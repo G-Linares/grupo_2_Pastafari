@@ -7,7 +7,8 @@
 
 </div>
 
-Pasta italiana auténtica en la puerta de tu casa con tan solo un click.
+
+### Pasta italiana auténtica en la puerta de tu casa con tan solo un click.
 
 ## Acerca del proyecto
 
