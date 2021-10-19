@@ -1,4 +1,11 @@
 # Pastafari
+<br />
+<div align="center">
+  <a>
+    <img src="assets/PastafariLogo.png" alt="Logo" width="80" height="80">
+  </a>
+
+</div>
 
 Pasta italiana auténtica en la puerta de tu casa con tan solo un click.
 
