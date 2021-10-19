@@ -1,4 +1,6 @@
-#Pastafari
+# Pastafari
+
+Pasta italiana auténtica en la puerta de tu casa con tan solo un click.
 
 ## Acerca del proyecto
 
@@ -16,9 +18,9 @@
 
 ### Construido con:
 
-* [Javascript]
-* [HTML5]
-* [CSS]
+* Javascript
+* HTML5
+* CSS
 * [Node.js](https://nodejs.org/en/)
 
 <p align="right">(<a href="#top">Regresar Arriba</a>)</p>
