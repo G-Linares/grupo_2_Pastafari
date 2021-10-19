@@ -4,7 +4,7 @@
   <a>
     <img src="assets/PastafariLogo.png" alt="Logo" width="440" height="600">
   </a>
-
+  
 </div>
 
 
@@ -16,6 +16,10 @@
 - Nuestra audencia objetivo sera cualquier persona con antojo y ganas de probar un platillo realizado con pasta autentica Italiana.
 - Pastafari contará con un menu interactivo con el cual los clientes puedan order la pasta que más les interese.
     - Dentro de los productos ofertados en el menú se podrá encontrar platillos como: 
+        1. Fetuccini Alla Puttanesca
+        2. Trenette Al Pesto
+        3. Pansotti Alla Genovese
+        4. Vermicelli Con Le Vongole
 
 ## Integrantes
 
