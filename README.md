@@ -21,8 +21,9 @@
 
 1. Angel Tamariz
 2. Mario Mercado
-3. Mario Menchaca
-4. Gerardo Linares
+    - Polímata y narrador de rol de mesa, mis gustos son variados y espero que lo que sé ayude en nuestro proyecto.
+4. Mario Menchaca
+5. Gerardo Linares
     - Estudiante de Ing. en Sistemas computacionales. Resido en la CDMX y mi fortaleza es el back-end. Me gusta mucho leer y aprender nuevas tecnologías.
 
 ### Construido con:
