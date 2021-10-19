@@ -15,6 +15,7 @@ Pasta italiana auténtica en la puerta de tu casa con tan solo un click.
 2. Mario Mercado
 3. Mario Menchaca
 4. Gerardo Linares
+    - Estudiante de Ing. en Sistemas computacionales. Resido en la CDMX y mi fortaleza es el back-end. Me gusta mucho leer y aprender nuevas tecnologías.
 
 ### Construido con:
 
