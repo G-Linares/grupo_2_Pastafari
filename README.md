@@ -62,7 +62,7 @@ Las elegí por que me parece que tienen un muy buen diseño, son bastante limpia
 
 <div align="center">
   <a>
-    <img src="wireframe/Home.png" alt="wireframe" width="320" height="512">
+    <img src="wireframe/Home.png" alt="wireframe" width="640" height="1024">
   </a>
 </div>
 
