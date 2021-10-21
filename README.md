@@ -42,9 +42,9 @@ Esta es una reconocida página que vende alimentos frescos, aquí lo que me gust
 - Mario Mercado
 
 
-[Simply Chocolate](https://simplychocolate.dk/)||
+[Simply Chocolate](https://simplychocolate.dk/)
 
-[Pogg Sweetp potato pie](https://pogg-sweetpotatopie.com/en/)||
+[Pogg Sweetp potato pie](https://pogg-sweetpotatopie.com/en/)
 
 [Air Company](https://aircompany.com/):
 Las elegí por que me parece que tienen un muy buen diseño, son bastante limpias y fáciles de usar aunque son tiendas de temas variados
