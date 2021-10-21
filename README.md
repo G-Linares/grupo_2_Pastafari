@@ -33,16 +33,14 @@
 ## Paginas de referencia
 
 [GRIND coffee](https://grind.co.uk/)
-
 Página que se dedica a la venta de café, cafeteras y pods. Presenta una estética muy limpia con una paleta de colores muy sobria lo que hace resaltar al producto. La página es dinámica y cuenta con menús muy útiles.
 - Gerardo Linares
-
+-----
 
 [Blue Apron](https://www.blueapron.com/)
-
 Esta es una reconocida página que vende alimentos frescos, aquí lo que me gusta es la sencillez de explicación sobre lo que hacen y que inmediatamente (gracias a sus imágenes) sabes de que va la página.
 - Mario Mercado
-
+-----
 
 [Simply Chocolate](https://simplychocolate.dk/)
 
@@ -52,7 +50,7 @@ Esta es una reconocida página que vende alimentos frescos, aquí lo que me gust
 
 Las elegí por que me parece que tienen un muy buen diseño, son bastante limpias y fáciles de usar aunque son tiendas de temas variados
 - Angel Tamariz
-
+-----
 ## Paleta de Color
 <br />
 <div align="center">
