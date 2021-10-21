@@ -50,6 +50,15 @@ Esta es una reconocida página que vende alimentos frescos, aquí lo que me gust
 Las elegí por que me parece que tienen un muy buen diseño, son bastante limpias y fáciles de usar aunque son tiendas de temas variados
 - Angel Tamariz
 
+## Paleta de Color
+<br />
+<div align="center">
+  <a>
+    <img src="design/colorPalette.png" alt="Palette" width="800" height="600">
+  </a>
+  
+</div>
+
 ### Construido con:
 
 * Javascript
