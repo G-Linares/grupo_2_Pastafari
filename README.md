@@ -57,6 +57,15 @@ Las elegí por que me parece que tienen un muy buen diseño, son bastante limpia
   
 </div>
 
+
+## Wireframe 
+
+<div align="center">
+  <a>
+    <img src="wireframe/Home.png" alt="wireframe" width="320" height="512">
+  </a>
+</div>
+
 ## Fonts
 
 - Roboto
@@ -69,3 +78,7 @@ Las elegí por que me parece que tienen un muy buen diseño, son bastante limpia
 * [Node.js](https://nodejs.org/en/)
 
 <p align="right">(<a href="#top">Regresar Arriba</a>)</p>
+
+
+
+
