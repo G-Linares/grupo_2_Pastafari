@@ -66,9 +66,11 @@ Las elegí por que me parece que tienen un muy buen diseño, son bastante limpia
   </a>
 </div>
 
+-----
+
 <div align="center">
   <a>
-    <img src="wireframe/1. Carrito.png" alt="wireframe" width="640" height="1024">
+    <img src="wireframe/1. Carrito.png" alt="carrito" width="720" height="512">
   </a>
 </div>
 
