@@ -66,6 +66,12 @@ Las elegí por que me parece que tienen un muy buen diseño, son bastante limpia
   </a>
 </div>
 
+<div align="center">
+  <a>
+    <img src="wireframe/1. Carrito.png" alt="wireframe" width="640" height="1024">
+  </a>
+</div>
+
 ## Fonts
 
 - Roboto
