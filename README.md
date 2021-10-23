@@ -27,6 +27,7 @@
 2. Mario Mercado
     - Polímata y narrador de rol de mesa, mis gustos son variados y espero que lo que sé ayude en nuestro proyecto.
 4. Mario Menchaca
+Estudiante de ingeniería en sistemas, mis principales gustos son crear música y escribir 
 5. Gerardo Linares
     - Estudiante de Ing. en Sistemas computacionales. Resido en la CDMX y mi fortaleza es el back-end. Me gusta mucho leer y aprender nuevas tecnologías.
 
