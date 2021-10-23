@@ -33,9 +33,9 @@ Estudiante de ingeniería en sistemas, mis principales gustos son crear música 
 
 ## Paginas de referencia
 
-(Pogg sweet potato pie) 3. https://pogg-sweetpotatopie.com/en/
+[Pogg sweet potato pie](https://pogg-sweetpotatopie.com/en/)
 Pequeños pays de camote en forma de pirámide, de origen asiático
-Específicamente de Japón, se dedica a la venta y exportación del mismo
+Específicamente de Japón, se dedica a la venta y exportación del mismo.
 -Mario menchaca
 -----
 
