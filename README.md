@@ -37,6 +37,7 @@ Estudiante de ingeniería en sistemas, mis principales gustos son crear música 
 Pequeños pays de camote en forma de pirámide, de origen asiático
 Específicamente de Japón, se dedica a la venta y exportación del mismo
 -Mario menchaca
+-----
 
 [GRIND coffee](https://grind.co.uk/):
 Página que se dedica a la venta de café, cafeteras y pods. Presenta una estética muy limpia con una paleta de colores muy sobria lo que hace resaltar al producto. La página es dinámica y cuenta con menús muy útiles.
