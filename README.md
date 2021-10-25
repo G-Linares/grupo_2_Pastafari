@@ -23,21 +23,21 @@
 
 ## Integrantes
 
-1. Angel Tamariz
+1. Angel Tamariz.
   - Formación como químico, con un enfoque en tecnologías basadas en hidrógeno. Cofundador de Cellen, startup que busca eliminar las emisiones del sector de movilidad mediante el uso del hidrógeno. Actualmente, me encuentro trabajando en aplicar estas tecnologías a drones de uso industrial. Me encanta a prender nuevas cosas y considero que una habilidad de gran importancia en estos tiempos es saber programar y poder aplicar estos conocimientos a casos prácticos que generen valor para todos.
-2. Mario Mercado
-    - Polímata y narrador de rol de mesa, mis gustos son variados y espero que lo que sé ayude en nuestro proyecto.
-3. Mario Menchaca
-Estudiante de ingeniería en sistemas, mis principales gustos son crear música y escribir 
-4. Gerardo Linares
-    - Estudiante de Ing. en Sistemas computacionales. Resido en la CDMX y mi fortaleza es el back-end. Me gusta mucho leer y aprender nuevas tecnologías.
+2. Mario Mercado.
+  - Polímata y narrador de rol de mesa, mis gustos son variados y espero que lo que sé ayude en nuestro proyecto.
+3. Mario Menchaca.
+  - Estudiante de ingeniería en sistemas, mis principales gustos son crear música y escribir 
+4. Gerardo Linares.
+  - Estudiante de Ing. en Sistemas computacionales. Resido en la CDMX y mi fortaleza es el back-end. Me gusta mucho leer y aprender nuevas tecnologías.
 
 ## Paginas de referencia
 
 [Pogg sweet potato pie](https://pogg-sweetpotatopie.com/en/)
 Pequeños pays de camote en forma de pirámide, de origen asiático
 Específicamente de Japón, se dedica a la venta y exportación del mismo.
--Mario menchaca
+- Mario menchaca
 -----
 
 [GRIND coffee](https://grind.co.uk/):
@@ -50,9 +50,7 @@ Esta es una reconocida página que vende alimentos frescos, aquí lo que me gust
 - Mario Mercado
 -----
 
-[Simply Chocolate](https://simplychocolate.dk/) |
-[Pogg Sweetp potato pie](https://pogg-sweetpotatopie.com/en/) |
-[Air Company](https://aircompany.com/):
+[Simply Chocolate](https://simplychocolate.dk/) | [Air Company](https://aircompany.com/):
 Las elegí por que me parece que tienen un muy buen diseño, son bastante limpias y fáciles de usar aunque son tiendas de temas variados
 - Angel Tamariz
 -----
