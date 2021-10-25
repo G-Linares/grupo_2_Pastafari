@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a>
-    <img src="design/PastafariLogo.png" alt="Logo" width="346" height="346">
+    <img src="design/Pasta-fondo blanco.jpg" alt="Logo" width="346" height="346">
   </a>
   
 </div>
