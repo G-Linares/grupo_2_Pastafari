@@ -1,0 +1,20 @@
+{
+  "name": "Pastafari",
+  "version": "1.0.0",
+  "description": "<br /> <div align=\"center\">   <a>     <img src=\"design/Pasta-fondo blanco.jpg\" alt=\"Logo\" width=\"346\" height=\"346\">   </a>",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/G-Linares/Pastafari.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/G-Linares/Pastafari/issues"
+  },
+  "homepage": "https://github.com/G-Linares/Pastafari#readme"
+}
