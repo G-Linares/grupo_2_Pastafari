@@ -1,6 +1,39 @@
 * {
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgb(194, 194, 194);
+    font-family: 'Roboto',sans-serif;
+}
+
+.logo{
+    color: rgb(27, 27, 27);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links a {
+    color: rgb(27, 27, 27);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.nav-links li {
+    list-style: none;
 }
