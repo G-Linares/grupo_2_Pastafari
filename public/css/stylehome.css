@@ -37,3 +37,45 @@ nav {
 .nav-links li {
     list-style: none;
 }
+
+.burger {
+    padding: 5px;
+    font-size: 1em;
+    color: rgb(27, 27, 27);
+    display: none;
+}
+
+@media  screen and (max-width: 1024px) {
+    .nav-links {
+        width: 60%;
+    }
+}
+
+@media  screen and (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: rgb(194, 194, 194);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 65%;
+        transform:  translateX(100%);
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+        cursor: pointer;
+    }
+}
+
+/* Aqui se aplica el estio para que aparezca el menu*/
