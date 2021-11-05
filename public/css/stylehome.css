@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -54,6 +56,7 @@ nav {
 @media  screen and (max-width: 768px) {
 
     body {
+        max-width: 768px;
         overflow-x: hidden;
     }
 
@@ -68,14 +71,43 @@ nav {
         align-items: center;
         width: 65%;
         transform:  translateX(100%);
+        transition: transform 0.5s ease-in;
+        
     }
+
     .nav-links li {
         opacity: 0;
     }
+
     .burger{
         display: block;
         cursor: pointer;
     }
+    
 }
 
-/* Aqui se aplica el estio para que aparezca el menu*/
+.nav-activada {
+    transform: translateX(0%);
+  
+}
+
+.nav-activada li {
+    font-weight: bold;
+    font-weight: 400;
+    padding: 30px;
+    width: 80%;
+    text-align: center;
+}
+
+@keyframes navLinkDesaparece {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+}
+
