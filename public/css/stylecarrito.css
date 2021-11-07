@@ -4,4 +4,189 @@
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+img {
+    width: 100%;
+    height: 99%;
+}
+
+img.borded {
+    box-shadow: 0px 0px 10px rgb(100,100,100); 
+}
+
+h2 {
+    font-family: 'Pacifico', cursive;
+}
+
+.centered-white {
+    color: rgb(244, 237, 249);
+    text-shadow: 2px 2px 0px black;
+    text-align: center;
+    font-size: 20px;
+}
+
+header {
+    background-color: rgb(244, 237, 249);
+    height: 10%;
+}
+
+body {
+    background-color: rgb(244, 237, 249);
+    min-width: 200px;
+}
+main {
+    background-color: rgba(23,112,0,.6);
+    padding: 15px;
+}
+
+.container-main-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-content: center;
+    align-items: center;
+    margin: 2%;
+}
+
+.container-main-bottom {
+    display: flex;
+    border-top: solid 1px black;
+    flex-wrap: wrap;
+}
+
+.fotos {
+    
+    flex: 1;
+    margin: 2%;
+}
+
+.descripciones {
+    display: none;
+    flex: 1;
+    text-align: center;
+    margin: 2%;
+}
+
+/*Esto contienede los botones de cantidades*/
+.contenedor-boton {
+    display:flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.cart-quantity-input {
+    width: 40px;
+}
+.precioxproducto {
+    display: flex;
+    flex: 1;
+   
+}
+
+/*Este es el boton que cambiara cuantos productos*/
+.boton_cantidadP {
+    background-color: rgba(219, 125, 29, .9);
+    border-radius: 5px;
+    width: 50%;
+    font-size: 70%;
+    align-items: center;
+    max-width: 60%;
+    min-width: 26px;
+    padding: 2.5px;
+}
+
+.container_logo {
+    display: flex;
+    width: 50%;
+}
+
+.container_end {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.subTotal {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border: 2px dotted red;
+}
+
+.item-sub {
+    background-color: blanchedalmond;
+}
+
+.buttons_cart_out {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-start;
+    flex: 1;
+    width: 100%;
+
+}
+
+
+footer {
+    background-color: rgb(244, 237, 249);
+    padding: 15px;
+    height: 10%;
+}
+
+footer section {
+    display: flex;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.left-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+}
+
+.right-list {
+    display: flex;
+    flex-direction: column;    
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.itemsL {
+    padding: 4px;
+    flex-shrink: 1;
+    text-align: start;
+}
+
+.itemsR {
+    padding: 4px;
+    flex-shrink: 1;
+    text-align: center;
+}
+
+
+@media (min-width: 361px) {
+    .descripciones {
+        display: flex;
+    }
+}
+
+@media (min-width: 485px) {
+    .right-list {
+        flex-direction: row;
+    }
 }
