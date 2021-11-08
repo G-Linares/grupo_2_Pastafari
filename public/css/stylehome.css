@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
 }
 
 
@@ -11,7 +12,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
-    background-color: rgb(194, 194, 194);
+    background: linear-gradient(to bottom, #ccd1d4, #f0f1f1);
     font-family: 'Roboto',sans-serif;
 }
 
@@ -51,6 +52,7 @@ nav {
     .nav-links {
         width: 60%;
     }
+
 }
 
 @media  screen and (max-width: 768px) {
@@ -65,7 +67,7 @@ nav {
         right: 0px;
         height: 92vh;
         top: 8vh;
-        background-color: rgb(194, 194, 194);
+        background: linear-gradient(to bottom, #ccd1d4, #f0f1f1);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -83,6 +85,7 @@ nav {
         display: block;
         cursor: pointer;
     }
+
     
 }
 
@@ -109,5 +112,105 @@ nav {
         transform: translateX(0px);
     }
 
+}
+
+.header-main-container {
+    padding: 50px;
+    background: linear-gradient(to right, #52c234, #061700);
+   
+}
+
+.header-main-text {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    justify-content: space-around;
+}
+
+.header-main-text div, .header-main-text a{
+
+
+}
+
+.top-text {
+    color: white;
+    font-weight: bold;
+    font-size: 43px;
+}
+
+.bottom-text {
+    color: white;
+    font-size: 24px;
+}
+
+.saber-mas{
+    font-size: 28px;
+    font-style: none;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.login-box-container {
+    display: none;    
+}
+
+.login {
+    border-radius: 5px 5px 5px 5px;
+    padding: 10px 20px 20px 20px;  
+    background: #ffffff;
+    width: 350px;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    display: block;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    color: #ccc;
+}
+
+
+
+.login a {
+    text-decoration: none;
+    color: #444;
+}
+
+.title {
+    color: #444;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0 30px 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+  }
+
+@media  (min-width: 768px) {
+    .login-box-container { 
+        display: block;
+        display: flex;
+        align-items: center;
+        border-left: 1px grey solid;
+        padding-left: 40px;
+        justify-content: center;
+    
+    }
+    .header-main-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 15px;
+       
+    }
+     
+    
 }
 
