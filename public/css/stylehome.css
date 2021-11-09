@@ -215,6 +215,53 @@ input {
     
 }
 
+main {
+  margin-top: -55px;
+  margin-bottom: -50px;
+}
+
+.main-container {
+  background: linear-gradient(to bottom, #c6c6c7, #f0f1f1);
+  padding: 0;
+  margin: 0;
+}
+
+.main-container-content > div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  border: solid red 1px;
+  margin-left: 100px;
+  margin-right: 100px;
+  background-color: white;
+  box-shadow: 0.89;
+
+
+}
+
+.content-top {
+  margin-top: 42px
+}
+
+.sobre-nosotros{
+  font-weight: bold;
+  font-family: 'Pacifico', cursive;
+  padding-bottom: 15px;
+  margin-top: -30px;
+}
+
+.content-bottom-container {
+  display: flex;
+  flex-direction: row;
+  border: solid red 1px;
+
+}
+
+
+
+
 footer {
   background: linear-gradient(to bottom, #dfe1e2, #f4f7f7);
   display: flex;
