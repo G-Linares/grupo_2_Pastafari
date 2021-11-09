@@ -13,32 +13,34 @@ nav {
     align-items: center;
     min-height: 8vh;
     background: linear-gradient(to bottom, #ccd1d4, #f0f1f1);
-    font-family: 'Roboto',sans-serif;
+    font-family:'Roboto', sans-serif;
 }
 
-.logo{
-    color: rgb(27, 27, 27);
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 20px;
+.logo h4{
+  font-family: 'Pacifico';
+  font-size: 28px;
+    
 }
 
 .nav-links {
     display: flex;
     justify-content: space-around;
     width: 30%;
+    
 }
 
 .nav-links a {
-    color: rgb(27, 27, 27);
+    color: rgb(2, 2, 2);
     text-decoration: none;
     letter-spacing: 3px;
-    font-weight: 300;
+    font-weight: bold;
     font-size: 14px;
 }
 
 .nav-links li {
     list-style: none;
+  
+    
 }
 
 .burger {
@@ -65,28 +67,26 @@ nav {
     .nav-links {
         position: absolute;
         right: 0px;
-        height: 92vh;
+        height: 70vh;
         top: 8vh;
-        background: linear-gradient(to bottom, #ccd1d4, #f0f1f1);
+        background: linear-gradient(to bottom, #c6c6c7, #f0f1f1);
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 65%;
+        width: 60%;
         transform:  translateX(100%);
-        transition: transform 0.5s ease-in;
-        
+        transition: transform 0.5s ease-in;        
     }
 
     .nav-links li {
         opacity: 0;
+        border-bottom: solid 1px rgba(128, 128, 128,0.9);
+        
     }
-
     .burger{
         display: block;
         cursor: pointer;
     }
-
-    
 }
 
 .nav-activada {
@@ -116,7 +116,9 @@ nav {
 
 .header-main-container {
     padding: 50px;
-    background: linear-gradient(to right, #52c234, #061700);
+    background-image: url('../img/backg.png');
+    background-color: #cccccc;
+  background-position: center;
    
 }
 
@@ -128,10 +130,6 @@ nav {
     justify-content: space-around;
 }
 
-.header-main-text div, .header-main-text a{
-
-
-}
 
 .top-text {
     color: white;
@@ -210,7 +208,48 @@ input {
         gap: 15px;
        
     }
-     
+
+    footer .footer-links {
+      display: block;
+    }
     
 }
 
+footer {
+  background: linear-gradient(to bottom, #dfe1e2, #f4f7f7);
+  display: flex;
+  justify-content: space-around;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  align-items: center;
+  
+}
+
+footer li {
+  list-style: none;
+  padding-top: 10px;
+}
+
+footer li a {
+  text-decoration: none;
+  color: black;
+  
+  
+}
+
+footer p {
+  padding-bottom: 7px;
+  font-weight: bold;
+  font-size: 16px;
+  border-bottom: rgba(182, 181, 181,1.2) solid 1px;
+  
+}
+
+.footer-links {
+  display: none;
+}
+
+.footer-logo-location h2 {
+  font-family:'Pacifico';
+}
+  
