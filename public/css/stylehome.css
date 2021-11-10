@@ -5,7 +5,9 @@
     font-family: 'Roboto',sans-serif;
 }
 
-
+body {
+  background-color: #dfe1e2;
+}
 
 nav {
     display: flex;
@@ -232,7 +234,6 @@ main {
   align-items: center;
   justify-content: center;
   padding: 50px;
-  border: solid red 1px;
   margin-left: 100px;
   margin-right: 100px;
   background-color: white;
@@ -255,10 +256,87 @@ main {
 .content-bottom-container {
   display: flex;
   flex-direction: row;
-  border: solid red 1px;
+  
 
 }
 
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;  
+  margin-bottom: 68px;
+  background-color: #dfe1e2;
+}
+
+.carousel-container h2 {
+  font-weight: bold;
+  font-size: 24px;
+  font-family: 'Pacifico', cursive;
+
+}
+
+
+.carousel {
+  overflow: hidden;
+  max-width: 600px;
+  position: relative;
+  width: 100%;
+  
+
+}
+
+.carousel .carousel__item,
+.carousel .carousel__item--hidden {
+  display: none;
+}
+
+.carousel .carousel__item img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+.carousel .carousel__item--visible {
+  display: block;
+  animation: fadeVisibility 0.5s;
+}
+
+.carousel .carousel__actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel .carousel__actions button {
+  border-radius: 50px;
+  border: 0;
+  font-weight: bold;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel .carousel__actions button#carousel__button--prev {
+  margin-left: 20px;
+}
+
+.carousel .carousel__actions button#carousel__button--next {
+  margin-right: 20px;
+}
+
+@keyframes fadeVisibility {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: opacity linear;
+  }
+}
 
 
 
