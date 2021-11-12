@@ -37,6 +37,11 @@ nav {
     letter-spacing: 3px;
     font-weight: bold;
     font-size: 14px;
+    transition: color 0.7s ease;
+}
+
+.nav-links a:hover{
+  color: rgba(247, 99, 46, 0.973);
 }
 
 .nav-links li {
@@ -85,6 +90,14 @@ nav {
     .nav-links li {
         opacity: 0;
         border-bottom: solid 1px rgba(128, 128, 128,0.9);
+        border-right: solid 1px rgba(128, 128, 128,0.9);
+        transition: background-color 0.5s ease;
+        cursor: pointer;
+        border-radius: 9px;
+    }
+
+    .nav-links li:hover {
+      background-color:rgba(247, 99, 46, 0.973) ;
     }
 
 
@@ -165,6 +178,7 @@ nav {
     color: white;
     font-weight: bold;
     width: 180px;
+    transition: color 0.5s ease;
 }
 
 .login-box-container {
@@ -403,6 +417,10 @@ input {
   cursor: pointer;
   background-color: rgb(196, 196, 196);
   
+}
+
+.main-container .content-bottom-container div {
+  transition: background-color 0.9s ease;
 }
 
 .sobre-nosotros{
