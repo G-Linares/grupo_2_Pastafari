@@ -24,7 +24,7 @@
 ## Integrantes
 
 1. Angel Tamariz.
-  - Formación como químico, con un enfoque en tecnologías basadas en hidrógeno. Cofundador de Cellen, startup que busca eliminar las emisiones del sector de movilidad mediante el uso del hidrógeno. Actualmente, me encuentro trabajando en aplicar estas tecnologías a drones de uso industrial. Me encanta a prender nuevas cosas y considero que una habilidad de gran importancia en estos tiempos es saber programar y poder aplicar estos conocimientos a casos prácticos que generen valor para todos.
+  - Formación como químico, con un enfoque en tecnologías basadas en hidrógeno. Cofundador de Cellen, startup que busca eliminar las emisiones del sector de movilidad mediante el uso del hidrógeno. Actualmente, me encuentro trabajando en aplicar estas tecnologías a drones de uso industrial. Me encanta aprender nuevas cosas y considero que una habilidad de gran importancia en estos tiempos es saber programar y poder aplicar estos conocimientos a casos prácticos que generen valor para todos.
 2. Mario Mercado.
   - Polímata y narrador de rol de mesa, mis gustos son variados y espero que lo que sé ayude en nuestro proyecto.
 3. Mario Menchaca.
