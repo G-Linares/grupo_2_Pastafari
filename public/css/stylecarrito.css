@@ -4,7 +4,6 @@
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
 }
 
 img {
@@ -20,12 +19,19 @@ h2, h4 {
     font-family: 'Pacifico', cursive;
 }
 
+.logo h4 {
+    font-family: 'Pacifico';
+    font-size: 28px;
+}
+
 .centered-white {
     color: rgb(244, 237, 249);
     text-shadow: 2px 2px 0px black;
     text-align: center;
-    font-size: 20px;
+    font-size: 26px;
 }
+
+
 
 /*--Aqui empieza lo del header--*/
 nav {
@@ -33,7 +39,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
-    background-color: rgb(194, 194, 194);
+    background: linear-gradient(to bottom, #ccd1d4, #f0f1f1);
     font-family: 'Roboto',sans-serif;
 }
 
@@ -47,13 +53,26 @@ nav {
     color: rgb(27, 27, 27);
     text-decoration: none;
     letter-spacing: 3px;
-    font-weight: 300;
+    font-weight: bold;
     font-size: 14px;
+    transition: color 0.7s ease;
 }
+
+.nav-links a:hover{
+    color: rgba(247, 99, 46, 0.973);
+  }
 
 .nav-links li {
     list-style: none;
 }
+
+.nav-container {
+    position: relative;
+    width: 100%;
+    top: 0px;
+    border-bottom: rgba(0, 0, 0, 0.397) solid 4px;
+    z-index: 1;
+  }
 
 li a {
     display: none;
@@ -66,8 +85,8 @@ body {
     min-width: 200px;
 }
 main {
-    background-color: rgba(23,112,0,.6);
-    padding: 15px;
+    background: rgb(137,208,29);
+    background: linear-gradient(90deg, rgba(137,208,29,1) 32%, rgba(23,112,0,0.90238093528427) 68%);
 }
 
 .container-main-top {
@@ -95,6 +114,7 @@ main {
     flex: 1;
     text-align: center;
     margin: 2%;
+    font-style: italic;
 }
 
 /*Esto contienede los botones de cantidades*/
@@ -110,20 +130,36 @@ main {
 .precioxproducto {
     display: flex;
     flex: 1;
-   
+}
+
+.botonE {
+    border-radius: 5px;
+    width: 50%;
+    font-weight: bold;
+    font-size: 100%;
+    max-width: 25%;
+    min-width: 26px;
+    padding: 2.5px;
+    justify-self: flex-start;
 }
 
 /*Estoss son los botones para regresar o proceder*/
 .boton_RP {
-    background-color: rgba(219, 125, 29, .9);
     border-radius: 5px;
     width: 50%;
-    font-size: 70%;
-    align-items: center;
+    font-weight: bold;
+    font-size: 100%;
     max-width: 60%;
     min-width: 26px;
     padding: 2.5px;
+
 }
+
+button.boton_RP {
+    margin: 1px;
+}
+
+
 
 .container_logo {
     display: flex;
@@ -140,9 +176,14 @@ main {
 
 .subTotal {
     display: flex;
-    flex: 1;
+    flex: .2;
     align-items: center;
-    border: 2px dotted red;
+    font-weight: bold;
+    margin: 2%;
+}
+
+div.subTotal {
+    font-size: 24px;
 }
 
 .item-sub {
@@ -160,12 +201,56 @@ main {
 
 }
 
+/*G*/
 
 footer {
-    background-color: rgb(244, 237, 249);
-    padding: 15px;
-    height: 10%;
+    background: linear-gradient(to bottom, #dfe1e2, #f4f7f7);
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    align-items: center;
+  }
+  
+  footer li {
+    list-style: none;
+    padding-top: 10px;
+  }
+  
+  footer li a {
+    text-decoration: none;
+    color: black;
+    
+    
+  }
+  
+  footer p {
+    padding-bottom: 7px;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: rgba(182, 181, 181,1.2) solid 1px;
+    
+  }
+  
+  .footer-links {
+    display: none;
+  }
+  
+  .footer-logo-location h2 {
+    font-family:'Pacifico';
+    margin-bottom: 10px;
+  }
+
+  footer input {
+    display: block;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    color: #ccc;
 }
+/*G*/  
 
 footer section {
     display: flex;
@@ -186,13 +271,6 @@ footer section {
 
 }
 
-.right-list {
-    display: flex;
-    flex-direction: column;    
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-}
 
 .itemsL {
     padding: 4px;
@@ -208,27 +286,35 @@ footer section {
 
 
 @media (min-width: 361px) {
-    .descripciones {
-        display: flex;
-    }
+    
 }
 
-@media (min-width: 485px) {
-    .right-list {
-        flex-direction: row;
-    }
-}
+
 
 @media (min-width: 669px) {
     .burger {
-        padding: 5px;
-        font-size: 1em;
-        color: rgb(27, 27, 27);
         display: none;
     }
 
     li a {
         display: flex;
     }
+
+    .nav-links {
+        width: 60%;
+    }
+
+    .descripciones {
+        display: flex;
+    }
+
+    .precioxproducto {
+        display: flex;
+        flex: .50;
+    }
+
+    footer {
+        flex-direction: row;
+      }
 }
 

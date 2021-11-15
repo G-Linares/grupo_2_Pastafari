@@ -15,57 +15,59 @@
 
 </head>
 
-<header>
-   
-    <nav>
-        <div class="logo">
-            <h4>Pastafari</h4>
-        </div>
+<body>
 
-        <ul class="nav-links">
-            <li>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="/carrito">Carrito</a>
-            </li>
-            <li>
-                <a href="#">Menu</a>
-            </li>
-            <li>
-                <a href="#">Login</a>
-            </li>
-        </ul>
-        <div class="burger">
-            <i class="fas fa-bars"></i>
-        </div>
-    </nav>
-    <script src="/public/scripts/home.js"></script>
+    <header>
+        <nav class="nav-container">
+            <div class="logo">
+                <h4>Pastafari</h4>
+            </div>
+    
+            <ul class="nav-links">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/carrito">Carrito</a>
+                </li>
+                <li>
+                    <a href="#">Menu</a>
+                </li>
+                <li>
+                    <a href="#">Login</a>
+                </li>
+                <li>
+                    <a href="/registro">Registrate</a>
+                </li>
+            </ul>
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+        <script src="/public/scripts/home.js"></script>
     </header>
 
-<body>
     <main>
         <h2 class="centered-white">Tus productos:</h2>
         <article class="container-main-top">
             <div class="fotos"><img src="/img/spaguetti_carbonara.jpg" alt="Spaguetti Carbonara" class="borded"></div>
-            <div class="descripciones">Delicioso Spaguetti Carbonara servido con hongos salteados.</div>
+            <div class="descripciones">Spaguetti Carbonara servido con hongos salteados.</div>
             <div class="contenedor-boton">
                 <input class="cart-quantity-input" type="number" value="1">
-                <!--<button type="button" class="boton_cantidadP">Boton</button> -->
             </div>
             <div class="precioxproducto">x $51.00</div>
-            <button type="button" value="borrar">Eliminar del carrito</button>
+            <button class="botonE" type="button" value="borrar">Eliminar del carrito</button>
         </article>
 
         <article class="container-main-top">
             <div class="fotos"><img src="/img/fettuccine_alfredo.jpg" alt="Fettucine Alfredo" class="borded"></div>
-            <div class="descripciones">Clásico fettuccine a la Alfredo.</div>
+            <div class="descripciones">Clásico fettuccine a la Alfredo con queso.</div>
             <div class="contenedor-boton">
                 <input class="cart-quantity-input" type="number" value="1">
                 <!--<button type="button" class="boton_cantidadP">Boton</button> -->
             </div>
             <div class="precioxproducto">x $51.00</div>
-            <button type="button" value="borrar">Eliminar del carrito</button>
+            <button class="botonE" type="button" value="borrar">Eliminar del carrito</button>
         </article>
 
         <article class="container-main-bottom">
@@ -81,29 +83,42 @@
                     <button type="button" class="boton_RP">Pagar</button>
                 </div>
             </div>
-            
         </article>
-        
+
     </main>
 
     <footer>
-        
-        <div class="container">
-            <section class="left-list">
-                <h2>Pastafari.Co</h2>
-                <p class="itemsL">Contactanos</p> <!--Estos deben ser links-->
-                <p class="itemsL">Acerca de nosotros</p>
-                <p class="itemsL">Información legal</p>
-                <p class="itemsL">Nuestra visión</p>
-            </section>
-    
-            <section class="right-list">
-                <p class="itemsR">Contactanos</p> <!--Estos deben ser links-->
-                <p class="itemsR">Acerca de nosotros</p>
-                <p class="itemsR">Información legal</p>
-                <p class="itemsR">Nuestra visión</p>
-            </section>
-        </div> 
+        <div class="footer-logo-location">
+            <h2>Pastafari</h2>
+            <h3>Romero de Terrenos #1153</h3>
+            <h4>Narvarte, 03038</h4>
+            <h4>CDMX</h4>
+        </div>
+        <div class="footer-links">
+            <p class="links">Links</p>
+            <ul>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Carrito</a></li>
+                <li><a href="#">Productos</a></li>
+            </ul>
+        </div>
+        <div class="footer-legal">
+            <p class="legal">Legal</p>
+            <ul>
+                <li><a href="#">Terminos y condiciones</a></li>
+                <li><a href="#">Promociones</a></li>
+            </ul>
+        </div>
+        <div class="footer-contacto">
+            <p class="contacto">Contacto</p>
+            <ul>
+                <p>Dejanos tu email para mas informacion sobre nuevos productos y promociones</p>
+                <input type="email" value="Direccion Email"></input>
+                <button type="submit"> Hecho!</button>
+            </ul>
+        </div>
+
+
     </footer>
 </body>
 
