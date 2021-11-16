@@ -115,6 +115,10 @@ nav {
         display: block;
         cursor: pointer;
     }
+
+    .content-top p {
+      font-size: 12px;
+    }
     .content-bottom-container {
       display: flex;
       flex-direction: column;
@@ -173,7 +177,7 @@ nav {
 
 .bottom-text {
     color: white;
-    font-size: 24px;
+    font-size: 2rem;
 }
 
 .saber-mas:hover{
@@ -280,6 +284,10 @@ input {
       display: block;
     }
 
+    footer .footer-contacto{
+      display: block;
+    }
+
     .main-container {
       display: flex;
       flex-direction: column;
@@ -297,6 +305,7 @@ input {
       margin-right: 50px;
       
     }
+    
 }
 
 .productos-container {
@@ -308,8 +317,8 @@ input {
 
 .productos-container h2 {
   padding-bottom: 15px;
-  font-family: 'Roboto',sans-serif;
-  font-size: 33px;
+  font-family: 'Pacifico',sans-serif;
+  font-size: 4rem;
 }
 .productos-item {
   display: flex;
@@ -381,6 +390,7 @@ input {
 
 .content-top p {
   margin-top: 25px;
+  font-size: 2rem;
 
 }
 
@@ -396,13 +406,24 @@ input {
   align-items: center;
   justify-content: space-around;
   padding: 20px;
-  height: 250px;
+  max-height: 98%;
+  max-width: 98%;
 }
 
 .content-bottom-container i {
-  font-size: 2em;
+  font-size: 5em;
+  padding: 25px;
 }
 
+.arrow-on-content i {
+  font-size: 2rem;
+  padding: 15px;
+}
+
+.content-bottom-container p {
+  font-size: 2rem;
+  padding: 45px;
+}
 
 .second-content {
   background-color: rgb(6, 39, 6);
@@ -440,6 +461,7 @@ input {
   margin-top: -30px;
   border-bottom: solid 1px rgba(128, 128, 128, 0.342);
   text-align: center;
+  font-size: 4rem;
 }
 
 .content-bottom-container {
@@ -458,7 +480,7 @@ input {
 
 .carousel-container h2 {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 4rem;
   font-family: 'Pacifico', cursive;
   padding-bottom: 15px;
   padding-top: 5px;
@@ -554,18 +576,20 @@ input {
 }
 .main-container-bottom-items h1 {
   font-family: 'Pacifico',sans-serif;
-}
-
-
-.main-container-bottom-items > * {
+  font-size: 4rem;
   color: #ffffff;
-  padding-bottom: 25px;
-  text-align: center;
-
 }
+
+.main-container-bottom-items p {
+  color: #ffffff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 2rem;
+}
+              
 .main-container-bottom-items button {
-  width: 200px;
-  height: 40px;
+  width: 98%;
+  height: 98%;
   border-radius: 5px;
   padding: 0;
   color: #ffffff;
@@ -575,6 +599,10 @@ input {
   font-size: 1.5rem;
   padding-bottom: 15px;
   border: none;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  font-size: 3rem;
 }
 
 .main-container-bottom-items button:hover {
@@ -594,7 +622,6 @@ footer {
   justify-content: space-around;
   padding-top: 25px;
   padding-bottom: 25px;
-  align-items: center;
   
 }
 
@@ -618,12 +645,37 @@ footer p {
   
 }
 
+footer span {
+  position: relative;
+  top: 9px;
+}
+
 .footer-links {
   display: none;
+}
+
+.footer-contacto{
+  display: none;
+}
+.footer-contacto button {
+  width: 120px;
+  height: 30px;
+}
+
+.footer-contacto input {
+  height: 20px;
+  width: 220px;
 }
 
 .footer-logo-location h2 {
   font-family:'Pacifico';
   margin-bottom: 10px;
+}
+
+.input-container-email {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
 }
   
