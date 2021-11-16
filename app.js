@@ -14,8 +14,8 @@ app.get('/carrito',function(req,res){
     res.sendFile(path.resolve(__dirname,'views/carrito.html'));
 });
 
-app.get('/login',function(req,res){
-    res.sendFile(path.resolve(__dirname,'views/login.html'));
+app.get('/registro',function(req,res){
+    res.sendFile(path.resolve(__dirname,'views/registro.html'));
 });
 
 app.get('/menu',function(req,res){
