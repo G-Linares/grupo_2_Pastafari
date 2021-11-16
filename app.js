@@ -18,8 +18,8 @@ app.get('/login',function(req,res){
     res.sendFile(path.resolve(__dirname,'views/login.html'));
 });
 
-app.get('/producto',function(req,res){
-    res.sendFile(path.resolve(__dirname,'views/producto.html'));
+app.get('/menu',function(req,res){
+    res.sendFile(path.resolve(__dirname,'views/menu.html'));
 });
 
 app.get('/registro',function(req,res){
