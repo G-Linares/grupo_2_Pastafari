@@ -15,22 +15,13 @@ img.borded {
     box-shadow: 0px 0px 10px rgb(100,100,100); 
 }
 
-h2, h4 {
-    font-family: 'Pacifico', cursive;
-}
+
+
 
 .logo h4 {
     font-family: 'Pacifico';
     font-size: 28px;
 }
-
-.centered-white {
-    color: rgb(244, 237, 249);
-    text-shadow: 2px 2px 0px black;
-    text-align: center;
-    font-size: 26px;
-}
-
 
 
 /*--Aqui empieza lo del header--*/
@@ -89,6 +80,15 @@ main {
     background: linear-gradient(90deg, rgba(137,208,29,1) 32%, rgba(23,112,0,0.90238093528427) 68%);
 }
 
+.centered-white {
+    color: rgb(244, 237, 249);
+    text-shadow: 2px 2px 0px black;
+    text-align: center;
+    font-size: 26px;
+    margin-top: 53px;
+    font-family: 'Pacifico', cursive;
+}
+
 .container-main-top {
     display: flex;
     flex-wrap: wrap;
@@ -126,6 +126,9 @@ main {
 
 .cart-quantity-input {
     width: 40px;
+    padding: 0px;
+    margin-bottom: 0px;
+    color: inherit;
 }
 .precioxproducto {
     display: flex;
@@ -201,61 +204,6 @@ div.subTotal {
 
 }
 
-/*G*/
-
-footer {
-    background: linear-gradient(to bottom, #dfe1e2, #f4f7f7);
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    align-items: center;
-  }
-  
-  footer li {
-    list-style: none;
-    padding-top: 10px;
-  }
-  
-  footer li a {
-    text-decoration: none;
-    color: black;
-    
-    
-  }
-  
-  footer p {
-    padding-bottom: 7px;
-    font-weight: bold;
-    font-size: 16px;
-    border-bottom: rgba(182, 181, 181,1.2) solid 1px;
-    
-  }
-  
-  .footer-links {
-    display: none;
-  }
-  
-  .footer-logo-location h2 {
-    font-family:'Pacifico';
-    margin-bottom: 10px;
-  }
-
-  footer input {
-    display: block;
-    padding: 15px 10px;
-    margin-bottom: 10px;
-    width: 100%;
-    border: 1px solid #ddd;
-    color: #ccc;
-}
-/*G*/  
-
-footer section {
-    display: flex;
-}
-
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -283,12 +231,6 @@ footer section {
     flex-shrink: 1;
     text-align: center;
 }
-
-
-@media (min-width: 361px) {
-    
-}
-
 
 
 @media (min-width: 669px) {
