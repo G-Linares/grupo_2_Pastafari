@@ -6,6 +6,8 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/*--Aquí comienza el body*/
+
 img {
     width: 100%;
     height: 100%;
@@ -15,69 +17,15 @@ img.borded {
     box-shadow: 0px 0px 10px rgb(100,100,100); 
 }
 
-
-
-
-.logo h4 {
-    font-family: 'Pacifico';
-    font-size: 28px;
-}
-
-
-/*--Aqui empieza lo del header--*/
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 8vh;
-    background: linear-gradient(to bottom, #ccd1d4, #f0f1f1);
-    font-family: 'Roboto',sans-serif;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: space-around;
-    width: 30%;
-}
-
-.nav-links a {
-    color: rgb(27, 27, 27);
-    text-decoration: none;
-    letter-spacing: 3px;
-    font-weight: bold;
-    font-size: 14px;
-    transition: color 0.7s ease;
-}
-
-.nav-links a:hover{
-    color: rgba(247, 99, 46, 0.973);
-  }
-
-.nav-links li {
-    list-style: none;
-}
-
-.nav-container {
-    position: relative;
-    width: 100%;
-    top: 0px;
-    border-bottom: rgba(0, 0, 0, 0.397) solid 4px;
-    z-index: 1;
-  }
-
-li a {
-    display: none;
-}
-
-
-/*--Aquí comienza el body*/
 body {
     background-color: rgb(244, 237, 249);
+    background-image: url('../img/backg.png');
+    background-size: cover;
     min-width: 200px;
 }
 main {
     background: rgb(137,208,29);
-    background: linear-gradient(90deg, rgba(137,208,29,1) 32%, rgba(23,112,0,0.90238093528427) 68%);
+    background: linear-gradient(90deg, rgba(137,208,29,0.60) 32%, rgba(23,112,0,0.80) 68%);
 }
 
 .centered-white {
@@ -144,6 +92,12 @@ main {
     min-width: 26px;
     padding: 2.5px;
     justify-self: flex-start;
+    transition: all 900ms;
+}
+
+button.botonE:hover {
+    border: rgb(255,9,15) solid 2px;
+    color: rgb(255,9,15);
 }
 
 /*Estoss son los botones para regresar o proceder*/
@@ -155,14 +109,16 @@ main {
     max-width: 60%;
     min-width: 26px;
     padding: 2.5px;
-
+    transition: all 900ms;
 }
 
 button.boton_RP {
     margin: 1px;
 }
 
-
+button.boton_RP:hover {
+    background-color: rgba(219,125,29, 0.8);
+}
 
 .container_logo {
     display: flex;
@@ -211,27 +167,6 @@ div.subTotal {
     align-items: center;
     align-content: center;
 }
-
-.left-list {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-
-}
-
-
-.itemsL {
-    padding: 4px;
-    flex-shrink: 1;
-    text-align: start;
-}
-
-.itemsR {
-    padding: 4px;
-    flex-shrink: 1;
-    text-align: center;
-}
-
 
 @media (min-width: 669px) {
     .burger {
