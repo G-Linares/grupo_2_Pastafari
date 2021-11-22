@@ -12,8 +12,6 @@ Se llega a la siguiente conclusion:
         - Asistir a las reuniones del euquipo.
         - Entregar en tiempo y hora.
 
-
-
     Aspectos a Mejorar:
         - Comunicacion entre todos los miembros del equipo.
         - Repartir el trabajo mas equitativamente.
