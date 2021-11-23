@@ -8,17 +8,26 @@ A continuación y aprovechando que el equipo ha discutido y pensado sobre cómo 
 
 Se llega a la siguiente conclusion:
 
-    Aspectos a Mantener:
-        - Asistir a las reuniones del euquipo.
-        - Entregar en tiempo y hora.
+    Que problemas enfrentamos:
+        - Asumir avances o implementaciones de codigo.
+        - Problemas tecnicos al usar tecnologias como Flexbox.
+        - Compromiso y seriedad con el proyecto.
 
-    Aspectos a Mejorar:
-        - Comunicacion entre todos los miembros del equipo.
-        - Repartir el trabajo mas equitativamente.
+        Para solucionar esto se acordo dar reviews constantes a los commits que se vayan agregando al repositorio.
+
+    Que hicimos bien:
+        - Asistir a las reuniones acordadas.
+        - Comunicacion abierta y clara.
+        - Se terminaron las actividades individuales en tiempo y forma.
+        - Se repartio el trabajo de una manera equitativa.
+        
+        Para mejorar estos puntos se acordo en asistir a las reuniones independientemente del avance que llevemos. Apoyar a los demas integrantes que tengan dificultades. Y crear branches independientes.
 
     Acciones de Mejora:
-        - Hacer reuniones despues de cada clase para ver avances.
-        - Establecer un horario de comunicion fijo.
+        - Mandar mensajes grupales por cualquier inconveniente.
+        - Mantener las lineas de comunicacion abiertas en todo momento.
+        - Tener la confianza de aceptar errores.
+        - Mantener las reuniones constantes despues de clase.
 
 A continuación, se proponen acciones como hipótesis de solución a estos requisitos y necesidades. Para luego asignar un responsable por cada oportunidad de mejora. Al final, transcribir el resultado de esta actividad al Backlog de retrospectivas, para su posterior seguimiento.
 
