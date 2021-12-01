@@ -1,29 +1,100 @@
-<header>
-    <nav class="nav-container">
-        <div class="logo">
-            <h4>Pastafari</h4>
-        </div>
+<header class="header">
 
-        <ul class="nav-links">
-            <li>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="/carrito">Carrito</a>
-            </li>
-            <li>
-                <a href="/menu">Menu</a>
-            </li>
-            <li>
-                <a href="/login">Login</a>
-            </li>
-            <li>
-                <a href="/registro">Registrate</a>
-            </li>
-        </ul>
-        <div class="burger">
-            <i class="fas fa-bars"></i>
-        </div>
+    <a href="/" class="logo">
+        <p>Pastafari</p>
+    </a>
+
+    <nav class="navbar">
+        <a href="/">home</a>
+        <i class="fas fa-home"></i>
+        <a href="about">about</a>
+        <i class="fas fa-question-circle"></i>
+        <a href="product">beers</a>
+        <i class="fas fa-th-list"></i>
+        <a href="#contact">contact</a>
+        <i class="fas fa-address-book"></i>
     </nav>
-    <script src="/public/scripts/home.js"></script>
+
+    <div class="icons">
+        <button class="fas fa-search-plus" id="search-btn"></button>
+        <button class="fas fa-shopping-cart" id="cart-btn"></button>
+        <button class="fas fa-user-circle" id="user-btn" onclick="openLoginForm()"></button>
+        <button class="fas fa-bars" id="menu-btn"></button>
+    </div>
+
+      <div class="popup-overlay"></div>
+      <div class="popup">
+        <div class="popup-close" onclick="closeLoginForm()">×</div>
+        <div class="form">
+          <div class="avatar">
+            <img src="images/pic-1.png" alt="">
+          </div>
+          <div class="header"> Account login </div>
+          <div class="element">
+            <label for="username" class="username-label">Username</label>
+            <input type="text" id="username">
+          </div>
+          <div class="element">
+            <label for="password">Password</label>
+            <input type="password" id="password">
+          </div>
+          <div class="element">
+            <button>Login</button>
+          </div>
+        </div>
+      </div>
+
+    <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </div>
+
+    <div class="cart-items-container">
+        <div class="cart-item">
+            <span class="fas fa-times"></span>
+            <span class="far fa-minus-square"></span>
+            <p>3</p>
+            <span class="far fa-plus-square"></span>
+            <img src="images/cart-item1.jpg" alt="">
+            <div class="content">
+                <h3>5 de Mayo Saga</h3>
+                <div class="price">$56.00</div>
+            </div>
+        </div>
+        <div class="cart-item">
+            <span class="fas fa-times"></span>
+            <p>4</p>
+            <span class="far fa-minus-square"></span>
+            <span class="far fa-plus-square"></span>
+            <img src="images/cart-item2.jpg" alt="">
+            <div class="content">
+                <h3>Calavera Mexican Imperial Stout</h3>
+                <div class="price">$59.00</div>
+            </div>
+        </div>
+        <div class="cart-item">
+            <span class="fas fa-times"></span>
+            <p>1</p>
+            <span class="far fa-minus-square"></span>
+            <span class="far fa-plus-square"></span>
+            <img src="images/cart-item3.jpg" alt="">
+            <div class="content">
+                <h3>Falling Piano Esa de Rojo</h3>
+                <div class="price">$92.00</div>
+            </div>
+        </div>
+        <div class="cart-item">
+            <span class="fas fa-times"></span>
+            <p>6</p>
+            <span class="far fa-minus-square"></span>
+            <span class="far fa-plus-square"></span>
+            <img src="images/cart-item4.jpg" alt="">
+            <div class="content">
+                <h3>Tempus Doble Malta</h3>
+                <div class="price">$40.00</div>
+            </div>
+        </div>
+        <a href="#" class="btn">Checkout</a>
+        <a href="#" class="btn">Clear Cart</a>
+    </div>
 </header>
