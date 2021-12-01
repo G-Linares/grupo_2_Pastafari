@@ -1,113 +1,126 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Roboto", sans-serif;  
-    background-image: url('../img/backg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+  font-family: "Roboto", sans-serif;
+  background-image: url("../img/backg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-
-
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f7f7f7;
-    font-family: roboto,arial;
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f7f7f7;
+  font-family: roboto, arial;
+  color: black;
 }
 
 select {
-    width: 15%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f7f7f7;
-    font-family: roboto,pacifico;
+  width: 15%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f7f7f7;
+  font-family: roboto, pacifico;
 }
 
-input[type=phone] {
-    width: 81%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f7f7f7;
+input[type="phone"] {
+  width: 81%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f7f7f7;
+  color: black;
 }
 
-input[type=text]:focus, input[type=password]:focus, input[type=phone]:focus, select:focus {
-
-    background-color: #ddd;
-    outline: none;
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="phone"]:focus,
+select:focus {
+  background-color: #ddd;
+  outline: none;
 }
 
 .main-container-registro {
-        display:flex;
-        flex-direction: row;
-        align-content: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 150px;
-        padding: 10%;
-        margin-top: 120px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 150px;
+  padding: 5%;
+  margin-top: 9vh;
 }
-.container-register , .container-login {
-        padding: 20px;
-        width: 100%;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        background: white;
-        -webkit-box-shadow: -9px 8px 31px -4px rgba(0,0,0,0.75);
-        -moz-box-shadow: -9px 8px 31px -4px rgba(0,0,0,0.75);
-        box-shadow: -9px 8px 31px -4px rgba(0,0,0,0.75);   
+
+.main-container-login {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 150px;
+  padding: 5%;
+  margin-top: 9vh;
+  margin-bottom: 17vh;
+}
+.container-register,
+.container-login {
+  padding: 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: white;
+  -webkit-box-shadow: -9px 8px 31px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -9px 8px 31px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: -9px 8px 31px -4px rgba(0, 0, 0, 0.75);
 }
 
 .main-container-registro h1 {
-    border-bottom: rgba(32, 32, 32, 0.322) solid 1px;  
-    padding-bottom: 10px;
-    font-size: 3rem;
+  border-bottom: rgba(32, 32, 32, 0.322) solid 1px;
+  padding-bottom: 10px;
+  font-size: 3rem;
 }
 
 .main-container-registro p {
-    font-size: 1.5rem;
-    padding-top: 10px;
-    padding-bottom: 25px;
+  font-size: 1.5rem;
+  padding-top: 10px;
+  padding-bottom: 25px;
 }
 
 .main-container-registro label {
-    font-size: 1;
-    font-weight: bold;
+  font-size: 1;
+  font-weight: bold;
 }
 
 .main-container-registro button {
-    background-color: #70d02c;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-    font-size: 16px;
-    font-family: roboto,pacifico;
-    border-radius: 10px;
+  background-color: #70d02c;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  font-size: 16px;
+  font-family: roboto, pacifico;
+  border-radius: 10px;
 }
 
 .main-container-registro button:hover {
-    opacity: 1;
+  opacity: 1;
 }
-    
 
-@media screen and (min-width: 840px){
-
-    .container-register , .container-login {
-        width: 660px;
-        
-    }
-
+@media screen and (min-width: 840px) {
+  .container-register,
+  .container-login {
+    width: 660px;
+  }
 }

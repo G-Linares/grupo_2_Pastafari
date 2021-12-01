@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/stylehome.css">
+        <link rel="stylesheet" href="./css/styleregistro.css">
+        <title>Login Form</title>
+    </head>
+<body>
+    <%- include('./partials/header') %> 
+    <div class="main-container-login">
+    <form action="">
+        <div class="container-login">
+            <h1>Accede a tu cuenta</h1>
+            <p>Por favor llena estos datos para acceder</p>
+
+            <label for="usr">Nombre de usuario</label>
+            <input type="text" name="username" placeholder="Enter Username" required>
+
+            <label for="psw">Password</label>
+            <input type="password" placeholder="Enter Password" name="pws" required>
+
+            <button type="submit" class="btn">Accede</button>
+        </div> 
+    </form>
+    </div>
+    <%- include('./partials/footer') %>  
+</body>
+</html>

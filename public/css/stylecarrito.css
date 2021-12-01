@@ -24,8 +24,9 @@ body {
     min-width: 200px;
 }
 main {
-    background: rgb(137,208,29);
+    
     background: linear-gradient(90deg, rgba(137,208,29,0.60) 32%, rgba(23,112,0,0.80) 68%);
+    margin-top: 8vh;
 }
 
 .centered-white {
