@@ -416,6 +416,7 @@
         display: flex;
         align-items: center;
         background:url(../img/backgTest.jpg) no-repeat;
+
         background-size: cover;
         background-position: center;
     }
