@@ -1,6 +1,9 @@
+const platillos = require('../data/platillos');
+const reviews = require('../data/reviews');
+
 const mainController = {
     home: (req,res) => {
-        res.render('home')
+        res.render('home', {platillos, reviews});
     },
     menu: (req,res) => {
         res.render('menu')

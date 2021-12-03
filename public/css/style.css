@@ -113,7 +113,7 @@
     }
     
     .header .logo p{
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         font-family: 'Pacifico', sans-serif;
         color: #ffffff;
     }
@@ -216,7 +216,7 @@
         top:1.2em; right: 2em;
         font-size: 2rem;
         cursor: pointer;
-        color: var(--black);
+        color: #000000;
     }
     
     .header .cart-items-container .cart-item .fa-minus-square{
@@ -224,7 +224,7 @@
         top: 1.2em; right: 8em;
         font-size: 2rem;
         cursor: pointer;
-        color: var(--black);
+        color: #000000;
     }
     
     .header .cart-items-container .cart-item .fa-plus-square{
@@ -232,15 +232,15 @@
         top:1.2em; right: 4em;
         font-size: 2rem;
         cursor: pointer;
-        color: var(--black);
+        color: #000000;
     }
     
     .header .cart-items-container .cart-item p{
         position: absolute;
         top: 1.8em; right: 9.7em;
         font-size: 1.2rem;
-        color: var(--black);
-        border: 2px solid var(--black);
+        color: #000000;
+        border: 2px solid #000000;
         padding: 5px;
         width: 25px;
         text-align: center;
@@ -265,7 +265,7 @@
     
     .header .cart-items-container .cart-item .content h3{
         font-size: 1.2rem;
-        color:var(--black);
+        color:#000000;
         padding-bottom: .5rem;
         max-width: 90%;
     }
@@ -296,7 +296,7 @@
         left:50%;
         transform:translate(-50%,-50%) scale(1.15);
         width:300px;
-        height:440px;
+        height:500px;
         background:var(--main-color);
         z-index:2;
         opacity:0;
@@ -340,8 +340,18 @@
         text-align:center;
         font-size:20px;
         font-weight:600;
-        color:#222;
+        color:#ffffff;
         margin:20px 0px;
+      }
+      .popup .form .no-accout-link{
+        text-align: center;
+        padding-top: 2rem;
+      }
+      .popup .form .no-accout-link a{
+          
+          color: #ffffff;
+          font-size: 12px;
+          font-style: none;
       }
       .popup .form .element {
         padding:8px 20px;
@@ -349,7 +359,7 @@
       .popup .form .element label {
         display:block;
         font-size:14px;
-        color:#222;
+        color:#ffffff;
         margin-bottom:5px;
       }
     
@@ -453,7 +463,6 @@
         overflow: hidden;
         position: relative;
         width: 100%;
-        border-radius: 0 15px 15px 0;
       }
       
       .carousel .carousel__item,
@@ -463,7 +472,6 @@
       
       .carousel .carousel__item img {
         width: 100%;
-    
         height: auto;
         
       }
@@ -490,6 +498,10 @@
         cursor: pointer;
         width: 40px;
         height: 40px;
+        background-color: var(--main-color);
+        border: solid 2.1px #ffffff;
+        color: #ffffff;
+        font-size: 3rem;
       }
     
       .carousel .carousel__actions button:hover{
@@ -524,7 +536,7 @@
         padding:5rem;
         text-align: center;
         border:var(--border); 
-        background-color: #E8EADC;
+        background-color: var(--main-color);
         border-radius: 9px;   
     }
     
@@ -534,19 +546,19 @@
     }
     
     .menu .box-container .box h3{
-        color: var(--bg);
+        color: #ffffff;
         font-size: 2rem;
         padding:1rem 0;
     }
     
     .menu .box-container .box h4{
-        color: var(--bg);
+        color: #ffffff;
         font-size: 1.5rem;
         padding:1rem 0;
     }
     
     .menu .box-container .box .price{
-        color: var(--bg);
+        color: #ffffff;
         font-size: 2.5rem;
         padding:.5rem 0;
     }
@@ -559,7 +571,7 @@
     }
     
     .menu .box-container .box:hover{
-        background:rgba(71, 71, 71, 0.473);
+        background:#222635;
     }
     
     .menu .box-container .box:hover > *{
@@ -570,95 +582,18 @@
         color: #fff;
     }
     
-    .products .box-container{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-        gap:1.5rem;
-    }
-    
-    .products .box-container .box{
-        text-align: center;
-        border:var(--border);
-        padding: 2rem;
-        border-radius: 15px;
-        background-color: var(--black);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-    
-    .products .box-container .box:hover{
-        background-color: rgba(0, 0, 0, 0.342);
-    }
-    
-    .products .box-container .box .icons{
-        display: flex;
-        justify-content: space-around;
-    }
-    
-    
-    
-    .products .box-container .box .icons a{
-        height: 5rem;
-        width: 10rem;
-        line-height: 5rem;
-        font-size: 2rem;
-        border:var(--border);
-        color:#fff;
-        margin:.3rem;
-        
-    }
-    
-    .products .box-container .box .icons a:hover{
-        background:var(--alterHover);
-    }
-    
-    .products .box-container .box .image{
-        padding: 2.5rem 0;
-    }
-    
-    .products .box-container .box .image img{
-        height: 25rem;
-        border-radius: 25px;
-    }
-    
-    .products .box-container .box .content h3{
-        color:#fff;
-        font-size: 2.5rem;
-    }
-    
-    .products .box-container .box .content .stars{
-        padding: 1.5rem;
-    }
-    
-    .products .box-container .box .content .stars i{
-        font-size: 1.7rem;
-        color: var(--alter);
-    }
-    
-    .products .box-container .box .content .price{
-        color:#fff;
-        font-size: 2.5rem;
-    }
-    
-    .products .box-container .box .content .price span{
-        text-decoration: line-through;
-        font-weight: lighter;
-        font-size: 1.5rem;
-    }
-    
     .review .box-container{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
         gap:1.5rem;
     }
+   
     
     .review .box-container .box{
         border:var(--border);
         text-align: center;
         padding:4rem 3rem;
-        background:rgba(71, 71, 71, 0.473);
+        background:var(--main-color);
         transition: all .2s ease-in-out;
         border-radius: 15px;
     }
@@ -704,7 +639,7 @@
     }
     .contact .row{
         display: flex;
-        background:var(--black);
+        background:var(--main-color);
         flex-wrap: wrap;
         gap:1rem;
         border-radius: 19px;
@@ -734,12 +669,12 @@
         align-items: center;
         margin-top: 2rem;
         margin-bottom: 2rem;
-        background:var(--bg);
+        background:var(--black);
         border:var(--border);
     }
     
     .contact .row form .inputBox span{
-        color:#fff;
+        color:#000000;
         font-size: 2rem;
         padding-left: 2rem;
     }
@@ -748,7 +683,7 @@
         width: 100%;
         padding:2rem;
         font-size: 1.7rem;
-        color:#fff;
+        color:#000000;
         text-transform: none;
         background:none;
     }
@@ -759,7 +694,7 @@
     
     
     .footer{
-        background:var(--black);
+        background:var(--main-color);
         text-align: center;
         display: flex;
         justify-content: space-around;
@@ -778,6 +713,7 @@
         margin:.3rem;
         transition: transform ease 500ms;
         border-radius: 50%;
+        background-color: var(--alter);
     }
     
     .footer .share a:hover{
@@ -798,7 +734,8 @@
         color:#fff;
         border:var(--border);
         font-size: 2rem;
-        border-radius: 15px;;
+        border-radius: 15px;
+        background-color: var(--alter);
         
     }
     
@@ -806,16 +743,7 @@
         background-color:var(--alterHover);
     }
     
-    .footer .credit{
-        font-size: 2rem;
-        color:#fff;
-        font-weight: lighter;
-        padding:1.5rem;
-    }
-    
-    .footer .credit span{
-        color:var(--main-color);
-    }
+  
     
     @media (max-width:991px){
     
@@ -853,7 +781,7 @@
         }
     
         .header .navbar a{
-            color:var(--black);
+            color:#ffffff;
             display: block;
             margin:1rem;
             padding:.5rem;
@@ -866,7 +794,7 @@
             bottom: 34px;
             left: 150px;
             font-size: 2em;
-            color: var(--black);
+            color: #ffffff;
         }
     
         .header .search-form{

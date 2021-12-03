@@ -23,7 +23,7 @@
 
 <section class="home" id="home">
     <div class="content">
-        <h3>Pasta <span> italiana </span> a tu alcanze</h3>
+        <h3>Pasta italiana<br/><span class="typed"> </span></h3>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus, maxime? Lorem, ipsum dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, expedita?</p>
         <a href="product" class="btn">Accede Al Menu</a>
     </div>
@@ -36,15 +36,15 @@
 
 <section class="about" id="about">
 
-    <h1 class="heading"> <span>about</span> us </h1>
+    <h1 class="heading"> <span>Acerca de </span> nosotros </h1>
 
     <div class="row">
 
         <div class="content">
-            <h3>what makes a great pasta?</h3>
+            <h3>Que hace a una gran pasta?</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui ea ullam, enim tempora ipsum fuga alias quae ratione a officiis id temporibus autem? Quod nemo facilis cupiditate. Ex, vel?</p>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit amet enim quod veritatis, nihil voluptas culpa! Neque consectetur obcaecati sapiente?</p>
-            <a href="/about" class="btn">learn more</a>
+            <a href="/about" class="btn">Aprende mas aqui</a>
         </div>
 
         <div class="image">
@@ -73,64 +73,30 @@
 
 <!-- acaba about -->
 
-<!-- comienza menu  -->
+<!-- comienza platilos del mes  -->
 
 <section class="menu" id="menu">
 
-    <h1 class="heading"> worldwide <span>beer's</span> </h1>
+    <h1 class="heading"> Platillos <span> del Mes </span> </h1>
 
     <div class="box-container">
-        
+        <% for(let platillo of platillos){ %>
         <div class="box">
-            <img src="" alt="">
-            <h3>Pastafari</h3>
-            <h4>al pesto</h4>
-            <div class="price">20 pesos</div>
-            <a href="#" class="btn">add to cart</a>
-            <a href="" class="btn">more info</a>
+            <img src="img/<%= platillo.img %>" alt="">
+            <h3><%= platillo.titulo%></h3>
+            <h4><%= platillo.tipo%></h4>
+            <div class="price"><%= platillo.precio%></div>
+            <a href="#" class="btn">agregar carrito</a>
+            <a href="" class="btn">detalles</a>
         
         </div> 
+        <% } %> 
     </div>
 
 </section>
 
-<!-- acaba el menu -->
+<!-- acaba el platillos del mes -->
 
-<!---productos nuestros-->
-
-<section class="products" id="products">
-
-    <h1 class="heading"> our <span>beer's</span> </h1>
-
-    <div class="box-container">
-        
-        
-        <div class="box">
-            <div class="content">
-                <h3>PAsta</h3>
-                <div class="stars">
-                
-                        <i class="fas fa-star"></i>             
-                    
-                        <i class="far fa-star"></i>
-                        
-                </div>
-                <div class="price">234234 <span>$119.99</span></div>
-            </div>
-            <div class="image">
-                <img src="" alt="">
-            </div>
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-heart"></a>
-            </div>
-        </div>
-       
-    </div>
-
-</section>
-
-<!---acaba productos nuestros-->
 
 <!-- comienza el review  -->
 
@@ -140,24 +106,26 @@
 
     <div class="box-container">
         
-        <div class="box">
-            <div class="quote-icon">
-                <i class="far fa-address-card"></i>
-            </div> 
-            <p>sdfsdf</p>
-            <img src="" class="user" alt="">
-            <h3>sdfsdfsdf</h3>
-            <div class="stars">
-            
-                    <i class="fas fa-star"></i>             
-                
-                
-                    
-                        <i class="far fa-star"></i>
-                    
+        <% for(let review of reviews){ %>
+            <div class="box">
+                <div class="quote-icon">
+                    <i class="far fa-address-card"></i>
+                </div> 
+                <p><%= review.text %></p>
+                <img src="img/<%= review.img%>" class="user" alt="">
+                <h3><%= review.name%></h3>
+                <div class="stars">
+                    <% for(let i= 0; i< review.score; i++){ %>
+                        <i class="fas fa-star"></i>             
+                    <% } %>
+                    <% if(review.score < 5){ %>
+                        <% for(let i = review.score; i < 5; i++ ){%>
+                            <i class="far fa-star"></i>
+                        <%}%>
+                    <% } %>
+                </div>
             </div>
-        </div>
-      
+        <%}%>
     </div>
 
 </section>
@@ -167,13 +135,13 @@
 <!-- comienza contacto -->
 
 <section class="contact" id="contact">
-    <h1 class="heading"> <span>contact</span> us </h1>
+    <h1 class="heading"> <span>Mandanos </span> mensaje </h1>
     <div class="row">
         <form action="">
-            <h3>get in touch</h3>
+            <h3>INgresa tus Datos</h3>
             <div class="inputBox">
                 <span class="fas fa-user"></span>
-                <input type="text" placeholder="N A M E">
+                <input type="text" placeholder="N O M B R E">
             </div>
             <div class="inputBox">
                 <span class="fas fa-envelope"></span>
@@ -181,9 +149,9 @@
             </div>
             <div class="inputBox">
                 <span class="fas fa-phone"></span>
-                <input type="number" placeholder="N U M B E R">
+                <input type="number" placeholder="T E L E F O N O">
             </div>
-            <input type="" value="contact now" class="btn" id="send-button-contact">
+            <input type="" value="CONTACTANOS" class="btn" id="send-button-contact">
         </form>
         <iframe class="map" src="https://maps.google.com/maps?q=angel%20de%20la%20revolucion%20mexico&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
     </div>
@@ -196,13 +164,10 @@
 <%- include('./partials/footer') %>
 
 <!-- acaba footer -->
-<script src="js/script.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="js/sweetalert.js"></script>
-<script src="sweetalert2.all.min.js"></script>
 
 <!-- agrego el typed.js-->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="js/typed.js"></script>
 <script src="js/home.js"></script>
 <!-- fin de typed typed.js-->
 
