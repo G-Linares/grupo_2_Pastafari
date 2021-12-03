@@ -1,4 +1,14 @@
+:root{
+  --main-color:#0c2733;
+  --black:#9FB8AD;
+  --bg:#0b4f6c;
+  --mainFont: #000000;
+  --border:.1rem solid rgba(18, 53, 10, 0.39);
+  --alter: #0c2733;
+  --button: #e65319;
+  --alterHover: #9b3f1b;
 
+  }
 
 body {
   font-family: "Roboto", sans-serif;
@@ -7,7 +17,7 @@ body {
   background-size: cover;
 }
 
-body .main-container-login form .container-login input {
+body .main-container-registro form .container-registro input {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -28,6 +38,7 @@ select:focus {
   outline: none;
 }
 
+
 .main-container-registro {
   display: flex;
   flex-direction: row;
@@ -36,70 +47,60 @@ select:focus {
   flex-wrap: wrap;
   gap: 150px;
   padding: 5%;
-  margin-top: 9vh;
-}
-
-.main-container-login {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 150px;
-  padding: 5%;
-  margin-top: 9vh;
+  margin-top: 19vh;
   margin-bottom: 17vh;
 }
-.container-register,
-.container-login {
-  padding: 20px;
+
+.container-registro {
+  padding: 30px;
   width: 100%;
-  border: 1px solid #ccc;
   border-radius: 10px;
-  background: white;
+  background: black;
   -webkit-box-shadow: -9px 8px 31px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -9px 8px 31px -4px rgba(0, 0, 0, 0.75);
   box-shadow: -9px 8px 31px -4px rgba(0, 0, 0, 0.75);
 }
 
-.main-container-registro h1 {
-  border-bottom: rgba(32, 32, 32, 0.322) solid 1px;
-  padding-bottom: 10px;
+.container-registro h1 {
+  text-align: center;
   font-size: 3rem;
 }
 
-.main-container-registro p {
+.container-registro p {
+  text-align: center;
+}
+
+.container-registro p , .container-registro label  {
   font-size: 1.5rem;
-  padding-top: 10px;
-  padding-bottom: 25px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-.main-container-registro label {
-  font-size: 1;
-  font-weight: bold;
+
+
+.container-registro .container-buttons {
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
 }
 
-.main-container-registro button {
-  background-color: #70d02c;
+.container-registro .container-buttons .btn-existingAccount{
+  background-color: black;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  font-size: 16px;
-  font-family: roboto, pacifico;
-  border-radius: 10px;
+  padding-top: 8px;
+}
+.container-registro .container-buttons .btn-existingAccount:hover {
+  color: var(--button);
 }
 
-.main-container-registro button:hover {
-  opacity: 1;
+.container-registro > * {
+  color: white;
 }
+
+
 
 @media screen and (min-width: 840px) {
-  .container-register,
-  .container-login {
+  .container-registro {
     width: 660px;
   }
 }

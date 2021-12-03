@@ -15,7 +15,7 @@ const mainController = {
         res.render('registro')
     },
     login: (req,res) => {
-        res.render('login')
+        res.render('createAccount')
     },
 };
 
