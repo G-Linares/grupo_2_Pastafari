@@ -2,26 +2,17 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-app.listen(3000, () => console.log('Servidor montado en puerto 3000'));
+const port = process.env.PORT || 3000;
 
-app.use(express.static('public'));
+const mainRouters = require('./routers/mainRouter.js');
 
-app.get('/',function(req,res){
-    res.sendFile(path.resolve(__dirname,'views/home.html'));
-});
+app.set('view engine', 'ejs');
 
-app.get('/carrito',function(req,res){
-    res.sendFile(path.resolve(__dirname,'views/carrito.html'));
-});
 
-app.get('/registro',function(req,res){
-    res.sendFile(path.resolve(__dirname,'views/registro.html'));
-});
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/menu',function(req,res){
-    res.sendFile(path.resolve(__dirname,'views/menu.html'));
-});
+app.use('/', mainRouters);
 
-app.get('/registro',function(req,res){
-    res.sendFile(path.resolve(__dirname,'views/registro.html'));
-});
+app.listen (port, () => {
+    console.log(`Escuchando en el puerto ${port}`);
+})

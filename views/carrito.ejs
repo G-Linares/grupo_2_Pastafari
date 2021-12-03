@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <%- include('./partials/head') %>
+        <link href="./css/stylecarrito.css" rel="stylesheet">
+        <title>Tu carrito</title>
+    </head>
+
+<body>
+
+    <%- include('./partials/header') %> 
+
+    <main>
+        <h2 class="centered-white">Tus productos:</h2>
+        <article class="container-main-top">
+            <div class="fotos"><img src="/img/spaguetti_carbonara.jpg" alt="Spaguetti Carbonara" class="borded"></div>
+            <div class="descripciones">Spaguetti Carbonara servido con hongos salteados.</div>
+            <div class="contenedor-boton">
+                <input class="cart-quantity-input" type="number" value="1">
+            </div>
+            <div class="precioxproducto">x $51.00</div>
+            <button class="botonE" type="button" value="borrar">Eliminar del carrito</button>
+        </article>
+
+        <article class="container-main-top">
+            <div class="fotos"><img src="/img/fettuccine_alfredo.jpg" alt="Fettucine Alfredo" class="borded"></div>
+            <div class="descripciones">Clásico fettuccine a la Alfredo con queso.</div>
+            <div class="contenedor-boton">
+                <input class="cart-quantity-input" type="number" value="1">
+                <!--<button type="button" class="boton_cantidadP">Boton</button> -->
+            </div>
+            <div class="precioxproducto">x $51.00</div>
+            <button class="botonE" type="button" value="borrar">Eliminar del carrito</button>
+        </article>
+
+        <article class="container-main-bottom">
+            <div class="container_logo"><img src="/img/Pastafari-logo sin fondo.png" alt="Logo"></div>
+            <div class="container_end">
+                <div class="subTotal">
+                    <div class="item-sub">SUBTOTAL</div>
+                </div>
+                <div class="buttons_cart_out">
+                    <button type="button" class="boton_RP" onclick="window.location.href = '/menu';">
+                        Volver a productos
+                    </button>
+                    <button type="button" class="boton_RP">Pagar</button>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <%- include('./partials/footer') %> 
+</body>
+
+<script src="js/home.js"></script>
+
+</html>

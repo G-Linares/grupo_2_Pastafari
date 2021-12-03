@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head') %>
+        <link rel="stylesheet" href="./css/styleregistro.css">
+        <title>Login Form</title>
+    </head>
+<body>
+    <%- include('./partials/header') %> 
+    <div class="main-container-login">
+    <form action="">
+        <div class="container-login">
+            <h1>Accede a tu cuenta</h1>
+            <p>Por favor llena estos datos para acceder</p>
+
+            <label for="usr">Nombre de usuario</label>
+            <input type="text" name="username" placeholder="Enter Username" required>
+
+            <label for="psw">Password</label>
+            <input type="password" placeholder="Enter Password" name="pws" required>
+
+            <button type="submit" class="btn">Accede</button>
+        </div> 
+    </form>
+    </div>
+    <%- include('./partials/footer') %>  
+</body>
+
+<script src="js/home.js"></script>
+</html>
