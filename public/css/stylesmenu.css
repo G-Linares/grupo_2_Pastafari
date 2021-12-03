@@ -107,6 +107,9 @@ body {
   transform: scale(1.08);
 }
 
+body main {
+  padding: 1.5rem 7%;
+}
 /* Footer */
 
 @media screen and (max-width: 1000px) {
