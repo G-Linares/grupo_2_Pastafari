@@ -1,5 +1,5 @@
 var typed = new Typed('.typed', {
-    strings: ["Autentica.", "Deliciosa.", "Inigualable."],
+    strings: ["Autentica", "Deliciosa", "Inigualable"],
     suffle:false,
     smartBackspace: true,
     typeSpeed: 50,

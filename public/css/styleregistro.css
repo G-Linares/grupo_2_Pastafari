@@ -1,16 +1,13 @@
-* {
-  box-sizing: border-box;
-}
+
 
 body {
   font-family: "Roboto", sans-serif;
-  background-image: url("../img/backg.png");
+  background-image: url("../img/backgTest.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-input[type="text"],
-input[type="password"] {
+body .main-container-login form .container-login input {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -19,27 +16,9 @@ input[type="password"] {
   background: #f7f7f7;
   font-family: roboto, arial;
   color: black;
+
 }
 
-select {
-  width: 15%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f7f7f7;
-  font-family: roboto, pacifico;
-}
-
-input[type="phone"] {
-  width: 81%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f7f7f7;
-  color: black;
-}
 
 input[type="text"]:focus,
 input[type="password"]:focus,

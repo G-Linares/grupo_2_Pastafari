@@ -80,7 +80,11 @@
             <img src="img/<%= platillo.img %>" alt="">
             <h3><%= platillo.titulo%></h3>
             <h4><%= platillo.tipo%></h4>
-            <div class="price"><%= platillo.precio%></div>
+            <div class="price"><%= platillo.precio%>
+                <% if(platillo.precioDescuento != ''){ %>
+                    <span><%= platillo.precioDescuento %></span>
+                <% }%>
+            </div> 
             <a href="#" class="btn">agregar carrito</a>
             <a href="" class="btn">detalles</a>
         
