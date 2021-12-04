@@ -1,56 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <%- include('./partials/head') %>
+<head>
+    <%- include('./partials/head') %>
         <link href="./css/stylecarrito.css" rel="stylesheet">
         <title>Tu carrito</title>
-    </head>
+</head>
 
 <body>
 
-    <%- include('./partials/header') %> 
+    <%- include('./partials/header') %>
 
-    <main>
-        <h2 class="centered-white">Tus productos:</h2>
-        <article class="container-main-top">
-            <div class="fotos"><img src="/img/spaguetti_carbonara.jpg" alt="Spaguetti Carbonara" class="borded"></div>
-            <div class="descripciones">Spaguetti Carbonara servido con hongos salteados.</div>
-            <div class="contenedor-boton">
-                <input class="cart-quantity-input" type="number" value="1">
-            </div>
-            <div class="precioxproducto">x $51.00</div>
-            <button class="botonE" type="button" value="borrar">Eliminar del carrito</button>
-        </article>
-
-        <article class="container-main-top">
-            <div class="fotos"><img src="/img/fettuccine_alfredo.jpg" alt="Fettucine Alfredo" class="borded"></div>
-            <div class="descripciones">Clásico fettuccine a la Alfredo con queso.</div>
-            <div class="contenedor-boton">
-                <input class="cart-quantity-input" type="number" value="1">
-                <!--<button type="button" class="boton_cantidadP">Boton</button> -->
-            </div>
-            <div class="precioxproducto">x $51.00</div>
-            <button class="botonE" type="button" value="borrar">Eliminar del carrito</button>
-        </article>
-
-        <article class="container-main-bottom">
-            <div class="container_logo"><img src="/img/Pastafari-logo sin fondo.png" alt="Logo"></div>
-            <div class="container_end">
-                <div class="subTotal">
-                    <div class="item-sub">SUBTOTAL</div>
+        <main class="contenedor-principal">
+            
+            <section class="productos">
+                <h2 class="centered-white">Tus productos:</h2>
+                <div class="producto">
+                    <img class="fotos" src="/img/spaguetti_carbonara.jpg" alt="imagen">
+                    <div class="detalles-producto">
+                        <h3 class="producto-nombre">Spaguetti Carbonara</h3>
+                        <h4 class="producto-precio">$ 50.00</h4>
+                        <div>
+                            Cantidad:
+                            <input class="cart-quantity-input" type="number" value="1" min="0">
+                        </div>
+                        <br>
+                        <!--<a href="/menu" class="contenedor-extra">Ver más productos</a>-->
+                        <p class="producto-remover">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                            <span class="eliminar">Eliminar del carrito</span>
+                        </p>
+                    </div>
                 </div>
-                <div class="buttons_cart_out">
-                    <button type="button" class="boton_RP" onclick="window.location.href = '/menu';">
-                        Volver a productos
-                    </button>
-                    <button type="button" class="boton_RP">Pagar</button>
-                </div>
-            </div>
-        </article>
-    </main>
 
-    <%- include('./partials/footer') %> 
+                <div class="producto">
+                    <img class="fotos" src="/img/spaguetti_carbonara.jpg" alt="imagen">
+                    <div class="detalles-producto">
+                        <h3 class="producto-nombre">Spaguetti Carbonara</h3>
+                        <h4 class="producto-precio">$ 50.00</h4>
+                        <div>
+                            Cantidad:
+                            <input class="cart-quantity-input" type="number" value="1" min="0">
+                        </div>
+                        <br>
+                        <!--<a href="/menu" class="contenedor-extra">Ver más productos</a>-->
+                        <p class="producto-remover">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                            <span class="eliminar">Eliminar del carrito</span>
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="total-carrito">
+                <p>
+                    <span>Total Compras</span>
+                    <span>$ 100.00</span>
+                </p>
+                <p>
+                    <span>Items en carrito</span>
+                    <span>2</span>
+                </p>
+                <a href="#">Proceder a la compra</a>
+            </section>
+
+        </main>
+
+        <%- include('./partials/footer') %>
 </body>
 
 <script src="js/home.js"></script>

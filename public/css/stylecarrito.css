@@ -1,198 +1,182 @@
-
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
 }
+
 
 /*--Aquí comienza el body*/
 
-img {
-    width: 100%;
-    height: 100%;
-}
-
-img.borded {
-    box-shadow: 0px 0px 10px rgb(100,100,100); 
-}
 
 body {
-    background-color: rgb(244, 237, 249);
-    background-image: url('../img/backg.png');
-    background-size: cover;
-    min-width: 200px;
-}
-main {
-    
-    background: linear-gradient(90deg, rgba(137,208,29,0.60) 32%, rgba(23,112,0,0.80) 68%);
-    padding: 1.5rem 7%;
+  background: url(../img/backgTest.jpg) no-repeat;
+  background-size:cover;
+  min-width: 200px;
 }
 
-.centered-white {
-    color: rgb(244, 237, 249);
-    text-shadow: 2px 2px 0px black;
-    text-align: center;
-    font-size: 26px;
-    margin-top: 53px;
-    font-family: 'Pacifico', cursive;
+body main.contenedor-principal {
+  display: flex;
+  /**background: linear-gradient(
+    90deg,
+    rgba(137, 208, 29, 0.6) 32%,
+    rgba(23, 112, 0, 0.8) 68%
+  );*/
+  padding: 1.5rem 7%;
 }
 
-.container-main-top {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:center;
-    align-content: center;
-    align-items: center;
-    margin: 2%;
+h2.centered-white {
+  color: rgb(244, 237, 249);
+  text-shadow: 2px 2px 0px black;
+  text-align: center;
+  font-size: 26px;
+  margin-top: 53px;
+  font-family: "Pacifico", cursive;
+  width: 100%;
 }
 
-.container-main-bottom {
-    display: flex;
-    border-top: solid 1px black;
-    flex-wrap: wrap;
+.productos > .fotos {
+    width: 10%;
 }
 
-.fotos {
-    flex: 1;
-    margin: 2%;
+.contenedor-principal > .productos {
+  flex: 1;
 }
 
-.descripciones {
+.productos > .producto {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid silver;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color:honeydew;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100)
+}
+
+.producto:hover {
+  border: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
+}
+
+.producto > img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  padding: 10px;
+}
+
+.producto > .detalles-producto {
+  padding: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.producto-nombre,
+.producto-precio, .contenedor-extra {
+  margin-bottom: 20px;
+}
+
+.detalles-producto > .producto-remover {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 25px;
+  background: var(--button);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all .5s ease;
+}
+
+.producto-remover:hover {
+  font-weight: 400;
+  background-color:steelblue;
+}
+
+div > .cart-quantity-input {
+  background-color: rgb(244, 237, 239);
+  width: 40px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.total-carrito {
+    flex: 0.25;
+    margin-left: 20px;
+    padding: 20px;
+    height: 240px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    background-color: honeydew;
+    margin-top: 8vhs;
+    margin-top: 15rem;
+}
+
+.total-carrito p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.total-carrito a {
+  display: block;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  background: var(--button);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.total-carrito a:hover {
+  background-color: red;
+}
+
+@media screen and (max-width: 376px) {
+  .fotos {
+    width: auto;
+  }  
+}
+
+@media screen and (max-width: 515px) {
+  .eliminar {
     display: none;
-    flex: 1;
-    text-align: center;
-    margin: 2%;
-    font-style: italic;
+  }
 }
 
-/*Esto contienede los botones de cantidades*/
-.contenedor-boton {
-    display:flex;
-    flex: 1;
-    justify-content: flex-end;
-}
+@media screen and (max-width: 825px) {
+  .producto {
+    height: 150px;
+  }
 
-.cart-quantity-input {
-    width: 40px;
-    padding: 0px;
-    margin-bottom: 0px;
-    color: inherit;
-}
-.precioxproducto {
-    display: flex;
-    flex: 1;
-}
+  .producto > img {
+    padding: 5px;
+    width: 200px;
+  }
 
-.botonE {
-    border-radius: 5px;
-    width: 50%;
-    font-weight: bold;
-    font-size: 100%;
-    max-width: 25%;
-    min-width: 26px;
-    padding: 2.5px;
-    justify-self: flex-start;
-    transition: all 900ms;
-}
+  .producto-nombre,
+  .producto-precio {
+    margin-bottom: 2.5px;
+  }
 
-button.botonE:hover {
-    border: rgb(255,9,15) solid 2px;
-    color: rgb(255,9,15);
-}
-
-/*Estoss son los botones para regresar o proceder*/
-.boton_RP {
-    border-radius: 5px;
-    width: 50%;
-    font-weight: bold;
-    font-size: 100%;
-    max-width: 60%;
-    min-width: 26px;
-    padding: 2.5px;
-    transition: all 900ms;
-}
-
-button.boton_RP {
-    margin: 1px;
-}
-
-button.boton_RP:hover {
-    background-color: rgba(219,125,29, 0.8);
-}
-
-.container_logo {
-    display: flex;
-    width: 50%;
-}
-
-.container_end {
-    display: flex;
-    width: 50%;
+  .productos {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+  }
 
-.subTotal {
-    display: flex;
-    flex: .2;
-    align-items: center;
-    font-weight: bold;
-    margin: 2%;
-}
+  .total-carrito {
+    margin-left: 0px;
+    margin-bottom: 20px;
+    margin-top: 1rem;
+  }
 
-div.subTotal {
-    font-size: 24px;
-}
-
-.item-sub {
-    background-color: blanchedalmond;
-}
-
-.buttons_cart_out {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: flex-start;
-    flex: 1;
-    width: 100%;
-
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-}
-
-@media (min-width: 669px) {
-    .burger {
-        display: none;
-    }
-
-    li a {
-        display: flex;
-    }
-
-    .nav-links {
-        width: 60%;
-    }
-
-    .descripciones {
-        display: flex;
-    }
-
-    .precioxproducto {
-        display: flex;
-        flex: .50;
-    }
-
-    footer {
-        flex-direction: row;
-      }
+  .contenedor-principal {
+    flex-direction: column;
+  }
 }
 
