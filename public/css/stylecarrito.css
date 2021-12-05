@@ -15,23 +15,29 @@ body {
   min-width: 200px;
 }
 
-body main.contenedor-principal {
+
+.contenedor-principal {
+
   display: flex;
-  /**background: linear-gradient(
-    90deg,
-    rgba(137, 208, 29, 0.6) 32%,
-    rgba(23, 112, 0, 0.8) 68%
-  );*/
+  flex-direction: row;
   padding: 1.5rem 7%;
+  justify-content: space-around;
+  align-items: flex-start;
 }
+
 
 h2.centered-white {
   color: rgb(244, 237, 249);
   text-shadow: 2px 2px 0px black;
   text-align: center;
   font-size: 26px;
-  margin-top: 53px;
+  margin-top: 100px;
   font-family: "Pacifico", cursive;
+  width: 100%;
+}
+
+.productos {
+  flex-direction: column;
   width: 100%;
 }
 
@@ -163,10 +169,6 @@ div > .cart-quantity-input {
   .producto-nombre,
   .producto-precio {
     margin-bottom: 2.5px;
-  }
-
-  .productos {
-    flex-direction: column;
   }
 
   .total-carrito {

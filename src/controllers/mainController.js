@@ -9,7 +9,7 @@ const mainController = {
         res.render('menu')
     },
     carrito: (req,res) => {
-        res.render('carrito')
+        res.render('carrito',{platillos});
     },
     registro: (req,res) => {
         res.render('registro')
