@@ -7,6 +7,7 @@ const mainController = {
         res.render('home', {platillos, reviews});
     },
     menu: (req,res) => {
+      
         res.render('menu', {menu});
     },
     carrito: (req,res) => {
