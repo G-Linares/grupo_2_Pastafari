@@ -4,10 +4,13 @@ const path = require('path');
 
 const port = process.env.PORT || 3000;
 
-const mainRouters = require('./routers/mainRouter.js');
+const mainRouters = require('./src/routers/mainRouter.js');
 
 app.set('view engine', 'ejs');
+//incluyo los dos paths, users y products para diferentes views.
 
+
+app.set('views', [path.join(__dirname + '/src/views/users'), path.join(__dirname + '/src/views/products')]);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
