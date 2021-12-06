@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+            <link href="/css/styleEdicion.css" rel="stylesheet">
+            <title>Producto: <%=productos[iden].titulo %></title>
+    </head>
+<body>
+    <%- include('../partials/header') %>
+
+    <main>
+        <section class="contenedor-form">
+            <form class="form-articulo">
+                <label for="nombre">Nombre del producto</label>
+                <input class="item" type="text" name="nombre" value="<%=productos[iden].titulo %>">
+                <label for="precio">Precio del producto</label>
+                <input type="text" name="precio" value="<%=productos[iden].precio %>">
+                <label for="descripcion">descripcion del producto</label>
+                <input type="text" name="precio" value="<%=productos[iden].descripcionCorta%>">
+                <label>Inserta la nueva imagen aquí</label>
+                <input type="file" name="imagen">
+                <button class="boton" type="reset" value="reset">Deshacer cambios</button>
+                <button class="boton" type="submit" value="submit">Guardar cambios</button>
+            </form>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+<script src="/js/home.js"></script>
+
+</html>

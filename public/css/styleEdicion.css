@@ -1,0 +1,38 @@
+
+main {
+    margin-top: 10rem;
+    height: 100vh;
+}
+.contenedor-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-articulo {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background-color: wheat;
+    padding: 10px;
+    justify-content: space-evenly;
+   
+}
+
+form img {
+    width: 120px;
+}
+
+.form-articulo > input {
+    margin-bottom: 10px;
+}
+
+section.contenedor-form {
+    position: relative;
+}
+
+button.boton {
+    padding: 5px;
+    margin-bottom: 5px;
+    width: 20%;
+}

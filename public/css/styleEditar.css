@@ -1,0 +1,82 @@
+.agregar-inventario {
+    margin-top: 8rem;
+    justify-content: center;
+    justify-content: center;
+    display: flex;
+}
+
+.contenedor-formulario {
+    display: flex;
+    background-color: grey;
+    border-radius: 5px;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+}
+
+.item {
+    padding: 5px;
+    margin: 5px;
+    width: 45%;
+    align-self: center;
+    justify-content: center;
+}
+
+main section.articulos-existentes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+main section article.inventario {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    background-color: white;
+}
+
+.inventario > img {
+    max-width: 50%;
+    max-height: 50%;
+    padding: 10px;
+}
+
+h2.producto-nombre {
+    color: black;
+    font-weight: bold;
+}
+
+button {
+    margin: 5px;
+    border-radius: 5px;
+    background-color:cyan;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+}
+
+button:hover {
+    transform: scale(1.01);
+}
+
+.item-descripcion {
+    align-self: center;
+    text-align: center;
+    padding: 5px;
+}
+
+.item-botones {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    display: flex;
+}

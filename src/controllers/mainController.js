@@ -17,6 +17,14 @@ const mainController = {
     login: (req,res) => {
         res.render('createAccount')
     },
+    editar: (req,res) => {
+        res.render('editarProductos', {productos: platillos});
+    },
+    editando: (req,res) => {
+        let iden = req.params.id;
+        console.log(iden);
+        res.render('vistaEditar', {productos: platillos, iden: iden})
+    },
 };
 
 module.exports = mainController;
