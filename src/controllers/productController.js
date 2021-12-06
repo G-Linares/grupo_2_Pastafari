@@ -4,11 +4,10 @@ const menu = require('../data/menuCompleto');
 const productController = {
     
     id: (req,res) => {
-
-        const id = req.params.id;
-        const lenghtmenu = menu.length;
-       
-        if(req.params.id > menu.length){
+        
+        const id = parseInt(req.params.id);
+        
+        if(id > menu.length || id < 0 || isNaN(id)){
             res.render('productIndex',{menu});
         } else {
             res.render('product',{item:menu[id]});
