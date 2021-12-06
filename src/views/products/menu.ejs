@@ -33,54 +33,16 @@
         </section>
         <h2 class="titulo">Menu</h2>
         <section class="menu">
+            <% for ( let platillo of menu) { %>
             <div class="comida">
-                <img src="img/bolognesa.jpg" alt="">
-                <h4>Bolognesa</h4>
-                <p>Deliciosa salsa marinara a base de las mejores especias, con carne, queso y mantequilla, hecho con la
-                    pasta de su eleccion</p>
-                <p>$129.99MXN</p>
+                <img src="img/<%= platillo.img %>" alt="">
+                <h4><%= platillo.titulo %></h4>
+                <p><%= platillo.descripcionCorta%></p>
+                <p><%= platillo.precio %>MXN</p>
                 <button>Anadir al Carrito</button>
             </div>
-            <div class="comida">
-                <img src="img/lasagna.jpg" alt="">
-                <h4>Lasagna</h4>
-                <p>Hojas de pasta apiladas en salsa bolognesa y queso mozarella, dando a luz asi a la famosa lassagna,
-                    con el toque especial de la casa</p>
-                <p>$119.99MXN</p>
-                <button>Anadir al Carrito</button>
-            </div>
-            <div class="comida">
-                <img src="img/alfredo.jpg" alt="">
-                <h4>Alfredo</h4>
-                <p>La famosa salsa Alfredo, hecha base de mantequilla, ajo, especias y queso mozarella, hecho con la
-                    pasta de su eleccion</p>
-                <p>$109.99MXN</p>
-                <button>Anadir al Carrito</button>
-            </div>
-            <div class="comida">
-                <img src="img/marinara.jpg" alt="">
-                <h4>Marinara</h4>
-                <p>La famosa salsa de tomate, amada alrededor de todo el mundo, tipica de pizzas, pastas, etc. hecho con
-                    la pasta de su eleccion</p>
-                <p>$99.99MXN</p>
-                <button>Anadir al Carrito</button>
-            </div>
-            <div class="comida">
-                <img src="img/pesto.jpg" alt="">
-                <h4>Pesto</h4>
-                <p>La salsa con mas sabor y personalidad, hecho a base de hojas de albahaca, aceite de oliva y ajo,
-                    hecho con la pasta de su eleccion</p>
-                <p>$109.99MXN</p>
-                <button>Anadir al Carrito</button>
-            </div>
-            <div class="comida">
-                <img src="img/alle.jpg" alt="">
-                <h4>Alle Vongole</h4>
-                <p>Nuestra receta mas extravagante y llena de sabor, hecho a base de salsa carbonara, vino blanco y
-                    almejas, hecho con la pasta de su eleccion</p>
-                <p>$199.99MXN</p>
-                <button>Anadir al Carrito</button>
-            </div>
+            <% } %>
+
         </section>
     </main>
 
