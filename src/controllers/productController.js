@@ -1,5 +1,6 @@
 
 const menu = require('../data/menuCompleto');
+const platillos = require('../data/platillos');
 
 const productController = {
     
@@ -7,10 +8,10 @@ const productController = {
         
         const id = parseInt(req.params.id);
         
-        if(id >= menu.length || id < 0 || isNaN(id)){
+        if(id >= platillos.length || id < 0 || isNaN(id)){
             res.render('productIndex',{menu});
         } else {
-            res.render('product',{item:menu[id]});
+            res.render('product',{item:platillos[id]});
         }
        
     },
