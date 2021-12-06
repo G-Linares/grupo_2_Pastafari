@@ -8,10 +8,11 @@ const productController = {
         const id = req.params.id;
         const lenghtmenu = menu.length;
        
-        if(id > lenghtmenu){
+        if(req.params.id > menu.length){
             res.render('productIndex',{menu});
-        } else res.render('product',{item:menu[id]});
-        
+        } else {
+            res.render('product',{item:menu[id]});
+        }
        
     },
     index: (req,res) => {
