@@ -14,12 +14,12 @@
         <main class="contenedor-principal">
             
             <div class="productos">
-                <% for(let platillo of platillos){%>
+                <% for(let platillo of platillosDelMes){%>
                     <div class="producto">
-                        <img class="fotos" src="/img/<%=platillo.img%>" alt="imagen">
+                        <img class="fotos" src="/img/<%=platillo.image%>" alt="imagen">
                         <div class="detalles-producto">
-                            <h3 class="producto-nombre"><%= platillo.titulo %></h3>
-                            <h4 class="producto-precio"><%= platillo.precio %></h4>
+                            <h3 class="producto-nombre"><%= platillo.item %></h3>
+                            <h4 class="producto-precio"><%= platillo.price %></h4>
                             <div>
                                 Cantidad:
                                 <input class="cart-quantity-input" type="number" value="1" min="0">

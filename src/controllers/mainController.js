@@ -22,20 +22,20 @@ const mainController = {
         res.render('menu', {menu});
     },
     carrito: (req,res) => {
-        res.render('carrito',{platillos});
+        res.render('carrito',{platillosDelMes});
     },
     login: (req,res) => {
         res.render('createAccount')
     },
     editar: (req,res) => {
-        res.render('editarProductos', {productos: platillos});
+        res.render('editarProductos', {productos: platillosDelMes});
     },
     editando: (req,res) => {  
         const iden = parseInt(req.params.id);
-        if(iden > platillos.length || iden < 0 || isNaN(iden)){
+        if(iden > platillosDelMes.length || iden < 0 || isNaN(iden)){
             res.send('404 no hay articulo con ese id');
         } else {
-            res.render('vistaEditar',{productos: platillos, iden: iden});
+            res.render('vistaEditar',{productos: platillosDelMes, iden: iden});
         }
     }
    

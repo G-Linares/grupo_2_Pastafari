@@ -1,22 +1,22 @@
 
+const fs = require('fs');
+const path = require('path');
+
+
 const menu = require('../data/menuCompleto');
-const platillos = require('../data/platillos');
+
+//ahorita estoy exportando platillos del mes por que no tengo JSON de menu completo
+const platillosDelMesFilePath = path.join(__dirname, '../data/platillosDelMes.json');
+const platillosDelMes = JSON.parse(fs.readFileSync(platillosDelMesFilePath, 'utf-8'));
 
 const productController = {
     
-    id: (req,res) => {
-        
+    id: (req,res) => {     
         const id = parseInt(req.params.id);
-        
-        if(id >= platillos.length || id < 0 || isNaN(id)){
-            res.render('productIndex',{menu});
-        } else {
-            res.render('product',{item:platillos[id]});
-        }
-       
+        res.render('product',{item : platillosDelMes[id- 1]});     
     },
     index: (req,res) => {
-        res.render('productIndex',{menu});
+        res.render('menu',{menu});
     }
 };
 module.exports = productController;
