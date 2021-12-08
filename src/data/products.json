@@ -1,0 +1,64 @@
+[
+    {
+        "id":1,
+        "menu-item":"BEEF BRISKET PAPPARDELLE",
+        "description":"Pechuga de res desmenuzada y ragú de vino tinto con tomates bañados por el sol y pappardelle de cinta larga y plana. Sumérjase, está delicioso.",
+        "image":"/img/menu-images/BeefParpadelle.jpg",
+        "price":144.03
+    },
+    {
+        "id":2,
+        "menu-item":"FETTUCCINE BOLOGNESE",
+        "description":"Nuestro abundante ragu de ternera y vino tinto se sirve con fettuccine de cinta plana, como se come en Roma. Si lo prefiere, puede optar por espaguetis.",
+        "image":"/img/menu-images/FettucineBolognaise.jpg",
+        "price":90.37
+    },
+    {
+        "id":3,
+        "menu-item":"NON GLUTEN FUSILLI PASTA",
+        "description":"Todos nuestros platos de pasta clásica (excepto risotto y girasole) se pueden preparar con nuestro fusilli sin gluten.",
+        "image":"/img/menu-images/GFPastaRange.jpg",
+        "price":195.87},
+    {
+        "id":4,
+        "menu-item":"SPINACH & RICOTTA GIRASOLE",
+        "description":"Estos bonitos paquetes de pasta, que significan girasol, se sirven con espinacas y salsa de crema de mascarpone.",
+        "image":"/img/menu-images/Girasol.jpg",
+        "price":6.03},
+    {
+        "id":5,
+        "menu-item":"LINGUINE CARBONARA",
+        "description":"Panceta crujiente en salsa cremosa de queso y mascarpone.",
+        "image":"/img/menu-images/LinguineCarbonara.jpg",
+        "price":143.51},
+    {
+        "id":6,
+        "menu-item":"MANZO PICCANTE",
+        "description":"Short rigatoni with beef and red wine ragu, beef meatballs, fresh chillies, roasted peppers and balsamic red onions, topped with mozzarella.",
+        "image":"/img/menu-images/ManzoPicante.jpg",
+        "price":46.46},
+    {
+        "id":7,
+        "menu-item":"LINGUINE CON FRUTTI DI MARE",
+        "description":"Langostinos, mejillones, almejas y calamares en una rica salsa de tomate y vino blanco.",
+        "image":"/menu-images/PenneAlPollaDellaCasa.jpg",
+        "price":41.66},
+    {
+        "id":8,
+        "menu-item":"SPAGHETTI LENTIL RAGU",
+        "description":"Un ragú abundante de lentejas verdes y verduras mixtas en salsa de tomate secado al sol.",
+        "image":"/img/menu-images/SpagettiLentilRagu.jpg",
+        "price":170.36},
+    {
+        "id":9,
+        "menu-item":"SPAGHETTI AL POMODORO",
+        "description":"Tomates ciruela, ajo y albahaca en una rica salsa de tomate cubierta con mozzarella fresca. Hazlo vegano sin mozzarella frescas",
+        "image":"/img/menu-images/SpaghettiPomodoro.jpg",
+        "price":102.82},
+    {
+        "id":10,
+        "menu-item":"TURKEY DELLA CHRISTMAS",
+        "description":"Pavo condimentado, champiñones y rigatoni corto horneados en una cremosa salsa de champiñones y vino blanco.",
+        "image":"/img/menu-images/Turkey-Della-Christmas.jpg",
+        "price":10.13}
+    ]
