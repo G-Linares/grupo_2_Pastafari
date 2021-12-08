@@ -21,4 +21,5 @@ app.use('/producto', productRouters);
 
 app.listen (port, () => {
     console.log(`Escuchando en el puerto ${port}`);
-})
+});
+

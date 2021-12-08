@@ -75,14 +75,14 @@
     <h1 class="heading"> Platillos <span> del Mes </span> </h1>
 
     <div class="box-container">
-        <% for(let platillo of platillos){ %>
+        <% for(let platillo of platillosDelMes){ %>
         <div class="box">
-            <img src="img/<%= platillo.img %>" alt="">
-            <h3><%= platillo.titulo%></h3>
-            <h4><%= platillo.tipo%></h4>
-            <div class="price"><%= platillo.precio%>
-                <% if(platillo.precioDescuento != ''){ %>
-                    <span><%= platillo.precioDescuento %></span>
+            <img src="img/<%= platillo.image %>" alt="">
+            <h3><%= platillo.item%></h3>
+            <h4><%= platillo.type%></h4>
+            <div class="price"><%= platillo.price%>
+                <% if(platillo.discount != ''){ %>
+                    <span><%= platillo.discount %></span>
                 <% }%>
             </div> 
             <a href="#" class="btn">agregar carrito</a>

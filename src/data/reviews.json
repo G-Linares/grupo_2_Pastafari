@@ -1,0 +1,76 @@
+[
+    {
+        "id":0,
+        "name": "Gerardo Linares",
+        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nulla sit libero nemo fuga sequi nobis? Necessitatibus aut laborum, nisi quas eaque laudantium consequuntur iste ex aliquam minus vel? Nemo.",
+        "score": 4,
+        "img": "pic-1.png"
+    },
+    
+    {
+        "id":1,
+        "name": "Mario Menchaca",
+        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nulla sit libero nemo fuga sequi nobis? Necessitatibus aut laborum, nisi quas eaque laudantium consequuntur iste ex aliquam minus vel? Nemo.",
+        "score": 5,
+        "img": "pic-1.png"
+    },
+    
+    {
+        "id":2,
+        "name": "Angel Tamariz",
+        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nulla sit libero nemo fuga sequi nobis? Necessitatibus aut laborum, nisi quas eaque laudantium consequuntur iste ex aliquam minus vel? Nemo.",
+        "score": 4,
+        "img": "pic-1.png"
+    },
+    
+    {
+        "id":3,
+        "name": "Mario Mercado",
+        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nulla sit libero nemo fuga sequi nobis? Necessitatibus aut laborum, nisi quas eaque laudantium consequuntur iste ex aliquam minus vel? Nemo.",
+        "score": 1,
+        "img": "pic-1.png"
+    },
+    
+    {
+        "id":4,
+        "name": "Juan Martinez",
+        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nulla sit libero nemo fuga sequi nobis? Necessitatibus aut laborum, nisi quas eaque laudantium consequuntur iste ex aliquam minus vel? Nemo.",
+        "score": 3,
+        "img": "pic-1.png"
+    },
+    {
+        "id":5,
+        "name": "Sandra Rodriguez",
+        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nulla sit libero nemo fuga sequi nobis? Necessitatibus aut laborum, nisi quas eaque laudantium consequuntur iste ex aliquam minus vel? Nemo.",
+        "score": 2,
+        "img": "pic-1.png"
+    } ,
+    {
+        "id":6,
+        "name": "Arturo Cortez",
+        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nulla sit libero nemo fuga sequi nobis? Necessitatibus aut laborum, nisi quas eaque laudantium consequuntur iste ex aliquam minus vel? Nemo.",
+        "score": 3,
+        "img": "pic-1.png"
+    },
+    {
+        "id":7,
+        "name": "Antonio Reyes",
+        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nulla sit libero nemo fuga sequi nobis? Necessitatibus aut laborum, nisi quas eaque laudantium consequuntur iste ex aliquam minus vel? Nemo.",
+        "score": 3,
+        "img": "pic-1.png"
+    },
+    {
+        "id":8,
+        "name": "Diego Gomez",
+        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nulla sit libero nemo fuga sequi nobis? Necessitatibus aut laborum, nisi quas eaque laudantium consequuntur iste ex aliquam minus vel? Nemo.",
+        "score": 3,
+        "img": "pic-1.png"
+    },
+    {
+        "id":9,
+        "name": "Emilio Vasquez",
+        "text":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nulla sit libero nemo fuga sequi nobis? Necessitatibus aut laborum, nisi quas eaque laudantium consequuntur iste ex aliquam minus vel? Nemo.",
+        "score": 3,
+        "img": "pic-1.png"
+    }
+]
