@@ -9,8 +9,12 @@ const platillosDelMes = JSON.parse(fs.readFileSync(platillosDelMesFilePath, 'utf
 const productController = {
     
     id: (req,res) => {     
-        const id = parseInt(req.params.id);
-        res.render('product',{item : platillosDelMes[id- 1]});     
+        let id = parseInt(req.params.id);
+		let product = platillosDelMes.find(platillosDelMes => platillosDelMes.id == id)
+        if (id <= 0 || id > platillosDelMes.length || isNaN(id)){
+            res.redirect('/');
+        } else {res.render('product', {product});}
+     
     },
     index: (req,res) => {
         res.render('menu',{platillosDelMes});

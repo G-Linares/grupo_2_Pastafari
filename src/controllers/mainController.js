@@ -45,12 +45,12 @@ const mainController = {
     editando: (req,res) => {  
         // const iden = parseInt(req.params.id);
         let id = parseInt(req.params.id);
+        //utilizo el metodo con find para encontrar el id de parametro en el objeto
 		let product = platillosDelMes.find(platillosDelMes => platillosDelMes.id == id)
-        console.log((product))
-		res.render('vistaEditar', {
-			product,
-			
-		})   
+        //se puede renderizar mandando el parametro {product : platillosDelMes[id -1]} tambien
+        if (id <= 0 || id > platillosDelMes.length || isNaN(id)){
+            res.redirect('/editar');
+        } else {res.render('vistaEditar', {product});}
     }
 };
 
