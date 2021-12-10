@@ -18,13 +18,19 @@
     </nav>
 
     <div class="icons">
-        <button class="fas fa-search-plus" id="search-btn"></button>
-        <button class="fas fa-shopping-cart" id="cart-btn"></button>
-        <button class="fas fa-user-circle" id="user-btn" onclick="openLoginForm()"></button>
-        <button class="fas fa-bars" id="menu-btn"></button>
+      
+
+      <button class="fas fa-search-plus" id="search-btn"></button>
+      <button class="fas fa-shopping-cart" id="cart-btn"></button>
+      <button class="fas fa-user-circle" id="user-btn" onclick="openLoginForm()"></button>
+      <button class="fas fa-bars" id="menu-btn"></button>
+
+      <form action="/search" method="GET">
+        
+      </form>
+
     </div>
 
-      <div class="popup-overlay"></div>
 
       <div class="popup">
         <div class="popup-close" onclick="closeLoginForm()">×</div>
@@ -47,16 +53,18 @@
           </div>
           <div class="no-accout-link">
             <a href="/createAccount">No tienes cuenta, da click aqui</a>
-          </div>
-          
-        </div>
+          </div> 
+       </div>
       </div>
 
-    <div class="search-form">
-        <input type="search" id="search-box" placeholder="busca aqui...">
-        <label for="search-box" class="fas fa-search"></label>
-    </div>
+      <div class="search-form">
+        <form action="/search" method="GET">
+          <input type="text" name="keywords" placeholder="busca aqui...">
+          
+        </form>
+      </div>
 
+     
     <div class="cart-items-container">
         <div class="cart-item">  
             <img src="img/1.jpg" alt="">

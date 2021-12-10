@@ -33,12 +33,12 @@
         </section>
         <h2 class="titulo">Menu</h2>
         <section class="menu">
-            <% for ( let platillo of menu) { %>
+            <% for ( let platillo of platillosDelMes) { %>
             <div class="comida">
-                <img src="img/<%= platillo.img %>" alt="">
-                <h4><%= platillo.titulo %></h4>
-                <p><%= platillo.descripcionCorta%></p>
-                <p><%= platillo.precio %>MXN</p>
+                <img src="img/<%= platillo.image %>" alt="">
+                <h4><%= platillo.item %></h4>
+                <p><%= platillo.description%></p>
+                <p><%= platillo.price %>MXN</p>
                 <button>Anadir al Carrito</button>
             </div>
             <% } %>

@@ -44,8 +44,14 @@ img{
 .img-select{
     display: flex;
 }
+.img-item img {
+    height: 550;
+    width: 403;
+}
+
 .img-item{
     margin: 0.3rem;
+    
 }
 .img-item:nth-child(1),
 .img-item:nth-child(2),

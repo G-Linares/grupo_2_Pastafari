@@ -3,7 +3,7 @@
     <head>
         <%- include('../partials/head') %>
             <link href="/css/styleEdicion.css" rel="stylesheet">
-            <title>Producto: <%=productos[iden].titulo %></title>
+            <title>Producto: <%=product.item %></title>
     </head>
 <body>
     <%- include('../partials/header') %>
@@ -12,11 +12,11 @@
         <section class="contenedor-form">
             <form class="form-articulo">
                 <label for="nombre">Nombre del producto</label>
-                <input class="item" type="text" name="nombre" value="<%=productos[iden].titulo %>">
+                <input class="item" type="text" name="nombre" value="<%=product.item %>">
                 <label for="precio">Precio del producto</label>
-                <input type="text" name="precio" value="<%=productos[iden].precio %>">
+                <input type="text" name="precio" value="<%=product.price %>">
                 <label for="descripcion">descripcion del producto</label>
-                <input type="text" name="precio" value="<%=productos[iden].descripcionCorta%>">
+                <input type="text" name="precio" value="<%=product.description%>">
                 <label>Inserta la nueva imagen aquí</label>
                 <input type="file" name="imagen">
                 <button class="boton" type="reset" value="reset">Deshacer cambios</button>

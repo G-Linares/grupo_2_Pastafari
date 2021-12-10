@@ -163,7 +163,6 @@
         align-items: center;
         transform: scaleY(0);
         transform-origin: top;
-        
     }
     
     .header .search-form.active{
@@ -172,9 +171,9 @@
         border:solid 5px var(--mainFont)
     }
     
-    .header .search-form input{
+    .header .search-form form input{
         height: 100%;
-        width: 100%;
+        width: 235%;
         font-size: 1.6rem;
         color:var(--black);
         padding:1rem;
@@ -182,14 +181,14 @@
         border-radius: 15px;
     }
     
-    .header .search-form label{
+    .header .search-form form button{
         cursor: pointer;
         font-size: 2.2rem;
         margin-right: 1.5rem;
         color:var(--black);
     }
     
-    .header .search-form label:hover{
+    .header .search-form form button:hover{
         color:var(--alterHover);
     }
     

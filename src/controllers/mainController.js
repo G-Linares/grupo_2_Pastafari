@@ -17,9 +17,21 @@ const mainController = {
     home: (req,res) => {
         res.render('home', {platillosDelMes, reviews});
     },
-    menu: (req,res) => {
-      
-        res.render('menu', {menu});
+    menu: (req,res) => { 
+        res.render('menu', {platillosDelMes});
+    },
+    search : (req, res) => {
+        let search = req.query.keywords;
+        // recibe un string en la barra de busqueda y hace un filter para encontrar que objeto tiene ese mismo nombre
+		let productsToSearch = platillosDelMes.filter(platillosDelMes => platillosDelMes.item == search);	
+        //si hay un match manda la info de ese objeto
+        if (productsToSearch == ""){
+            res.redirect('/');
+        } else {res.render('product', { 
+			item : productsToSearch[0], 
+			search,
+			toThousand,
+		});}
     },
     carrito: (req,res) => {
         res.render('carrito',{platillosDelMes});
@@ -31,14 +43,15 @@ const mainController = {
         res.render('editarProductos', {productos: platillosDelMes});
     },
     editando: (req,res) => {  
-        const iden = parseInt(req.params.id);
-        if(iden > platillosDelMes.length || iden < 0 || isNaN(iden)){
-            res.send('404 no hay articulo con ese id');
-        } else {
-            res.render('vistaEditar',{productos: platillosDelMes, iden: iden});
-        }
+        // const iden = parseInt(req.params.id);
+        let id = parseInt(req.params.id);
+		let product = platillosDelMes.find(platillosDelMes => platillosDelMes.id == id)
+        console.log((product))
+		res.render('vistaEditar', {
+			product,
+			
+		})   
     }
-   
 };
 
 module.exports = mainController;

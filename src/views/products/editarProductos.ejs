@@ -38,13 +38,13 @@
                 <% for (let value in productos){%>
                     <article class="inventario">
                         <h2 class="producto-nombre item">
-                            <%=productos[value].titulo%>
+                            <%=productos[value].item%>
                         </h2>
-                        <img class="item-img" src="img/<%=productos[value].img%>" alt="Platillo">
+                        <img class="item-img" src="img/<%=productos[value].image%>" alt="Platillo">
                         <p class="item-descripcion">
                             Descripción:
-                            <%=productos[value].descripcionCorta%>
-                            Precio:<%= productos[value].precio %>
+                            <%=productos[value].description%>
+                            Precio:<%= productos[value].price %>
                         </p>
                         <div class="item-botones"> 
                             <button type="button"
