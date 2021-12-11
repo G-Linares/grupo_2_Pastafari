@@ -59,6 +59,36 @@
                     <% } %>
 
             </section>
+
+            <section class="menu" id="menu">
+
+                <h1 class="heading"> Articulos Existentes</h1>
+            
+                <div class="box-container">
+                    <% for(let platillo of productos){ %>
+                    <div class="box">
+                        <img src="img/<%= platillo.image %>" alt="">
+                        <h3>Nombre: <%= platillo.item%></h3>
+                        <h4>Tipo: <%= platillo.type%></h4>
+                        <h4>Estilo de Platillo: <%= platillo.dish%></h4>
+                        <h4>Descuento: <%= platillo.discount%></h4>
+                        <h4>Compras: <%= platillo.boughts%></h4>
+                        <div class="price">Precio:<%= platillo.price%>
+                            <% if(platillo.discount != ''){ %>
+                                <span><%= platillo.discount %></span>
+                            <% }%>
+                        </div> 
+                        <button class="btn" type="button"
+                            onClick="location.href='./editarProducto/<%=platillo.id%>'">
+                            Editar Producto
+                        </button>
+                        <button class="btn" type="button">Eliminar</button>
+                    
+                    </div> 
+                    <% } %> 
+                </div>
+            
+            </section>
         </main>
 
         <%- include('../partials/footer') %>

@@ -6,7 +6,7 @@ const path = require('path');
 const menu = require('../data/menuCompleto');
 
 //ahorita estoy exportando platillos del mes por que no tengo JSON de menu completo
-const platillosDelMesFilePath = path.join(__dirname, '../data/platillosDelMes.json');
+const platillosDelMesFilePath = path.join(__dirname, '../data/menuCompleto2.json');
 const platillosDelMes = JSON.parse(fs.readFileSync(platillosDelMesFilePath, 'utf-8'));
 
 const productController = {
