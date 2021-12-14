@@ -13,6 +13,9 @@ app.set('view engine', 'ejs');
 //incluyo los dos paths, users y products para diferentes views.
 app.set('views', [path.join(__dirname + '/src/views/users'), path.join(__dirname + '/src/views/products')]);
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+
 app.use(express.static(path.join(__dirname, './public')));
 
 app.use('/', mainRouters);

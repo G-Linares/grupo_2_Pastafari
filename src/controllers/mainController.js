@@ -52,6 +52,20 @@ const mainController = {
     );
     res.redirect("/editar");
   },
+  agregar: (req,res) => {
+    console.log(req.body);
+    console.log(req.file);
+    console.log(req.file.originalname);
+        let newProduct = {
+            id: menu.length+1,
+            ...req.body,
+            image: req.file.filename
+          };
+          console.log(newProduct);
+          menu.push(newProduct);
+          fs.writeFileSync(menuCompleto2, JSON.stringify(menu, null, ' '));
+          res.redirect('/editar');
+  }
 };
 
 module.exports = mainController;
