@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 
-const menu = require('../data/menuCompleto');
+const menu = require('../data/menuCompleto2');
 
 //ahorita estoy exportando platillos del mes por que no tengo JSON de menu completo
 const platillosDelMesFilePath = path.join(__dirname, '../data/menuCompleto2.json');

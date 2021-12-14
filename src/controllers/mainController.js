@@ -38,8 +38,8 @@ const mainController = {
         } else {
             res.render('vistaEditar',{productos: menu, iden: iden});
         }
-    }
-   
+    },
+    
 };
 
 module.exports = mainController;
