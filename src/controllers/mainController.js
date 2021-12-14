@@ -39,12 +39,9 @@ const mainController = {
             res.render('vistaEditar',{productos: menu, iden: iden});
         }
     },
-    destroy : (req, res) => {
-		let id = req.params.id;
-        console.log(id);
+    destroy : (req, res) => {   
+		let id = req.params.id;    
 		let finalProducts = menu.filter(menu => menu.id != id);
-        console.log('finalProducts');
-
 		fs.writeFileSync(menuCompleto2, JSON.stringify(finalProducts, null, ' '));
 		res.redirect('/');
 

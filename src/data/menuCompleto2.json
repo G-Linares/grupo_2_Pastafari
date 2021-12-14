@@ -1,17 +1,5 @@
 [
  {
-  "id": 2,
-  "item": "Fetuccine Alfredo",
-  "type": "fettuccine",
-  "dish": "alfredo",
-  "description": "Delicioso fettuccine en salsa Alfredo cremosa, acompañada de jamón y perejil.",
-  "image": "fettuccineAlfredo.jpg",
-  "score": 4,
-  "discount": 0,
-  "boughts": 97,
-  "price": 50
- },
- {
   "id": 3,
   "item": "Fusilli Alfredo",
   "type": "fusilli",
