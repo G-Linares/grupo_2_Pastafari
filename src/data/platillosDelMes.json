@@ -108,5 +108,16 @@
         "score":1,
         "boughts":56,
         "price":10.13
+    },
+    {
+        "id":11,
+        "item":"TURKEY DELLA CHRISTMAS",
+        "type":"Turkey",
+        "description":"Pavo condimentado, champiñones y rigatoni corto horneados en una cremosa salsa de champiñones y vino blanco.",
+        "image":"menu-images/Turkey-Della-Christmas.jpg",
+        "discount": 20.99,
+        "score":1,
+        "boughts":56,
+        "price":10.13
     }
 ]
