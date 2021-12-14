@@ -43,7 +43,7 @@
                         <img class="item-img" src="img/<%=productos[value].image%>" alt="Platillo">
                         <p class="item-descripcion">
                             Descripción:
-                            <%=productos[value].description%>
+                            <%=productos[value].description %>
                             Precio:<%= productos[value].price %>
                         </p>
                         <div class="item-botones"> 
@@ -51,7 +51,10 @@
                             onClick="location.href='./editarProducto/<%=productos[value].id%>'">
                             Editar Producto
                         </button>
-                        <button type="button">Eliminar</button>
+                        
+                        <form action="/delete/<%=productos[value].id%>?_method=DELETE" method="POST">
+							<button type="submit" class="action-button delete">ELIMINAR</button>
+						</form>
                         </div>
                         
                     </article>
