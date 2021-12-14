@@ -8,7 +8,10 @@ mainRouters.get('/', mainController.home);
 mainRouters.get('/menu', mainController.menu);
 mainRouters.get('/carrito', mainController.carrito);
 mainRouters.get('/createAccount', mainController.login);
+
 mainRouters.get('/editar', mainController.editar);
+mainRouters.delete('/editar/:id', mainController.borrar);
+
 mainRouters.get('/editarProducto/:id?', mainController.editando);
 
 module.exports = mainRouters;
