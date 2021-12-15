@@ -46,13 +46,13 @@
            
                 <div class="carousel">
                     <div class="carousel__item carousel__item--visible">
-                      <img src="img/1.jpg" />
+                      <img src="img/products/farfalleAlfredo.jpg" />
                     </div>
                     <div class="carousel__item">
-                      <img src="img/2.jpg" />
+                      <img src="img/products/fettuccineBolognesa.jpg" />
                     </div>
                     <div class="carousel__item">
-                      <img src="img/3.jpg" />
+                      <img src="img/products/spaguettiallaNorma.jpg" />
                     </div>
                     <div class="carousel__actions">
                       <button id="carousel__button--prev" aria-label="Previous slide"><</button>
@@ -77,10 +77,10 @@
     <div class="box-container">
         <% for(let platillo of platillosDelMes){ %>
         <div class="box">
-            <img src="img/<%= platillo.image %>" alt="">
+            <img src="img/products/<%= platillo.image %>" alt="">
             <h3><%= platillo.item%></h3>
             <h4><%= platillo.type%></h4>
-            <div class="price"><%= platillo.price%>
+            <div class="price">$<%= platillo.price%>
                 <% if(platillo.discount != ''){ %>
                     <span><%= platillo.discount %></span>
                 <% }%>
@@ -111,7 +111,7 @@
                     <i class="far fa-address-card"></i>
                 </div> 
                 <p><%= review.text %></p>
-                <img src="img/<%= review.img%>" class="user" alt="">
+                <img src="img/products/<%= review.img%>" class="user" alt="">
                 <h3><%= review.name%></h3>
                 <div class="stars">
                     <% for(let i= 0; i< review.score; i++){ %>
