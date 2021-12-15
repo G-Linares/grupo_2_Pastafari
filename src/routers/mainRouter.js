@@ -12,19 +12,33 @@ filename: function (req, file, cb) {
     cb(null, `img_${file.originalname}`)
 }
 });
+
 let upload = multer({storage:storage})
 
 const mainRouters = express.Router();
 
+// render a home
 mainRouters.get('/', mainController.home);
+
+//render a todo el menu
 mainRouters.get('/menu', mainController.menu);
+
+//render al carrito
 mainRouters.get('/carrito', mainController.carrito);
+
+//render a login
 mainRouters.get('/createAccount', mainController.login);
 
-mainRouters.get('/editar', mainController.editar);
-mainRouters.post('/editar', upload.single('image'),mainController.agregar);
-mainRouters.delete('/editar/:id', mainController.borrar);
+//render a todo el menu que se puede editar
+mainRouters.get('/editar', mainController.index);
 
-mainRouters.get('/editarProducto/:id?', mainController.editando);
+////crea un nuevo producto
+mainRouters.post('/editar', upload.single('image'),mainController.agregar);
+
+//se elimina un producto del JSON
+mainRouters.delete('/delete/:id', mainController.borrar); 
+
+//render a un articulo en especifico
+mainRouters.get('/editarProducto/:id', mainController.editando);
 
 module.exports = mainRouters;

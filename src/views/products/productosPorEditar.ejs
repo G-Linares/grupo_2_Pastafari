@@ -85,7 +85,11 @@
                                 onClick="location.href='./editarProducto/<%=platillo.id%>'">
                                 Editar Producto
                             </button>
-                            <button class="btn" type="button">Eliminar</button>
+                            <form action="/delete/<%=platillo.id%>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn">ELIMINAR</button>
+                            </form>
+                        
+                            
 
                         </div>
                         <% } %>

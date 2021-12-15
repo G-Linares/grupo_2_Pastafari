@@ -46,13 +46,13 @@
            
                 <div class="carousel">
                     <div class="carousel__item carousel__item--visible">
-                      <img src="img/products/farfalleAlfredo.jpg" />
+                      <img src="img/1.jpg" />
                     </div>
                     <div class="carousel__item">
-                      <img src="img/products/fettuccineBolognesa.jpg" />
+                      <img src="img/2.jpg" />
                     </div>
                     <div class="carousel__item">
-                      <img src="img/products/spaguettiallaNorma.jpg" />
+                      <img src="img/3.jpg" />
                     </div>
                     <div class="carousel__actions">
                       <button id="carousel__button--prev" aria-label="Previous slide"><</button>
@@ -86,7 +86,7 @@
                 <% }%>
             </div> 
             <a href="#" class="btn">agregar carrito</a>
-            <a href="/producto/<%= platillo.id%>" class="btn">detalles</a>
+            <a href="/producto/platilloDelMes/<%= platillo.id%>" class="btn">detalles</a>
         
         </div> 
         <% } %> 
@@ -111,7 +111,7 @@
                     <i class="far fa-address-card"></i>
                 </div> 
                 <p><%= review.text %></p>
-                <img src="img/products/<%= review.img%>" class="user" alt="">
+                <img src="img/<%= review.img%>" class="user" alt="">
                 <h3><%= review.name%></h3>
                 <div class="stars">
                     <% for(let i= 0; i< review.score; i++){ %>

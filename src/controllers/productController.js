@@ -3,20 +3,38 @@ const fs = require('fs');
 const path = require('path');
 
 
-const menu = require('../data/menuCompleto');
+// jala el JSON de menu Completo
+const menuCompleto = path.join(__dirname, "../data/menuCompleto.json");
+const menu = JSON.parse(fs.readFileSync(menuCompleto, "utf-8"));
 
-//ahorita estoy exportando platillos del mes por que no tengo JSON de menu completo
-const platillosDelMesFilePath = path.join(__dirname, '../data/menuCompleto2.json');
-const platillosDelMes = JSON.parse(fs.readFileSync(platillosDelMesFilePath, 'utf-8'));
+const platillosDelMesFilePath = path.join(__dirname,"../data/platillosDelMes.json");
+const platillosDelMes = JSON.parse(fs.readFileSync(platillosDelMesFilePath, "utf-8"));
+
 
 const productController = {
     
-    id: (req,res) => {     
+    //renderiza un elemento que viene desde el menu
+    id: (req,res) => {  
         const id = parseInt(req.params.id);
-        res.render('product',{item : platillosDelMes[id- 1]});     
+        if (id > menu.length || id < 0 || isNaN(id)) {
+            res.send("404 no hay articulo con ese id");
+        } else {
+            res.render('product',{item : menu[id - 1]}); 
+        }       
     },
+
+    //lista el menu
     index: (req,res) => {
         res.render('menu',{menu});
+    },
+    
+    platilloDelMes: (req,res) =>{
+        const id = parseInt(req.params.id);
+        if (id > platillosDelMes.length || id < 0 || isNaN(id)) {
+            res.send("404 no hay articulo con ese id");
+        } else {
+            res.render('product',{item : platillosDelMes[id - 1]}); 
+        }  
     }
 };
 module.exports = productController;
