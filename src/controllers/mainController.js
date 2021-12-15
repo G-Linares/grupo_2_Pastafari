@@ -39,7 +39,7 @@ const mainController = {
   editando: (req, res) => {
     const iden = parseInt(req.params.id);
     if (iden > menu.length || iden < 0 || isNaN(iden)) {
-      res.send("404 no hay articulo con ese id");
+      res.render('error');
     } else {
       //se mandan dos parametros por que en la vista utiliza el elemento y el objeto en total
       res.render("editarProducto", { productos: menu, iden: iden -1 });
