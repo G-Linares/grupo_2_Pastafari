@@ -13,6 +13,10 @@ const reviews = JSON.parse(fs.readFileSync(reviewsFilePath, "utf-8"));
 const platillosDelMesFilePath = path.join(__dirname,"../data/platillosDelMes.json");
 const platillosDelMes = JSON.parse(fs.readFileSync(platillosDelMesFilePath, "utf-8"));
 
+//jala el JSON de usuarios
+const usersPath = path.join(__dirname, "../data/users.json");
+const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
+
 //podemos ocuparlo despues para validar el string que entra
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -37,6 +41,7 @@ const mainController = {
     if (iden > menu.length || iden < 0 || isNaN(iden)) {
       res.send("404 no hay articulo con ese id");
     } else {
+      //se mandan dos parametros por que en la vista utiliza el elemento y el objeto en total
       res.render("editarProducto", { productos: menu, iden: iden -1 });
     }
   },
@@ -46,12 +51,13 @@ const mainController = {
 		fs.writeFileSync(menuCompleto, JSON.stringify(finalProducts, null, ' '));
     //no puedo mandar a /editar por que se tiene que dar refresh a la pagina para que se vean los cambios.
 		res.redirect('/');
-
 	},
+  //
   agregar: (req,res) => {
-    console.log(req.body);
-    console.log(req.file);
-    console.log(req.file.originalname);
+    //ya funciona bien, solo que estos Consoles.log estan para probar si falla
+    // console.log(req.body);
+    // console.log(req.file);
+    // console.log(req.file.originalname);
         let newProduct = {
             id: menu.length+1,
             ...req.body,
@@ -61,6 +67,16 @@ const mainController = {
           menu.push(newProduct);
           fs.writeFileSync(menuCompleto, JSON.stringify(menu, null, ' '));
           res.redirect('/editar');
+  },
+  loginNew: (req,res) => {
+        // ingresa un nuevo usuario al JSON de usuarios 
+        let newUser = {
+            id: users.length+1,
+            ...req.body,
+            img:"No-tenemos-profile-pics.png"
+          };
+          fs.writeFileSync(usersPath, JSON.stringify(users, null, ' '));
+          res.redirect('/');
   }
 };
 

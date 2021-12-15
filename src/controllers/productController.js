@@ -19,7 +19,7 @@ const productController = {
         if (id > menu.length || id < 0 || isNaN(id)) {
             res.send("404 no hay articulo con ese id");
         } else {
-            res.render('product',{item : menu[id - 1]}); 
+            res.render('product',{item : menu[id -1]}); 
         }       
     },
 
@@ -27,13 +27,13 @@ const productController = {
     index: (req,res) => {
         res.render('menu',{menu});
     },
-    
+    //renderiza el item description de un item que esta en platillos del Mes
     platilloDelMes: (req,res) =>{
         const id = parseInt(req.params.id);
         if (id > platillosDelMes.length || id < 0 || isNaN(id)) {
             res.send("404 no hay articulo con ese id");
         } else {
-            res.render('product',{item : platillosDelMes[id - 1]}); 
+            res.render('product',{item : platillosDelMes[id-1] }); 
         }  
     }
 };

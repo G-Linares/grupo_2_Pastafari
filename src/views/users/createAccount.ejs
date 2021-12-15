@@ -9,56 +9,41 @@
     <%- include('../partials/header') %>
 
     <div class="main-container-registro">
-      <form action="">
+      <form action="/createaccount" method="POST" class="contenedor-formulario" enctype="multipart/form-data">
         <div class="container-registro">
           <h1>Crea tu nueva cuenta</h1>
           <p>Por favor llena estos datos para acceder</p>
 
-          <label for="usr">Nombre de usuario</label>
+          <label for="usr">Nombre Completo</label>
+          <input
+            type="text"
+            name="name"
+            id ="name"
+            placeholder="Ingresa Nombre Completo"
+            required
+          />
+          <label for="usr">Nombre de Usuario</label>
           <input
             type="text"
             name="username"
-            placeholder="Enter Username"
+            id = "username"
+            placeholder="Ingresa Nombre de Usuario"
             required
           />
 
-          <label for="psw">Password</label>
+          <label for="psw">Contraseña</label>
           <input
             type="password"
-            placeholder="Enter Password"
-            name="pws"
+            placeholder="Ingresa la Contraseña"
+            name="password"
+            id = "password"
             required
           />
 
-          <label for="psw">Repita la Password</label>
-          <input
-            type="password"
-            placeholder="Repite la Password"
-            name="pws"
-            required
-          />
+          <label for="start">Año de Nacimiento:</label>
 
-          <label for="start">Fecha de Nacimiento:</label>
+          <input type="number" min="1900" max="2099" step="1" value="2016" name="fechaNacimiento" id="fechaNacimiento"/>
 
-          <input
-            type="date"
-            id="start"
-            name="fecha-nacimiento"
-            value="2018-07-22"
-            min="1900-01-01"
-            max="2022-12-31"
-          />
-
-          <label for="ice-cream-choice">Donde te ubicas?</label>
-          <input list="estados" id="estados-choice" name="estados" />
-
-          <datalist id="estados">
-            <option value="CDMX"></option>
-            <option value="Monterrey"></option>
-            <option value="Guerrero"></option>
-            <option value="Morelos"></option>
-            <option value="Puebla"></option>
-          </datalist>
 
           <div class="container-buttons">
             <button type="submit" class="btn">Accede</button>

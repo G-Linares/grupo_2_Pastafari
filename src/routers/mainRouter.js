@@ -28,12 +28,11 @@ mainRouters.get('/carrito', mainController.carrito);
 
 //render a login
 mainRouters.get('/createAccount', mainController.login);
+mainRouters.post('/createAccount',upload.single('image'),mainController.loginNew);
 
 //render a todo el menu que se puede editar
 mainRouters.get('/editar', mainController.index);
-
-////crea un nuevo producto
-mainRouters.post('/editar', upload.single('image'),mainController.agregar);
+mainRouters.post('/editar', upload.single(),mainController.agregar);
 
 //se elimina un producto del JSON
 mainRouters.delete('/delete/:id', mainController.borrar); 
