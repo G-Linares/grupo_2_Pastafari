@@ -69,12 +69,13 @@ const mainController = {
           res.redirect('/editar');
   },
   loginNew: (req,res) => {
-        // ingresa un nuevo usuario al JSON de usuarios 
+        // ingresa un nuevo usuario al JSON de usuarios   
         let newUser = {
             id: users.length+1,
             ...req.body,
             img:"No-tenemos-profile-pics.png"
           };
+          users.push(newUser);
           fs.writeFileSync(usersPath, JSON.stringify(users, null, ' '));
           res.redirect('/');
   }
