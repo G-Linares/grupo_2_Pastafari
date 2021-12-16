@@ -111,15 +111,15 @@ div > .cart-quantity-input {
 }
 
 .total-carrito {
-    flex: 0.25;
+  
     margin-left: 20px;
     padding: 20px;
     height: 240px;
     border: 1px solid silver;
     border-radius: 5px;
     background-color: honeydew;
-    margin-top: 8vhs;
-    margin-top: 15rem;
+    position: sticky;
+    top: 15rem;
 }
 
 .total-carrito p {
@@ -175,6 +175,7 @@ div > .cart-quantity-input {
     margin-left: 0px;
     margin-bottom: 20px;
     margin-top: 1rem;
+    width: 100%;
   }
 
   .contenedor-principal {

@@ -3,7 +3,7 @@
 
 <head>
     <%- include('../partials/head') %>
-    <link rel="stylesheet" href="css/stylesmenu.css">
+    
    
     <title>Menu</title>
 
@@ -14,6 +14,7 @@
     <%- include('../partials/header') %> 
 
     <main>
+<<<<<<< HEAD
         <section class="contenedor sobre-nuestros-productos" id="about">
             <h2 class="titulo">Ingredientes</h2>
             <div class="contenedor-sobre-nosotros">
@@ -42,8 +43,32 @@
                 <button>Anadir al Carrito</button>
             </div>
             <% } %>
+=======
+        <section class="menu" id="menu">
+>>>>>>> Mercado
 
+            <h1 class="heading"> Menu </h1>
+        
+            <div class="box-container">
+                <% for(let platillo of item){ %>
+                <div class="box">
+                    <img src="img/products/<%= platillo.image %>" alt="">
+                    <h3><%= platillo.item%></h3>
+                    <h4><%= platillo.type%></h4>
+                    <div class="price"><%= platillo.price%>
+                        <% if(platillo.discount != ''){ %>
+                            <span><%= platillo.discount %></span>
+                        <% }%>
+                    </div> 
+                    <a href="#" class="btn">agregar carrito</a>
+                    <a href="/producto/<%= platillo.id%>" class="btn">detalles</a>
+                
+                </div> 
+                <% } %> 
+            </div>
+        
         </section>
+        
     </main>
 
     <%- include('../partials/footer') %> 

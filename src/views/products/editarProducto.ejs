@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+            <link href="/css/styleEdicion.css" rel="stylesheet">
+            <title>Producto: <%=productos[iden].titulo %></title>
+    </head>
+<body>
+    <%- include('../partials/header') %>
+
+    <main>
+        <section class="contenedor-form">
+            <form class="form-articulo">
+                <label for="nombre">Nombre del producto</label>
+                <input class="item" type="text" name="nombre" value="<%=productos[iden].item %>">
+                <label for="tipo">Tipo de pasta</label>
+                <input class="item" type="text" name="tipo" value="<%=productos[iden].type %>">
+                <label for="precio">Precio del producto</label>
+                <input type="text" name="precio" value="<%=productos[iden].price %>">
+                <label for="descripcion">Descripcion</label>
+                <textarea id="descripcion" name="descripcion" rows="4" cols="50"><%= productos[iden].description %> 
+                </textarea>
+                <label for="imagen">Inserta la nueva imagen aquí</label>
+                <input type="file" name="imagen">
+                <label for="score">Score del producto</label>
+                <input type="text" name="score" value="<%=productos[iden].score %>">
+                <label for="score">Cambia el score</label>
+                <select>
+                    <option value="elige" selected>Elige</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="discount">Descuento del producto</label>
+                <input type="text" name="discout" value="<%=productos[iden].discount %>">
+                <label for="boughts">Número comprado</label>
+                <input type="text" name="boughts" value="<%=productos[iden].boughts%>">
+                <label for="dish">Estilo de platillo</label>
+                <input type="text" name="dish" value="<%=productos[iden].dish%>">
+                <button class="boton" type="reset" value="reset">Deshacer cambios</button>
+                <button class="boton" type="submit" value="submit">Guardar cambios</button>
+            </form>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+<script src="/js/home.js"></script>
+
+</html>

@@ -14,9 +14,9 @@
         <main class="contenedor-principal">
             
             <div class="productos">
-                <% for(let platillo of platillosDelMes){%>
+                <% for(let platillo of item){%>
                     <div class="producto">
-                        <img class="fotos" src="/img/<%=platillo.image%>" alt="imagen">
+                        <img class="fotos" src="/img/products/<%=platillo.image%>" alt="imagen">
                         <div class="detalles-producto">
                             <h3 class="producto-nombre"><%= platillo.item %></h3>
                             <h4 class="producto-precio"><%= platillo.price %></h4>

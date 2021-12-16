@@ -1,202 +1,278 @@
 [
-  {
-    "id": 1,
-    "titulo": "Spaghetti Aglio",
-    "tipo": "Pasta Fria",
-    "descripcionCorta": "Procedente de la región de Abruzzo región centro meridional de Italia es un plato clásico de la gastronomía italiana",
-    "precio": 80.99,
-    "img": "img/9.Girasole.jpg"
-  },
-  {
-    "id": 2,
-    "titulo": "Penne rigate all’Amatriciana",
-    "tipo": "Pasta Caliente",
-    "descripcionCorta": "Procedente del Lacio región administrativa de Italia central y es una de las salsas más tradicionales de la cocina italiana",
-    "precio": 98.55,
-    "img": "img/1.jpg"
-  },
-  {
-    "id": 3,
-    "titulo": "Spaghetti alla Carbonara",
-    "tipo": "Pasta Caliente",
-    "descripcionCorta": "Plato de pasta italiano originario del Lacio",
-    "precio": 99.00,
-    "img": "img/2.jpg"
-  },
-  {
-    "id": 4,
-    "titulo": "Spaghetti alla Puttanesca",
-    "tipo": "Pasta Caliente/Fria",
-    "descripcionCorta": "concretamente de Roma.",
-    "precio": 89.99,
-    "img": "img/3.jpg"
-  },
-  {
-    "id": 5,
-    "titulo": "Fusilli alla Norma",
-    "tipo": "Pasta Fria",
-    "descripcionCorta": "Plato tradicional de la cocina siciliana muy celebrado en la ciudad italiana de Catania.",
-    "precio": 117.55,
-    "img": "public/img/14.SpaghettiPomodoro.jpg"
-  },
-  {
-    "id": 6,
-    "titulo": "Bavette alle Vongole in Bianco",
-    "tipo": "Pasta Caliente",
-    "descripcionCorta": "Un plato de pasta muy tradicional de la cocina napolitana es más tradicionalmente denominado Vermicelli con le Vongole",
-    "precio": 135.80,
-    "img": "img/3.jpg"
-  },
-  {
-    "id": 7,
-    "titulo": "Bavette alle Vongole in Bianco",
-    "tipo": "Pasta Caliente",
-    "descripcionCorta": "Un plato de pasta muy tradicional de la cocina napolitana es más tradicionalmente denominado Vermicelli con le Vongole",
-    "precio": 125.00,
-    "img": "img/1.jpg"
-  },
-  {
-    "id": 8,
-    "titulo": "Bavette alle Vongole in Bianco",
-    "tipo": "Pasta Caliente",
-    "descripcionCorta": "Un plato de pasta muy tradicional de la cocina napolitana es más tradicionalmente denominado Vermicelli con le Vongole",
-    "precio": 148.76,
-    "img": "img/alle.jpg"
-  },
-  {
-    "id": 9,
-    "titulo": "Penne rigate all’Amatriciana",
-    "tipo": "Pasta Caliente",
-    "descripcionCorta": "Un plato de pasta muy tradicional de la cocina napolitana es más tradicionalmente denominado Vermicelli con le Vongole",
-    "precio": 135.00,
-    "img": "img/3.jpg"
-  },
-  {
-    "id": 10,
-    "titulo": "Bavette alle Vongole in Bianco",
-    "tipo": "Pasta Caliente",
-    "descripcionCorta": "Un plato de pasta muy tradicional de la cocina napolitana es más tradicionalmente denominado Vermicelli con le Vongole",
-    "precio": 76.55,
-    "img": "img/7.FettucineBolognaise.jpg"
-  },
-  {
-    "id": 11,
-    "titulo": "Bavette alle Vongole in Bianco",
-    "tipo": "Pasta Caliente",
-    "descripcionCorta": "Un plato de pasta muy tradicional de la cocina napolitana es más tradicionalmente denominado Vermicelli con le Vongole",
-    "precio": 94.00,
-    "img": "img/1.jpg"
-  },
-  {
-    "id": 12,
-    "titulo": "Bavette alle Vongole in BiancoBavette alle Vongole in Bianco",
-    "tipo": "Pasta Caliente",
-    "descripcionCorta": "Un plato de pasta muy tradicional de la cocina napolitana es más tradicionalmente denominado Vermicelli con le Vongole",
-    "precio": 85.99,
-    "img": "public/img/10.LinguineCarbonara.jpg"
-  },
-  {
-    "id": 13,
-    "titulo": "Penne rigate all’Amatriciana",
-    "tipo": "Pasta Caliente",
-    "descripcionCorta": "Un plato de pasta muy tradicional de la cocina napolitana es más tradicionalmente denominado Vermicelli con le Vongole",
-    "precio": 78.00,
-    "img": "img/8.PastaRange.jpg"
-  },
-  {
-    "id": 14,
-    "titulo": "Bavette alle Vongole in Bianco",
-    "tipo": "Pasta Caliente",
-    "descripcionCorta": "Un plato de pasta muy tradicional de la cocina napolitana es más tradicionalmente denominado Vermicelli con le Vongole",
-    "precio": 101.25,
-    "img": "img/13.SpagettiLentilRagu.jpg"
-  },
-  {
-    "id": 15,
-    "titulo": "Bavette alle Vongole in Bianco",
-    "tipo": "Pasta Caliente",
-    "descripcionCorta": "Un plato de pasta muy tradicional de la cocina napolitana es más tradicionalmente denominado Vermicelli con le Vongole",
-    "precio": 98.99,
-    "img": "img/3.jpg"
-  },
-  {
-    "id": 16,
-    "titulo": "Beef Brisket Pappardelle",
-    "tipo": "Pasta Caliente",
-    "descripcionCorta": "Un plato de pasta muy tradicional de la cocina napolitana es más tradicionalmente denominado Vermicelli con le Vongole",
-    "precio": 110.25,
-    "img": "img/14.SpaghettiPomodoro.jpg"
-  },
-  {
-    "id": 17,
-    "titulo": "Fettuccine Bolognese",
-    "tipo": "Fettuccine",
-    "descripcionCorta": "Pechuga de res desmenuzada y ragú de vino tinto con tomates bañados por el sol y pappardelle de cinta larga y plana. Sumérjase",
-    "precio": 85.76,
-    "img": "img/1.jpg"
-  },
-  {
-    "id": 18,
-    "titulo": "Non Gluten Fusilli Pasta",
-    "tipo": "Fusilli",
-    "descripcionCorta": "está delicioso.",
-    "precio": 99.99,
-    "img": "img/13.SpagettiLentilRagu.jpg"
-  },
-  {
-    "id": 19,
-    "titulo": "Spinach & Ricotta Girasole",
-    "tipo": "Ricotta",
-    "descripcionCorta": "Nuestro abundante ragu de ternera y vino tinto se sirve con fettuccine de cinta plana",
-    "precio": 102.15,
-    "img": "img/1.jpg"
-  },
-  {
-    "id": 20,
-    "titulo": "Linguine Carbonara",
-    "tipo": "Linguine",
-    "descripcionCorta": "como se come en Roma. Si lo prefiere",
-    "precio": 155.60,
-    "img": "img/2.jpg"
-  },
-  {
-    "id": 21,
-    "titulo": "Manzo Piccante",
-    "tipo": "Manzo",
-    "descripcionCorta": "puede optar por espaguetis.",
-    "precio": 89.75,
-    "img": "img/12.PenneAlPollaDellaCasa.jpg"
-  },
-  {
-    "id": 22,
-    "titulo": "Linguine con FruttI DI Mare",
-    "tipo": "Linguine",
-    "descripcionCorta": "Todos nuestros platos de pasta clásica (excepto risotto y girasole) se pueden preparar con nuestro fusilli sin gluten.",
-    "precio": 96.75,
-    "img": "img/alfredo.jpg"
-  },
-  {
-    "id": 23,
-    "titulo": "Spaghetti Lentil Ragu",
-    "tipo": "Spaghetti",
-    "descripcionCorta": "Estos bonitos paquetes de pasta",
-    "precio": 99.89,
-    "img": "img/1.jpg"
-  },
-  {
-    "id": 24,
-    "titulo": "Spaghetti Al Pomodoro",
-    "tipo": "Spaghetti",
-    "descripcionCorta": "que significan girasol",
-    "precio": 115.23,
-    "img": "img/alfredo.jpg"
-  },
-  {
-    "id": 25,
-    "titulo": "Turkey Della Christmas",
-    "tipo": "Turkey",
-    "descripcionCorta": "se sirven con espinacas y salsa de crema de mascarpone.",
-    "precio": 135.67,
-    "img": "img/12.PenneAlPollaDellaCasa.jpg"
-  }
+ {
+  "id": 1,
+  "item": "Fusilli Alfredo",
+  "type": "fusilli",
+  "dish": "alfredo",
+  "description": "Delicioso fusilli en salsa Alfredo cremosa, acompañada de jamón y perejil.",
+  "image": "fusilliAlfredo.jpg",
+  "score": 3,
+  "discount": 0,
+  "boughts": 97,
+  "price": 50
+ },
+ {
+  "id": 2,
+  "item": "Rigatoni Alfredo",
+  "type": "rigatoni",
+  "dish": "alfredo",
+  "description": "Delicioso rigatoni en salsa Alfredo cremosa, acompañada de jamón y perejil.",
+  "image": "rigatoniAlfredo.jpg",
+  "score": 2,
+  "discount": 0,
+  "boughts": 97,
+  "price": 89
+ },
+ {
+  "id": 3,
+  "item": "Spaguetti Alfredo",
+  "type": "spaguetti",
+  "dish": "alfredo",
+  "description": "Delicioso spaguetti en salsa Alfredo cremosa, acompañada de jamón y perejil.",
+  "image": "spaguettiAlfredo.jpg",
+  "score": 1,
+  "discount": 0,
+  "boughts": 97,
+  "price": 52.45
+ },
+ {
+  "id": 4,
+  "item": "Farfalle alla Norma",
+  "type": "farfalle",
+  "dish": "allaNorma",
+  "description": "Increíble farfalle alla Norma, una tradicional siciliana con berenjena, ricotta, jitomate y albahaca fresca.",
+  "image": "farfalleallaNorma.jpg",
+  "score": 5,
+  "discount": 0,
+  "boughts": 97,
+  "price": 98.12
+ },
+ {
+  "id": 5,
+  "item": "Fettuccine alla Norma",
+  "type": "fettuccine",
+  "dish": "allaNorma",
+  "description": "Increíble fettuccine alla Norma, una tradicional siciliana con berenjena, ricotta, jitomate y albahaca fresca.",
+  "image": "fettuccineallaNorma.jpg",
+  "score": 4,
+  "discount": 0,
+  "boughts": 97,
+  "price": 66
+ },
+ {
+  "id": 6,
+  "item": "Fusilli alla Norma",
+  "type": "fusilli",
+  "dish": "allaNorma",
+  "description": "Increíble fusilli alla Norma, una tradicional siciliana con berenjena, ricotta, jitomate y albahaca fresca.",
+  "image": "fusilliallaNorma.jpg",
+  "score": 3,
+  "discount": 0,
+  "boughts": 97,
+  "price": 52
+ },
+ {
+  "id": 7,
+  "item": "Rigatoni alla Norma",
+  "type": "rigatoni",
+  "dish": "allaNorma",
+  "description": "Increíble rigatoni alla Norma, una tradicional siciliana con berenjena, ricotta, jitomate y albahaca fresca.",
+  "image": "rigatoniallaNorma.jpg",
+  "score": 2,
+  "discount": 0,
+  "boughts": 97,
+  "price": 29
+ },
+ {
+  "id": 8,
+  "item": "Spaguetti alla Norma",
+  "type": "spaguetti",
+  "dish": "allaNorma",
+  "description": "Increíble spaguetti alla Norma, una tradicional siciliana con berenjena, ricotta, jitomate y albahaca fresca.",
+  "image": "spaguettiallaNorma.jpg",
+  "score": 1,
+  "discount": 0,
+  "boughts": 97,
+  "price": 19
+ },
+ {
+  "id": 9,
+  "item": "Farfalle al Pesto",
+  "type": "farfalle",
+  "dish": "alPesto",
+  "description": "Asombroso farfalle al Pesto con su clásico color verde gracias a la albahaca genovesa y el piñon, se sirve con parmesano rallado.",
+  "image": "farfallealPesto.jpg",
+  "score": 5,
+  "discount": 0,
+  "boughts": 97,
+  "price": 61
+ },
+ {
+  "id": 10,
+  "item": "Fetuccine al Pesto",
+  "type": "fettuccine",
+  "dish": "alPesto",
+  "description": "Asombroso fettuccine al Pesto con su clásico color verde gracias a la albahaca genovesa y el piñon, se sirve con parmesano rallado.",
+  "image": "fetuccinealPesto.jpg",
+  "score": 4,
+  "discount": 0,
+  "boughts": 97,
+  "price": 61
+ },
+ {
+  "id": 11,
+  "item": "Fusilli al Pesto",
+  "type": "fusilli",
+  "dish": "alPesto",
+  "description": "Asombroso fusilli al Pesto con su clásico color verde gracias a la albahaca genovesa y el piñon, se sirve con parmesano rallado.",
+  "image": "fusillialPesto.jpg",
+  "score": 3,
+  "discount": 0,
+  "boughts": 97,
+  "price": 47
+ },
+ {
+  "id": 12,
+  "item": "Rigatoni al Pesto",
+  "type": "rigatoni",
+  "dish": "alPesto",
+  "description": "Asombroso rigatoni al Pesto con su clásico color verde gracias a la albahaca genovesa y el piñon, se sirve con parmesano rallado.",
+  "image": "rigatonialPesto.jpg",
+  "score": 2,
+  "discount": 0,
+  "boughts": 97,
+  "price": 67
+ },
+ {
+  "id": 13,
+  "item": "Spaguetti al Pesto",
+  "type": "spaguetti",
+  "dish": "alPesto",
+  "description": "Asombrosa spaguetti al Pesto con su clásico color verde gracias a la albahaca genovesa y el piñon, se sirve con parmesano rallado.",
+  "image": "spaguettialPesto.jpg",
+  "score": 1,
+  "discount": 0,
+  "boughts": 97,
+  "price": 84
+ },
+ {
+  "id": 14,
+  "item": "Farfalle Bolognesa",
+  "type": "farfalle",
+  "dish": "bolognesa",
+  "description": "Maravillosa farfalle con salsa bolognesa al estilo tradicional.",
+  "image": "farfalleBolognesa.jpg",
+  "score": 5,
+  "discount": 0,
+  "boughts": 97,
+  "price": 62
+ },
+ {
+  "id": 15,
+  "item": "Fettuccine Bolognesa",
+  "type": "fettuccine",
+  "dish": "bolognesa",
+  "description": "Maravillosa fettuccine con salsa bolognesa al estilo tradicional.",
+  "image": "fettuccineBolognesa.jpg",
+  "score": 4,
+  "discount": 0,
+  "boughts": 97,
+  "price": 32.9
+ },
+ {
+  "id": 16,
+  "item": "Fusilli Bolognesa",
+  "type": "fusilli",
+  "dish": "bolognesa",
+  "description": "Maravillosa fusilli con salsa bolognesa al estilo tradicional.",
+  "image": "fusilliBolognesa.jpg",
+  "score": 3,
+  "discount": 0,
+  "boughts": 97,
+  "price": 28.1
+ },
+ {
+  "id": 17,
+  "item": "Rigatoni Bolognesa",
+  "type": "rigatoni",
+  "dish": "bolognesa",
+  "description": "Maravillosa rigatoni con salsa bolognesa al estilo tradicional.",
+  "image": "rigatoniBolognesa.jpg",
+  "score": 2,
+  "discount": 0,
+  "boughts": 97,
+  "price": 12.48
+ },
+ {
+  "id": 18,
+  "item": "Spaguetti Bolognesa",
+  "type": "spaguetti",
+  "dish": "bolognesa",
+  "description": "Maravilloso spaguetti con salsa bolognesa al estilo tradicional.",
+  "image": "spaguettiBolognesa.jpg",
+  "score": 1,
+  "discount": 0,
+  "boughts": 97,
+  "price": 56.7
+ },
+ {
+  "id": 19,
+  "item": "Farfalle Carbonara",
+  "type": "farfalle",
+  "dish": "carbonara",
+  "description": "Exquisita pasta farfalle carbonara con trozos de jamón y espolvoreada con pimienta negra y parmesano.",
+  "image": "farfalleCarbonara.jpg",
+  "score": 5,
+  "discount": 0,
+  "boughts": 97,
+  "price": 12.99
+ },
+ {
+  "id": 20,
+  "item": "Fettuccine Carbonara",
+  "type": "fettuccine",
+  "dish": "carbonara",
+  "description": "Exquisita pasta fettuccine carbonara con trozos de jamón y espolvoreada con pimienta negra y parmesano.",
+  "image": "fettuccineCarbonara.jpg",
+  "score": 4,
+  "discount": 0,
+  "boughts": 97,
+  "price": 99.68
+ },
+ {
+  "id": 21,
+  "item": "Fusilli Carbonara",
+  "type": "fusilli",
+  "dish": "carbonara",
+  "description": "Exquisita pasta fusilli carbonara con trozos de jamón y espolvoreada con pimienta negra y parmesano.",
+  "image": "fusilliCarbonara.jpg",
+  "score": 3,
+  "discount": 0,
+  "boughts": 97,
+  "price": 86.75
+ },
+ {
+  "id": 22,
+  "item": "Rigatoni Carbonara",
+  "type": "rigatoni",
+  "dish": "carbonara",
+  "description": "Exquisita pasta rigatoni carbonara con trozos de jamón y espolvoreada con pimienta negra y parmesano.",
+  "image": "rigatoniCarbonara.jpg",
+  "score": 2,
+  "discount": 0,
+  "boughts": 97,
+  "price": 11.2
+ },
+ {
+  "id": 23,
+  "item": "Spaguetti Carbonara",
+  "type": "spaguetti",
+  "dish": "carbonara",
+  "description": "Exquisita pasta spaguetti carbonara con trozos de jamón y espolvoreada con pimienta negra y parmesano.",
+  "image": "spaguettiCarbonara.jpg",
+  "score": 1,
+  "discount": 0,
+  "boughts": 97,
+  "price": 10.67
+ }
 ]
