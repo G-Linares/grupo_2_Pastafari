@@ -19,7 +19,7 @@ const productController = {
         if (id > menu.length || id < 0 || isNaN(id)) {
             res.render('error');
         } else {
-            res.render('product',{item : menu[id -1]}); 
+            res.render('product',{item : menu[id]}); 
         }       
     },
 
@@ -33,7 +33,7 @@ const productController = {
         if (id > platillosDelMes.length || id < 0 || isNaN(id)) {
             res.render('error');
         } else {
-            res.render('product',{item : platillosDelMes[id-1] }); 
+            res.render('product',{item : platillosDelMes[id - 1] }); 
         }  
     }
 };

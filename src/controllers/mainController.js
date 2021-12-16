@@ -42,7 +42,7 @@ const mainController = {
       res.render('error');
     } else {
       //se mandan dos parametros por que en la vista utiliza el elemento y el objeto en total
-      res.render("editarProducto", { productos: menu, iden: iden -1 });
+      res.render("editarProducto", { productos: menu, iden: iden });
     }
   },
   borrar : (req, res) => {   
