@@ -19,18 +19,9 @@ const mainRouters = express.Router();
 
 // render a home
 mainRouters.get('/', mainController.home);
-<<<<<<< HEAD
+
+//search a algun platillo con el nombre exacto
 mainRouters.get('/search',mainController.search);
-
-mainRouters.get('/menu', mainController.menu);
-
-mainRouters.get('/carrito', mainController.carrito);
-
-mainRouters.get('/createAccount', mainController.login);
-
-mainRouters.get('/editar', mainController.editar);
-mainRouters.get('/editar/:id?', mainController.editando);
-=======
 
 //render a todo el menu
 mainRouters.get('/menu', mainController.menu);
@@ -51,6 +42,5 @@ mainRouters.delete('/delete/:id', mainController.borrar);
 
 //render a un articulo en especifico
 mainRouters.get('/editarProducto/:id', mainController.editando);
->>>>>>> Mercado
 
 module.exports = mainRouters;

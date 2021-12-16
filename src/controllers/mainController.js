@@ -21,46 +21,6 @@ const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const mainController = {
-<<<<<<< HEAD
-    home: (req,res) => {
-        res.render('home', {platillosDelMes, reviews});
-    },
-    menu: (req,res) => { 
-        res.render('menu', {platillosDelMes});
-    },
-    search : (req, res) => {
-        let search = req.query.keywords;
-        // recibe un string en la barra de busqueda y hace un filter para encontrar que objeto tiene ese mismo nombre
-		let productsToSearch = platillosDelMes.filter(platillosDelMes => platillosDelMes.item == search);	
-        //si hay un match manda la info de ese objeto
-        if (productsToSearch == ""){
-            res.redirect('/');
-        } else {res.render('product', { 
-			item : productsToSearch[0], 
-			search,
-			toThousand,
-		});}
-    },
-    carrito: (req,res) => {
-        res.render('carrito',{platillosDelMes});
-    },
-    login: (req,res) => {
-        res.render('createAccount')
-    },
-    editar: (req,res) => {
-        res.render('editarProductos', {productos: platillosDelMes});
-    },
-    editando: (req,res) => {  
-        // const iden = parseInt(req.params.id);
-        let id = parseInt(req.params.id);
-        //utilizo el metodo con find para encontrar el id de parametro en el objeto
-		let product = platillosDelMes.find(platillosDelMes => platillosDelMes.id == id)
-        //se puede renderizar mandando el parametro {product : platillosDelMes[id -1]} tambien
-        if (id <= 0 || id > platillosDelMes.length || isNaN(id)){
-            res.redirect('/editar');
-        } else {res.render('vistaEditar', {product});}
-    }
-=======
   home: (req, res) => {
     res.render("home", { platillosDelMes, reviews });
   },
@@ -92,22 +52,21 @@ const mainController = {
     //no puedo mandar a /editar por que se tiene que dar refresh a la pagina para que se vean los cambios.
 		res.redirect('/');
 	},
-  //
+  
   agregar: (req,res) => {
-    //ya funciona bien, solo que estos Consoles.log estan para probar si falla
-    // console.log(req.body);
-    // console.log(req.file);
-    // console.log(req.file.originalname);
-        let newProduct = {
-            id: menu.length+1,
-            ...req.body,
-            image: req.file.filename
-          };
-          console.log(newProduct);
-          menu.push(newProduct);
-          fs.writeFileSync(menuCompleto, JSON.stringify(menu, null, ' '));
-          res.redirect('/editar');
+    let newProduct = {
+      id: menu.length+1,
+      ...req.body,
+      image: req.file.filename
+    };
+    //soplo estan para ver que se han creado
+    console.log(newProduct);
+    menu.push(newProduct);
+
+    fs.writeFileSync(menuCompleto, JSON.stringify(menu, null, ' '));
+    res.redirect('/editar');
   },
+
   loginNew: (req,res) => {
         // ingresa un nuevo usuario al JSON de usuarios   
         let newUser = {
@@ -118,8 +77,19 @@ const mainController = {
           users.push(newUser);
           fs.writeFileSync(usersPath, JSON.stringify(users, null, ' '));
           res.redirect('/');
+  },
+  search : (req, res) => {
+    let search = req.query.keywords;
+    // recibe un string en la barra de busqueda y hace un filter para encontrar que objeto tiene ese mismo nombre
+    let productsToSearch = menu.filter(menu => menu.item == search);	
+    //si hay un match manda la info de ese objeto
+    if (productsToSearch == ""){
+        res.render('error');
+    } else{
+      // la neta no se por que se manda toThousand pero ahi esta
+      res.render('product', {item : productsToSearch[0],search,toThousand,})
+    }
   }
->>>>>>> Mercado
 };
 
 module.exports = mainController;

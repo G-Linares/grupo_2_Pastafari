@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname, './public')));
 
 //inicializamos middleware para POST
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 //inicializo middleware para PUT y DELETE
 app.use(methodOverride('_method'));
@@ -26,9 +27,6 @@ app.set('views', [path.join(__dirname + '/src/views/users'), path.join(__dirname
 // aqui vas los paths para el URL
 app.use('/', mainRouters);
 app.use('/producto', productRouters);
-
-
-
 
 // ************ error handler ************
 app.use((req, res, next) => next(createError(404)));

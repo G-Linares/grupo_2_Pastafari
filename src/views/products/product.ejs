@@ -5,7 +5,7 @@
     <%- include('../partials/head') %>
     <link rel="stylesheet" href="../../css/style.css" />
     <link rel="stylesheet" href="../../css/styleProductDetails.css" />
-    <title>Producto <%= product.item %></title>
+    <title>Producto <%= item.item%></title>
 
   </head>
   <body>
@@ -16,73 +16,38 @@
         <div class = "product-imgs">
           <div class = "img-display">
             <div class = "img-showcase">
-<<<<<<< HEAD
-              <img src = "../img/<%= product.image%>" alt = "main-picture">
-              <img src = "../img/<%= product.image%>" alt = "">
-              <img src = "../img/<%= product.image%>" alt = "">
-              <img src = "../img/<%= product.image%>" alt = "">
-            </div>
-          </div>
-          <div class = "img-select">
-            <div class = "img-item">
-              <a href = "#" data-id = "1">
-                <img src = "../img/<%= product.image%>" alt = "main-picture">
-              </a>
-            </div>
-            <div class = "img-item">
-              <a href = "#" data-id = "2">
-                <img src = "../img/<%= product.image%>" alt = "">
-              </a>
-            </div>
-            <div class = "img-item">
-              <a href = "#" data-id = "3">
-                <img src = "../img/<%= product.image%>" alt = "">
-              </a>
-            </div>
-            <div class = "img-item">
-              <a href = "#" data-id = "4">
-                <img src = "../img/<%= product.image%>" alt = "">
-              </a>
-            </div>
-=======
               <img src = "../img/products/<%= item.image%>" alt = "main-picture">
             </div>
           </div>
->>>>>>> Mercado
           </div>
         <!-- card right -->
         <div class = "product-content">
-          <h2 class = "product-title"><%= product.item %></h2>
+          <h2 class = "product-title"><%= item.item %></h2>
           <div class = "product-rating">
-          <% for(let i= 0; i< product.score; i++){ %>
+          <% for(let i= 0; i< item.score; i++){ %>
             <i class="fas fa-star"></i>             
           <% } %>
-          <% if(product.score < 5){ %>
-            <% for(let i = product.score; i < 5; i++ ){%>
+          <% if(item.score < 5){ %>
+            <% for(let i = item.score; i < 5; i++ ){%>
                 <i class="far fa-star"></i>
             <%}%>
           <% } %>        
-          <span><%= product.score %> (<%= product.boughts%>)</span>
+          <span><%= item.score %> (<%= item.boughts%>)</span>
           </div>
 
           <div class = "product-price">
-            <% if (product.discount != 0){ %>
-              <p class = "last-price">Precio Original: <span><%= product.discount %></span></p>
+            <% if (item.discount != 0){ %>
+              <p class = "last-price">Precio Original: <span><%= item.discount %></span></p>
             <% } %>
-            <p class = "new-price">Precio Final: <span><%= product.price%></span></p>
+            <p class = "new-price">Precio Final: <span><%= item.price%></span></p>
           </div>
 
           <div class = "product-detail">
             <h2>Acerca del Platillo: </h2>
-            <p><%= product.description %></p>
+            <p><%= item.description %></p>
             
             <ul>
-<<<<<<< HEAD
-              <li><i class="fas fa-check-circle"></i> Tipo de Pasta: <span><%= product.type%></span></li>
-              <li><i class="fas fa-check-circle"></i> Disponible: <span>in stock</span></li>
-=======
               <li><i class="fas fa-check-circle"></i> Tipo de Pasta: <span><%= item.type%></span></li>
->>>>>>> Mercado
               <li><i class="fas fa-check-circle"></i> Envio: <span>Gratis</span></li>
             </ul>
           </div>
