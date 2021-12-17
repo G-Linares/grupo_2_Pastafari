@@ -10,20 +10,20 @@
 
     <main>
         <section class="contenedor-form">
-            <form action="/editarProducto/<%= productToEdit.id %>?_method=PUT" method="POST">
+            <form class="form-articulo" action="/editarProducto/<%= productToEdit.id %>?_method=PUT" method="POST">
                 <label for="item">Nombre del producto</label>
                 <input class="item" type="text" name="item" value="<%=productToEdit.item %>">
                 <label for="type">Tipo de pasta</label>
                 <input class="item" type="text" name="type" value="<%=productToEdit.type %>">
                 <label for="price">Precio del producto</label>
-                <input type="text" name="price" value="<%=productToEdit.price %>">
+                <input type="number" name="price" value="<%=productToEdit.price %>">
                 <label for="description">Descripcion</label>
                 <textarea id="descripcion" name="description" rows="4" cols="50"><%= productToEdit.description %> 
                 </textarea>
                 <label for="image">Inserta la nueva imagen aquí</label>
                 <input type="file" name="image">
                 <label for="score">Score del producto</label>
-                <input type="text" name="score" value="<%=productToEdit.score %>">
+                <input type="number" name="score" value="<%=productToEdit.score %>">
                 <label for="score">Cambia el score</label>
                 <select>
                     <option value="elige" selected>Elige</option>
@@ -35,9 +35,9 @@
                 </select>
 
                 <label for="discount">Descuento del producto</label>
-                <input type="text" name="discout" value="<%=productToEdit.discount %>">
+                <input type="number" name="discount" value="<%=productToEdit.discount %>">
                 <label for="boughts">Número comprado</label>
-                <input type="text" name="boughts" value="<%=productToEdit.boughts%>">
+                <input type="number" name="boughts" value="<%=productToEdit.boughts%>">
                 <label for="dish">Estilo de platillo</label>
                 <input type="text" name="dish" value="<%=productToEdit.dish%>">
                 <button class="boton" type="reset" value="reset">Deshacer cambios</button>
