@@ -11,7 +11,7 @@ const productRouters = require ('./src/routers/productRouters.js');
 //inicializamos el motor de vista a EJS
 app.set('view engine', 'ejs');
 
-//declaramops carpeta estatitica a public
+//declaramos carpeta estatitica a public
 app.use(express.static(path.join(__dirname, './public')));
 
 //inicializamos middleware para POST

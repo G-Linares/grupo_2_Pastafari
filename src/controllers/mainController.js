@@ -9,7 +9,7 @@ const menu = JSON.parse(fs.readFileSync(menuCompleto, "utf-8"));
 const reviewsFilePath = path.join(__dirname, "../data/reviews.json");
 const reviews = JSON.parse(fs.readFileSync(reviewsFilePath, "utf-8"));
 
-//jala el JSON de las reviews
+//jala el JSON de las platillos Del mes
 const platillosDelMesFilePath = path.join(__dirname,"../data/platillosDelMes.json");
 const platillosDelMes = JSON.parse(fs.readFileSync(platillosDelMesFilePath, "utf-8"));
 
