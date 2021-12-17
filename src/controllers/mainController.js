@@ -37,12 +37,13 @@ const mainController = {
     res.render("productosPorEditar", { productos: menu });
   },
   editando: (req, res) => {
-    const iden = parseInt(req.params.id);
-    if (iden > menu.length || iden < 0 || isNaN(iden)) {
+    const id = parseInt(req.params.id);
+    //mejor ocupo metodo find para encontrar el item que tenga el mismo ID
+    let productToEdit = menu.find(product => product.id == id);
+    if (!productToEdit) {
       res.render('error');
     } else {
-      //se mandan dos parametros por que en la vista utiliza el elemento y el objeto en total
-      res.render("editarProducto", { productos: menu, iden: iden });
+      res.render("editarProducto", { productToEdit });
     }
   },
   borrar : (req, res) => {   
@@ -89,7 +90,27 @@ const mainController = {
       // la neta no se por que se manda toThousand pero ahi esta
       res.render('product', {item : productsToSearch[0],search,toThousand,})
     }
-  }
+  },
+  update: (req, res) => {
+		let id = req.params.id;
+		let productToEdit = menu.find(product => product.id == id)
+
+		productToEdit = {
+			id: productToEdit.id,
+			...req.body,
+      image: productToEdit.image,
+		};
+		
+		let newProducts = menu.map(product => {
+			if (product.id == productToEdit.id) {
+				return product = {...productToEdit};
+			}
+			return product;
+		});
+
+		fs.writeFileSync(menuCompleto, JSON.stringify(newProducts, null, ' '));
+		res.redirect('/');
+	}
 };
 
 module.exports = mainController;
