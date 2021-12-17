@@ -42,5 +42,6 @@ mainRouters.delete('/delete/:id', mainController.borrar);
 
 //render a un articulo en especifico
 mainRouters.get('/editarProducto/:id', mainController.editando);
+mainRouters.put('/editarProducto/:id', mainController.update);
 
 module.exports = mainRouters;
