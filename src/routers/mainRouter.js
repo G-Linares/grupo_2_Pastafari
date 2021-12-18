@@ -13,6 +13,7 @@ let storage = multer.diskStorage({
     cb(null, `img_${file.originalname}`);
   },
 });
+
 let upload = multer({ storage: storage, fileFilter: (req, file, cb) => {
     if (!whitelist.includes(file.mimetype)) {
       console.log("---Ejecutó el if porque no es un archivo aceptado----");
@@ -44,11 +45,7 @@ mainRouters.post("/createAccount", upload.single(), mainController.loginNew);
 
 //render a todo el menu que se puede editar
 mainRouters.get("/editar", mainController.index);
-mainRouters.post(
-  "/editar",
-  /*evaluar,**/ upload.single("image"),
-  mainController.agregar
-);
+mainRouters.post("/editar", upload.single("image"), mainController.agregar);
 
 //se elimina un producto del JSON
 mainRouters.delete("/delete/:id", mainController.borrar);
