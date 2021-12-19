@@ -22,11 +22,6 @@ const productController = {
             res.render('product',{item : menu[id]}); 
         }       
     },
-
-    //lista el menu
-    index: (req,res) => {
-        res.render('menu',{menu});
-    },
     //renderiza el item description de un item que esta en platillos del Mes
     platilloDelMes: (req,res) =>{
         const id = parseInt(req.params.id);
@@ -34,7 +29,67 @@ const productController = {
             res.render('error');
         } else {
             res.render('product',{item : platillosDelMes[id - 1] }); 
-        }  
-    }
+        }
+    },
+    //renderiza el menu
+    menu: (req,res) => {
+        res.render('menu', { item: menu });
+    },
+    //renderiza vista para editar artículos
+    index: (req, res) => {
+        res.render("productosPorEditar", { productos: menu });
+      },
+    //procesa la edición de artículos
+    agregar: (req,res) => {
+        let newProduct = {
+            id: menu.length+1,
+            ...req.body,
+            image: req.file.filename
+          };
+          //soplo estan para ver que se han creado
+          console.log(newProduct);
+          menu.push(newProduct);
+      
+          fs.writeFileSync(menuCompleto, JSON.stringify(menu, null, ' '));
+          res.redirect('/producto/editar');
+        },
+    editandoProducto: (req,res) => {
+        const id = parseInt(req.params.id);
+        //mejor ocupo metodo find para encontrar el item que tenga el mismo ID
+        let productToEdit = menu.find(product => product.id == id);
+        if (!productToEdit) {
+          res.render('error');
+        } else {
+          res.render("editarProducto", { productToEdit });
+        }
+      },
+    actualizarProducto: (req,res) => {
+		let id = req.params.id;
+		let productToEdit = menu.find(product => product.id == id)
+
+		productToEdit = {
+			id: productToEdit.id,
+			...req.body,
+      image: productToEdit.image,
+		};
+		
+		let newProducts = menu.map(product => {
+			if (product.id == productToEdit.id) {
+				return product = {...productToEdit};
+			}
+			return product;
+		});
+
+		fs.writeFileSync(menuCompleto, JSON.stringify(newProducts, null, ' '));
+		res.redirect('/');
+	},
+    borrar : (req, res) => {   
+		let id = req.params.id;    
+		let finalProducts = menu.filter(menu => menu.id != id);
+		fs.writeFileSync(menuCompleto, JSON.stringify(finalProducts, null, ' '));
+    //no puedo mandar a /editar por que se tiene que dar refresh a la pagina para que se vean los cambios.
+		res.redirect('/');
+	}
+
 };
 module.exports = productController;

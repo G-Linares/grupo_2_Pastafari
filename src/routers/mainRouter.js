@@ -33,9 +33,6 @@ mainRouters.get("/", mainController.home);
 //search a algun platillo con el nombre exacto
 mainRouters.get("/search", mainController.search);
 
-//render a todo el menu
-mainRouters.get("/menu", mainController.menu);
-
 //render al carrito
 mainRouters.get("/carrito", mainController.carrito);
 
@@ -43,15 +40,7 @@ mainRouters.get("/carrito", mainController.carrito);
 mainRouters.get("/createAccount", mainController.login);
 mainRouters.post("/createAccount", upload.single(), mainController.loginNew);
 
-//render a todo el menu que se puede editar
-mainRouters.get("/editar", mainController.index);
-mainRouters.post("/editar", upload.single("image"), mainController.agregar);
 
-//se elimina un producto del JSON
-mainRouters.delete("/delete/:id", mainController.borrar);
 
-//render a un articulo en especifico
-mainRouters.get("/editarProducto/:id", mainController.editando);
-mainRouters.put("/editarProducto/:id", mainController.update);
 
 module.exports = mainRouters;

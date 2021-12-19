@@ -10,7 +10,7 @@
 
     <main>
         <section class="contenedor-form">
-            <form class="form-articulo" action="/editarProducto/<%= productToEdit.id %>?_method=PUT" method="POST">
+            <form class="form-articulo" action="/producto/editarProducto/<%= productToEdit.id %>?_method=PUT" method="POST">
                 <label for="item">Nombre del producto</label>
                 <input class="item" type="text" name="item" value="<%=productToEdit.item %>">
                 <label for="type">Tipo de pasta</label>
