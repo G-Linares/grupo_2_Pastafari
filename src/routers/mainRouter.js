@@ -41,7 +41,7 @@ mainRouters.get("/carrito", mainController.carrito);
 
 //render a login
 mainRouters.get("/createAccount", mainController.login);
-mainRouters.post("/createAccount", upload.single(), mainController.loginNew);
+mainRouters.post("/createAccount", /*upload.single(),*/ mainController.loginNew);
 
 //render a todo el menu que se puede editar
 mainRouters.get("/editar", mainController.index);
