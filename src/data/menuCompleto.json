@@ -192,18 +192,6 @@
   "price": 28.1
  },
  {
-  "id": 16,
-  "item": "Rigatoni Bolognesa",
-  "type": "rigatoni",
-  "dish": "bolognesa",
-  "description": "Maravillosa rigatoni con salsa bolognesa al estilo tradicional.",
-  "image": "rigatoniBolognesa.jpg",
-  "score": 2,
-  "discount": 0,
-  "boughts": 97,
-  "price": 12.48
- },
- {
   "id": 17,
   "item": "Spaguetti Bolognesa",
   "type": "spaguetti",
@@ -240,18 +228,6 @@
   "price": 99.68
  },
  {
-  "id": 20,
-  "item": "Fusilli Carbonara",
-  "type": "fusilli",
-  "dish": "carbonara",
-  "description": "Exquisita pasta fusilli carbonara con trozos de jamón y espolvoreada con pimienta negra y parmesano.",
-  "image": "fusilliCarbonara.jpg",
-  "score": 3,
-  "discount": 0,
-  "boughts": 97,
-  "price": 86.75
- },
- {
   "id": 21,
   "item": "Rigatoni Carbonara",
   "type": "rigatoni",
@@ -262,17 +238,5 @@
   "discount": 0,
   "boughts": 97,
   "price": 11.2
- },
- {
-  "id": 22,
-  "item": "Spaguetti Carbonara",
-  "type": "spaguetti",
-  "dish": "carbonara",
-  "description": "Exquisita pasta spaguetti carbonara con trozos de jamón y espolvoreada con pimienta negra y parmesano.",
-  "image": "spaguettiCarbonara.jpg",
-  "score": 1,
-  "discount": 0,
-  "boughts": 97,
-  "price": 10.67
  }
 ]
