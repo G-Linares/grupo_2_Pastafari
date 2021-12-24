@@ -20,7 +20,7 @@
     <div class="content">
         <h3>Pasta italiana<br/><span class="typed"> </span></h3>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus, maxime? Lorem, ipsum dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, expedita?</p>
-        <a href="menu" class="btn">Accede Al Menu</a>
+        <a href="/producto/menu" class="btn">Accede Al Menu</a>
     </div>
 </section>
 
@@ -77,7 +77,7 @@
     <div class="box-container">
         <% for(let platillo of platillosDelMes){ %>
         <div class="box">
-            <img src="img/products/<%= platillo.image %>" alt="">
+            <img src="/img/products/<%= platillo.image %>" alt="">
             <h3><%= platillo.item%></h3>
             <h4><%= platillo.type%></h4>
             <div class="price">$<%= platillo.price%>

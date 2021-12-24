@@ -16,7 +16,7 @@
         <div class = "product-imgs">
           <div class = "img-display">
             <div class = "img-showcase">
-              <img src = "../img/products/<%= item.image%>" alt = "main-picture">
+              <img src = "/img/products/<%= item.image%>" alt = "main-picture">
             </div>
           </div>
           </div>
@@ -39,7 +39,7 @@
             <% if (item.discount != 0){ %>
               <p class = "last-price">Precio Original: <span><%= item.discount %></span></p>
             <% } %>
-            <p class = "new-price">Precio Final: <span><%= item.price%></span></p>
+            <p class = "new-price">Precio Final: $<span><%= item.price%></span></p>
           </div>
 
           <div class = "product-detail">

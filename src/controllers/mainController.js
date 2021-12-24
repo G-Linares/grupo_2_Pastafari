@@ -24,50 +24,12 @@ const mainController = {
   home: (req, res) => {
     res.render("home", { platillosDelMes, reviews });
   },
-  menu: (req, res) => {
-    res.render("menu", { item: menu });
-  },
   carrito: (req, res) => {
     res.render("carrito", { item: menu });
   },
   login: (req, res) => {
     res.render("createAccount");
   },
-  index: (req, res) => {
-    res.render("productosPorEditar", { productos: menu });
-  },
-  editando: (req, res) => {
-    const id = parseInt(req.params.id);
-    //mejor ocupo metodo find para encontrar el item que tenga el mismo ID
-    let productToEdit = menu.find(product => product.id == id);
-    if (!productToEdit) {
-      res.render('error');
-    } else {
-      res.render("editarProducto", { productToEdit });
-    }
-  },
-  borrar : (req, res) => {   
-		let id = req.params.id;    
-		let finalProducts = menu.filter(menu => menu.id != id);
-		fs.writeFileSync(menuCompleto, JSON.stringify(finalProducts, null, ' '));
-    //no puedo mandar a /editar por que se tiene que dar refresh a la pagina para que se vean los cambios.
-		res.redirect('/');
-	},
-  
-  agregar: (req,res) => {
-    let newProduct = {
-      id: menu.length+1,
-      ...req.body,
-      image: req.file.filename
-    };
-    //soplo estan para ver que se han creado
-    console.log(newProduct);
-    menu.push(newProduct);
-
-    fs.writeFileSync(menuCompleto, JSON.stringify(menu, null, ' '));
-    res.redirect('/editar');
-  },
-
   loginNew: (req,res) => {
         // ingresa un nuevo usuario al JSON de usuarios   
         let newUser = {
@@ -90,27 +52,7 @@ const mainController = {
       // la neta no se por que se manda toThousand pero ahi esta
       res.render('product', {item : productsToSearch[0],search,toThousand,})
     }
-  },
-  update: (req, res) => {
-		let id = req.params.id;
-		let productToEdit = menu.find(product => product.id == id)
-
-		productToEdit = {
-			id: productToEdit.id,
-			...req.body,
-      image: productToEdit.image,
-		};
-		
-		let newProducts = menu.map(product => {
-			if (product.id == productToEdit.id) {
-				return product = {...productToEdit};
-			}
-			return product;
-		});
-
-		fs.writeFileSync(menuCompleto, JSON.stringify(newProducts, null, ' '));
-		res.redirect('/');
-	}
+  }
 };
 
 module.exports = mainController;
