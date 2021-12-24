@@ -5,6 +5,7 @@
   "username": "reflectionaffected",
   "password": "glandstitle123",
   "fechaNacimiento": 1996,
+  "category": "admin",
   "img": "pic-1.png"
  },
  {
@@ -13,6 +14,7 @@
   "username": "publiclyobeisant",
   "password": "glandstitle123",
   "fechaNacimiento": 1996,
+  "category": "common",
   "img": "pic-1.png"
  },
  {
@@ -21,6 +23,7 @@
   "username": "obsesseddolls",
   "password": "glandstitle123",
   "fechaNacimiento": 1996,
+  "category": "admin",
   "img": "pic-1.png"
  },
  {
@@ -29,6 +32,7 @@
   "username": "bluelesson",
   "password": "glandstitle123",
   "fechaNacimiento": 1996,
+  "category": "admin",
   "img": "pic-1.png"
  },
  {
@@ -37,6 +41,7 @@
   "username": "unstableemit",
   "password": "glandstitle123",
   "fechaNacimiento": 1996,
+  "category": "common",
   "img": "pic-1.png"
  },
  {
@@ -45,6 +50,7 @@
   "username": "iceclever",
   "password": "glandstitle123",
   "fechaNacimiento": 1996,
+  "category": "common",
   "img": "pic-1.png"
  },
  {
@@ -53,6 +59,7 @@
   "username": "feastlumbar",
   "password": "glandstitle123",
   "fechaNacimiento": 1996,
+  "category": "admin",
   "img": "pic-1.png"
  },
  {
@@ -61,6 +68,7 @@
   "username": "bedclothesking",
   "password": "glandstitle123",
   "fechaNacimiento": 1996,
+  "category": "admin",
   "img": "pic-1.png"
  },
  {
@@ -69,6 +77,7 @@
   "username": "childhoodchipped",
   "password": "glandstitle123",
   "fechaNacimiento": 1996,
+  "category": "admin",
   "img": "pic-1.png"
  },
  {
@@ -77,6 +86,7 @@
   "username": "famouschow",
   "password": "glandstitle123",
   "fechaNacimiento": 1996,
+  "category": "common",
   "img": "pic-1.png"
  },
  {
@@ -85,6 +95,7 @@
   "username": "stressedrank",
   "password": "glandstitle123",
   "fechaNacimiento": 1996,
+  "category": "admin",
   "img": "pic-1.png"
  },
  {
@@ -93,6 +104,7 @@
   "username": "spritemoth",
   "password": "glandstitle123",
   "fechaNacimiento": 1996,
+  "category": "common",
   "img": "pic-1.png"
  },
  {
@@ -101,6 +113,7 @@
   "username": "meanlethal",
   "password": "bastetawdry",
   "fechaNacimiento": 1996,
+  "category": "common",
   "img": "pic-1.png"
  },
  {
@@ -109,6 +122,7 @@
   "username": "beefassign",
   "password": "beefassign",
   "fechaNacimiento": 1996,
+  "category": "common",
   "img": "pic-1.png"
  },
  {
@@ -117,6 +131,7 @@
   "username": "sushiwitch",
   "password": "devotedhandball",
   "fechaNacimiento": 1996,
+  "category": "admin",
   "img": "pic-1.png"
  }
 ]
