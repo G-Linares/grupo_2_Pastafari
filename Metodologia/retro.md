@@ -34,3 +34,34 @@ A continuación, se proponen acciones como hipótesis de solución a estos requi
 Final de la retrospectiva:
 
 Se repasan los objetivos propuestos para mejorar en el siguiente Sprint.
+
+
+# Inicio de la retrospectiva, sprint 4:
+
+Se lee el backlog de retrospectivas del sprint 3, y los acuerdos que se ejecutaron o quedaron pendientes.
+
+# Oportunidades de Mejora y Planes de acción:
+
+En este sprint 4 se llega a la siguiente conclusion:
+
+    Que problemas enfrentamos:
+        - Disminución de equipo de trabajo.
+        - Retraso en el playground por parte de un compañero.
+
+        Para solucionar esto se acordo ponerse al corriente con Playground y clases previas.
+
+    Que hicimos bien:
+        - Comunicación constante en todo el equipo.
+        - Repartición de tareas.
+        - Buscar sulociones fuera del Playground.
+        
+        Para mejorar estos puntos se acordo en seguir repasando contenido visto, en específico las rutas del Front-End.
+
+    Acciones de Mejora:
+        - Estar al corriente con el Playground.
+        - Mejorar tiempos de entrega por requerimento.
+
+
+Final de la retrospectiva:
+
+Se repasan los objetivos propuestos para mejorar en el Sprint 5.
