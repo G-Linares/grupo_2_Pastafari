@@ -35,7 +35,7 @@
       <div class="popup">
         <div class="popup-close" onclick="closeLoginForm()">×</div>
         
-        <div class="form">
+        <form class="form" action="/usersaccount" method="POST" enctype="multipart/form-data">
           <div class="avatar">
             <img src="img/pic-1.png" alt="">
           </div>
@@ -49,12 +49,12 @@
             <input type="password" id="password">
           </div>
           <div class="element">
-            <button>Login</button>
+            <button type="submit">Login</button>
           </div>
           <div class="no-accout-link">
             <a href="/createAccount">No tienes cuenta, da click aqui</a>
           </div> 
-       </div>
+       </form>
       </div>
 
       <div class="search-form">

@@ -52,6 +52,10 @@ const mainController = {
       // la neta no se por que se manda toThousand pero ahi esta
       res.render('product', {item : productsToSearch[0],search,toThousand,})
     }
+  },
+  usersAccount: (req,res) => {
+    
+    res.send("funciona");
   }
 };
 
