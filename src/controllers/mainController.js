@@ -62,9 +62,6 @@ const mainController = {
   loginExisting: (req, res) => {    
     let requestedUser = req.body.username;
     let requestedPassword = req.body.password;
-    console.log(requestedUser);
-    console.log(requestedPassword)
-
     let resultUser = users.find(function(element){
       if(element.username == requestedUser && element.password == requestedPassword){
         return true
