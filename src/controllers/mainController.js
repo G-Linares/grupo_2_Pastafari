@@ -1,3 +1,4 @@
+const req = require("express/lib/request");
 const fs = require("fs");
 const path = require("path");
 
@@ -14,8 +15,13 @@ const reviewsFilePath = path.join(__dirname, "../data/reviews.json");
 const reviews = JSON.parse(fs.readFileSync(reviewsFilePath, "utf-8"));
 
 //jala el JSON de las platillos Del mes
-const platillosDelMesFilePath = path.join(__dirname,"../data/platillosDelMes.json");
-const platillosDelMes = JSON.parse(fs.readFileSync(platillosDelMesFilePath, "utf-8"));
+const platillosDelMesFilePath = path.join(
+  __dirname,
+  "../data/platillosDelMes.json"
+);
+const platillosDelMes = JSON.parse(
+  fs.readFileSync(platillosDelMesFilePath, "utf-8")
+);
 
 //jala el JSON de usuarios
 const usersPath = path.join(__dirname, "../data/users.json");
@@ -49,18 +55,36 @@ const mainController = {
           fs.writeFileSync(usersPath, JSON.stringify(users, null, ' '));
           res.redirect('/');
   },
-  search : (req, res) => {
+  search: (req, res) => {
     let search = req.query.keywords;
     // recibe un string en la barra de busqueda y hace un filter para encontrar que objeto tiene ese mismo nombre
-    let productsToSearch = menu.filter(menu => menu.item == search);	
+    let productsToSearch = menu.filter((menu) => menu.item == search);
     //si hay un match manda la info de ese objeto
-    if (productsToSearch == ""){
-        res.render('error');
-    } else{
+    if (productsToSearch == "") {
+      res.render("error");
+    } else {
       // la neta no se por que se manda toThousand pero ahi esta
-      res.render('product', {item : productsToSearch[0],search,toThousand,})
+      res.render("product", { item: productsToSearch[0], search, toThousand });
     }
-  }
+  },
+  loginExisting: (req, res) => {    
+    let requestedUser = req.body.username;
+    let requestedPassword = req.body.password;
+    let resultUser = users.find(function(element){
+      if(element.username == requestedUser && element.password == requestedPassword){
+        return true
+      }
+    });
+
+    if (resultUser) {
+      res.redirect("/");
+    } else {
+      res.send("Usuario o contraseña invalida");
+    }
+  },
+  dashboard: (req, res) => {
+    res.send("estas dentro");
+  },
 };
 
 module.exports = mainController;

@@ -39,6 +39,9 @@ mainRouters.get("/carrito", mainController.carrito);
 mainRouters.get("/createAccount", mainController.sign_up);
 mainRouters.post("/createAccount", userupload.single("img"), mainController.new_sign_up);
 
+mainRouters.post("/loginExisting",mainController.loginExisting);
+mainRouters.get("/dashboard",mainController.dashboard);
+
 
 
 
