@@ -1,6 +1,10 @@
 const fs = require("fs");
 const path = require("path");
 
+//requiere bscryptjs to hash password
+const bcrypt = require("bcryptjs");
+
+
 // jala el JSON de menu Completo
 const menuCompleto = path.join(__dirname, "../data/menuCompleto.json");
 const menu = JSON.parse(fs.readFileSync(menuCompleto, "utf-8"));
@@ -27,15 +31,19 @@ const mainController = {
   carrito: (req, res) => {
     res.render("carrito", { item: menu });
   },
-  login: (req, res) => {
+  sign_up: (req, res) => {
     res.render("createAccount");
   },
-  loginNew: (req,res) => {
-        // ingresa un nuevo usuario al JSON de usuarios   
+  new_sign_up: (req,res) => {
+        // ingresa un nuevo usuario al JSON de usuarios  
+        console.log(req.body);
+        let incomPass = req.body.password;
+        let hashedPass= bcrypt.hashSync(incomPass, 10);
         let newUser = {
             id: users.length+1,
             ...req.body,
-            img:"No-tenemos-profile-pics.png"
+            password: hashedPass,
+            img: req.body.username + req.file.filename,
           };
           users.push(newUser);
           fs.writeFileSync(usersPath, JSON.stringify(users, null, ' '));
