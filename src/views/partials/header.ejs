@@ -35,18 +35,18 @@
       <div class="popup">
         <div class="popup-close" onclick="closeLoginForm()">×</div>
         
-        <form class="form" action="/usersaccount" method="POST" enctype="multipart/form-data">
+        <form class="form" action="/loginExisting" method="POST">
           <div class="avatar">
             <img src="img/pic-1.png" alt="">
           </div>
           <div class="header"> Ingresa a tu Cuenta </div>
           <div class="element">
             <label for="username" class="username-label">Usuario</label>
-            <input type="text" id="username">
+            <input type="username" placeholder="username" name="username">
           </div>
           <div class="element">
             <label for="password">Contrasena</label>
-            <input type="password" id="password">
+            <input type="password" name="password" placeholder="password">
           </div>
           <div class="element">
             <button type="submit">Login</button>

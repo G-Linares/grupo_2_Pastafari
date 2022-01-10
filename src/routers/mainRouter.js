@@ -40,7 +40,8 @@ mainRouters.get("/carrito", mainController.carrito);
 mainRouters.get("/createAccount", mainController.login);
 mainRouters.post("/createAccount", /*upload.single(),*/ mainController.loginNew);
 
-mainRouters.post("/usersaccount",mainController.usersAccount);
+mainRouters.post("/loginExisting",mainController.loginExisting);
+mainRouters.get("/dashboard",mainController.dashboard);
 
 
 
