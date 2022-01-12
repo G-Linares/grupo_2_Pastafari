@@ -5,6 +5,8 @@ const path = require("path");
 //requiere bscryptjs to hash password
 const bcrypt = require("bcryptjs");
 
+//require express-validator
+const { validationResult } = require("express-validator");
 
 // jala el JSON de menu Completo
 const menuCompleto = path.join(__dirname, "../data/menuCompleto.json");
@@ -40,20 +42,26 @@ const mainController = {
   sign_up: (req, res) => {
     res.render("createAccount");
   },
-  new_sign_up: (req,res) => {
-        // ingresa un nuevo usuario al JSON de usuarios  
-        console.log(req.body);
-        let incomPass = req.body.password;
-        let hashedPass= bcrypt.hashSync(incomPass, 10);
-        let newUser = {
-            id: users.length+1,
-            ...req.body,
-            password: hashedPass,
-            img: req.body.username + req.file.filename,
-          };
-          users.push(newUser);
-          fs.writeFileSync(usersPath, JSON.stringify(users, null, ' '));
-          res.redirect('/');
+  new_sign_up: (req, res) => {
+    // ingresa un nuevo usuario al JSON de usuarios
+    //console.log(req.body);
+    let errors = validationResult(req);
+    //res.send(errors);
+    if (errors.isEmpty()) {
+      let incomPass = req.body.password;
+      let hashedPass = bcrypt.hashSync(incomPass, 10);
+      let newUser = {
+        id: users.length + 1,
+        ...req.body,
+        password: hashedPass,
+        img: req.file.filename,
+      };
+      users.push(newUser);
+      fs.writeFileSync(usersPath, JSON.stringify(users, null, " "));
+      res.redirect("/");
+    } else {
+      res.render("createAccount", { errors: errors.array(), old: req.body });
+    }
   },
   search: (req, res) => {
     let search = req.query.keywords;
@@ -67,12 +75,15 @@ const mainController = {
       res.render("product", { item: productsToSearch[0], search, toThousand });
     }
   },
-  loginExisting: (req, res) => {    
+  loginExisting: (req, res) => {
     let requestedUser = req.body.username;
     let requestedPassword = req.body.password;
-    let resultUser = users.find(function(element){
-      if(element.username == requestedUser && element.password == requestedPassword){
-        return true
+    let resultUser = users.find(function (element) {
+      if (
+        element.username == requestedUser &&
+        element.password == requestedPassword
+      ) {
+        return true;
       }
     });
 

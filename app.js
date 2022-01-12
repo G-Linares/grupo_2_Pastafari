@@ -32,6 +32,15 @@ app.use('/producto', productRouters);
 app.use((req, res, next) => next(createError(404)));
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
+  res.locals.path = req.path;
+  
+  if (err.message == 'Tipo de imagen invalida, necesitas PNG, JPEG o JPG') {
+    res.render('createAccount', {msg: err.message, old: req.body})
+    //console.log(res.locals.path + 'Esto es lo que dice el path');
+  } else if (err.message == 'File too large') {
+    res.render('createAccount', {msg: 'Archivo demasiado grande', old: req.body})
+  }
+
   res.locals.message = err.message;
   res.locals.path = req.path;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

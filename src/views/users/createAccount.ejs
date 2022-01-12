@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <%- include('../partials/head') %>
-    <!--<link rel="stylesheet" href="./css/styleregistro.css" />-->
     <title>Login Form</title>
   </head>
   <body class="register">
@@ -20,13 +19,24 @@
           <p>Por favor llena estos datos para acceder</p>
           <p>Este registro no distingue entre mayusculas o minusculas</p>
 
+          <% if (locals.errors) { %> 
+            <% errors.forEach(error => { %>
+            <p style="color:red;"><%= error.msg %></p>
+            <% }) %> 
+          <% } %> 
+          
+          <% if (locals.msg) { %> 
+            <p style="color:red;"><%= msg %></p>
+          <% } %>
+
           <label for="name">Nombre(s)</label>
           <input
             type="text"
             name="name"
             id="name"
             placeholder="Ingresa tu nombre"
-            oninput= "this.value = this.value.toUpperCase()"
+            oninput="this.value = this.value.toUpperCase()"
+            value="<%= locals.old && old.name ? old.name : '' %>"
             required
           />
           <label for="lastname">Apellidos</label>
@@ -35,7 +45,8 @@
             name="lastname"
             id="lastname"
             placeholder="Ingresa tus apellidos"
-            oninput= "this.value = this.value.toUpperCase()"
+            oninput="this.value = this.value.toUpperCase()"
+            value="<%= locals.old && old.lastname ? old.lastname : '' %>"
             required
           />
           <label for="username">Nombre de Usuario</label>
@@ -44,7 +55,8 @@
             name="username"
             id="username"
             placeholder="Ingresa Nombre de Usuario"
-            oninput= "this.value = this.value.toUpperCase()"
+            oninput="this.value = this.value.toUpperCase()"
+            value="<%= locals.old && old.username? old.username : '' %>"
             required
           />
           <label for="email">E-mail</label>
@@ -53,7 +65,8 @@
             name="email"
             id="email"
             placeholder="Ingresa tu email"
-            oninput= "this.value = this.value.toUpperCase()"
+            oninput="this.value = this.value.toUpperCase()"
+            value="<%= locals.old && old.email ? old.email : '' %> "
             required
           />
 
@@ -63,18 +76,16 @@
             placeholder="Ingresa la Contraseña"
             name="password"
             id="password"
-            oninput= "this.value = this.value.toUpperCase()"
+            oninput="this.value = this.value.toUpperCase()"
             required
           />
-          <label for="cofpassword"
-            >Confirmación de Contraseña 
-          </label>
+          <label for="cofpassword">Confirmación de Contraseña </label>
           <!--Esto debe cambiarse para que ayude al usuario a no errar al establecer contraseña-->
-          <input 
+          <input
             type="password"
             placeholder="Confirma tu contraseña"
             id="cofpassword"
-            oninput= "this.value = this.value.toUpperCase()"
+            oninput="this.value = this.value.toUpperCase()"
             required
           />
           <label for="img">Imagen de usuario</label>
