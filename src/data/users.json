@@ -133,5 +133,23 @@
   "fechaNacimiento": 1996,
   "category": "admin",
   "img": "pic-1.png"
+ },
+ {
+  "id": 16,
+  "name": "TEST",
+  "lastname": "TEST",
+  "username": "TEST",
+  "email": "TEST@GMAIL.COM",
+  "password": "$2a$10$9x5nf81.Xlq6OvLvEpu1BuWsvqQYCfEGr/DwhqeJTXJFmvI0K0F/W",
+  "img": "TEST_img_cranelogo.png"
+ },
+ {
+  "id": 17,
+  "name": "GERARDO",
+  "lastname": "LINARES",
+  "username": "USERNAME",
+  "email": "USERNAME@GMAIL.COM",
+  "password": "$2a$10$Fqt4h5wu5Wy3k3KUaKMdZO6H.efSpyWX//0npbu6RpwBSRrZjbly2",
+  "img": "USERNAME_img_cranelogo-removebg-preview.png"
  }
 ]

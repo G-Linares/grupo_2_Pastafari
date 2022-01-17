@@ -1,4 +1,3 @@
-const req = require("express/lib/request");
 const fs = require("fs");
 const path = require("path");
 
@@ -41,10 +40,8 @@ const mainController = {
     res.render("createAccount");
   },
   new_sign_up: (req,res) => {
-        // ingresa un nuevo usuario al JSON de usuarios  
-        console.log(req.body);
-        let incomPass = req.body.password;
-        let hashedPass= bcrypt.hashSync(incomPass, 10);
+        // ingresa un nuevo usuario al JSON de usuarios
+        let hashedPass = bcrypt.hashSync(req.body.password, 10);
         let newUser = {
             id: users.length+1,
             ...req.body,
@@ -68,18 +65,17 @@ const mainController = {
     }
   },
   loginExisting: (req, res) => {    
-    let requestedUser = req.body.username;
-    let requestedPassword = req.body.password;
-    let resultUser = users.find(function(element){
-      if(element.username == requestedUser && element.password == requestedPassword){
-        return true
-      }
-    });
-
-    if (resultUser) {
-      res.redirect("/");
+    const user = users.find( user => user.username == req.body.username);
+    if(user){
+      bcrypt.compare(req.body.password,user.password).then((result)=>{
+        if(result){
+          console.log("Contrasena correcta")
+        } else {
+          console.log("Contrasena no hace match")
+        }
+      }).catch((err)=>console.error(err))
     } else {
-      res.send("Usuario o contraseña invalida");
+      res.render('home', {errormessage: 'No hay usuario', platillosDelMes, reviews });
     }
   },
   dashboard: (req, res) => {
