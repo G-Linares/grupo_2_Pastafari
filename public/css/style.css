@@ -935,3 +935,8 @@ select:focus {
       transform: opacity linear;
     }
   }
+
+.invisible {
+  display: none;
+  visibility: hidden;
+}

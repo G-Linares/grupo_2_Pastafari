@@ -1,4 +1,3 @@
-const req = require("express/lib/request");
 const fs = require("fs");
 const path = require("path");
 
@@ -73,6 +72,21 @@ const mainController = {
     } else {
       // la neta no se por que se manda toThousand pero ahi esta
       res.render("product", { item: productsToSearch[0], search, toThousand });
+    }
+  },
+  loginExisting: (req, res) => {    
+    const user = users.find( user => user.username == req.body.username);
+
+    if(user){
+      bcrypt.compare(req.body.password,user.password).then((result)=>{
+        if(result){
+          res.redirect('/producto/menu')
+        } else {
+          console.log("Contrasena no hace match")
+        }
+      }).catch((err)=>console.error(err))
+    } else {
+      res.render('home', {errormessage: 'No hay usuario', platillosDelMes, reviews });
     }
   },
   dashboard: (req, res) => {
