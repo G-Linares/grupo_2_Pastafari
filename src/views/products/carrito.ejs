@@ -19,7 +19,7 @@
                         <img class="fotos" src="/img/products/<%=platillo.image%>" alt="imagen">
                         <div class="detalles-producto">
                             <h3 class="producto-nombre"><%= platillo.item %></h3>
-                            <h4 class="producto-precio"><%= platillo.price %></h4>
+                            <h4 class="producto-precio">$ <%= platillo.price %></h4>
                             <div>
                                 Cantidad:
                                 <input class="cart-quantity-input" type="number" value="1" min="0">
@@ -38,11 +38,10 @@
 
             <div class="total-carrito">
                 <p>
-                    <span>Total Compras</span>
-                    <span>$ 100.00</span>
+                    Total Compras $ 100.00
                 </p>
                 <p>
-                    <span>Items en carrito</span>
+                    Items en carrito
                     <span>2</span>
                 </p>
                 <a href="#">Proceder a la compra</a>

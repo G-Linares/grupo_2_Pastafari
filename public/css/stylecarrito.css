@@ -58,7 +58,8 @@ h2.centered-white {
   border-radius: 5px;
   margin-bottom: 20px;
   background-color:honeydew;
-  box-shadow: 0px 0px 10px rgb(100, 100, 100)
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  font-size: 300%;
 }
 
 .producto:hover {
@@ -120,17 +121,18 @@ div > .cart-quantity-input {
     background-color: honeydew;
     position: sticky;
     top: 15rem;
+    font-size: 200%;
 }
 
 .total-carrito p {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
-  font-size: 20px;
+  /*font-size: 20px;*/
 }
 
 .total-carrito a {
-  display: block;
+  display: flex;
   text-align: center;
   height: 40px;
   line-height: 40px;
@@ -138,25 +140,45 @@ div > .cart-quantity-input {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  border-radius: 5px;
+  justify-content: center;
 }
 
 .total-carrito a:hover {
   background-color: red;
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 590px) {
   .fotos {
     width: auto;
   }  
-}
+  .productos > .producto {
+    font-size: 200%;
+    min-width: 390px;
+  }
 
-@media screen and (max-width: 515px) {
-  .eliminar {
-    display: none;
+  .total-carrito {
+    margin-left: 0px;
+    margin-bottom: 20px;
+    margin-top: 1rem;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 825px) {
+  .eliminar {
+    display: none;
+  }
+  /* .productos > .producto {
+    font-size: 300%;
+  } */
+  .contenedor-principal {
+    flex-direction: column;
+  }  
+  
+}
+
+@media screen and (max-width: 1220px) {
   .producto {
     height: 150px;
   }
@@ -171,15 +193,11 @@ div > .cart-quantity-input {
     margin-bottom: 2.5px;
   }
 
-  .total-carrito {
-    margin-left: 0px;
-    margin-bottom: 20px;
-    margin-top: 1rem;
-    width: 100%;
-  }
+  .productos > .producto {
+    font-size: 220%;
 
-  .contenedor-principal {
-    flex-direction: column;
-  }
+  
 }
+}
+
 
