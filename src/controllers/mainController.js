@@ -75,9 +75,6 @@ const mainController = {
       res.render("product", { item: productsToSearch[0], search, toThousand });
     }
   },
-  loginExisting: (req, res) => {
-    
-  },
   dashboard: (req, res) => {
     res.send("estas dentro");
   },
