@@ -76,22 +76,7 @@ const mainController = {
     }
   },
   loginExisting: (req, res) => {
-    let requestedUser = req.body.username;
-    let requestedPassword = req.body.password;
-    let resultUser = users.find(function (element) {
-      if (
-        element.username == requestedUser &&
-        element.password == requestedPassword
-      ) {
-        return true;
-      }
-    });
-
-    if (resultUser) {
-      res.redirect("/");
-    } else {
-      res.send("Usuario o contraseña invalida");
-    }
+    
   },
   dashboard: (req, res) => {
     res.send("estas dentro");
