@@ -39,10 +39,6 @@ const mainController = {
   sign_up: (req, res) => {
     res.render("createAccount");
   },
-  new_sign_up: (req,res) => {
-        // ingresa un nuevo usuario al JSON de usuarios
-       
-  },
   search: (req, res) => {
     let search = req.query.keywords;
     // recibe un string en la barra de busqueda y hace un filter para encontrar que objeto tiene ese mismo nombre
