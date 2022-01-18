@@ -42,6 +42,7 @@ const mainController = {
   new_sign_up: (req,res) => {
         // ingresa un nuevo usuario al JSON de usuarios
         let hashedPass = bcrypt.hashSync(req.body.password, 10);
+
         let newUser = {
             id: users.length+1,
             ...req.body,
@@ -66,10 +67,11 @@ const mainController = {
   },
   loginExisting: (req, res) => {    
     const user = users.find( user => user.username == req.body.username);
+
     if(user){
       bcrypt.compare(req.body.password,user.password).then((result)=>{
         if(result){
-          console.log("Contrasena correcta")
+          res.redirect('/producto/menu')
         } else {
           console.log("Contrasena no hace match")
         }

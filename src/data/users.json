@@ -133,5 +133,14 @@
   "fechaNacimiento": 1996,
   "category": "admin",
   "img": "pic-1.png"
+ },
+ {
+  "id": 16,
+  "name": "TEST",
+  "lastname": "TEST",
+  "username": "TEST",
+  "email": "TEST@GMAIL.COM",
+  "password": "$2a$10$FmBo3Gb0c0LUi4WoxE2dduRvM38/uIPhqV.6NL.IHtq0vF1oNoKhe",
+  "img": "TEST_img_cranelogo.png"
  }
 ]
