@@ -41,17 +41,7 @@ const mainController = {
   },
   new_sign_up: (req,res) => {
         // ingresa un nuevo usuario al JSON de usuarios
-        let hashedPass = bcrypt.hashSync(req.body.password, 10);
-
-        let newUser = {
-            id: users.length+1,
-            ...req.body,
-            password: hashedPass,
-            img: req.body.username + req.file.filename,
-          };
-          users.push(newUser);
-          fs.writeFileSync(usersPath, JSON.stringify(users, null, ' '));
-          res.redirect('/');
+       
   },
   search: (req, res) => {
     let search = req.query.keywords;
