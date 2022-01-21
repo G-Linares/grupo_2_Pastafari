@@ -326,6 +326,11 @@ body.showLoginForm .popup {
   border: gray 2px solid;
 }
 
+.developerDescription {
+  color: white;
+  font-size: large;
+}
+
 .popup .popup-close {
   position: absolute;
   top: -15px;
@@ -533,7 +538,6 @@ body.showLoginForm .popup {
 .carousel .carousel__actions button#carousel__button--next {
   margin-right: 20px;
 }
-
 
 .menu .box-container {
   display: grid;
@@ -775,6 +779,18 @@ select:focus {
   outline: none;
 }
 
+.largerMain {
+  margin-bottom: 25vh;
+}
+
+.largerMain h3 {
+  margin-top: 20px;
+}
+
+.largerMain .menu .box-container .box img {
+  height: 21rem;
+}
+
 .main-container-registro {
   display: flex;
   flex-direction: row;
@@ -928,14 +944,14 @@ select:focus {
 }
 
 @keyframes fadeVisibility {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-      transform: opacity linear;
-    }
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 1;
+    transform: opacity linear;
+  }
+}
 
 .invisible {
   display: none;

@@ -35,6 +35,9 @@ const mainController = {
   home: (req, res) => {
     res.render("home", { platillosDelMes, reviews });
   },
+  aboutUs: (req, res) => {
+    res.render("aboutUs");
+  },
   carrito: (req, res) => {
     res.render("carrito", { item: menu });
   },

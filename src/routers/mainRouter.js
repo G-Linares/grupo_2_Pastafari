@@ -10,7 +10,10 @@ const mainRouters = express.Router();
 // render to home
 mainRouters.get("/", mainController.home);
 
-//this search is still unfinished
+//render to aboutUs page
+mainRouters.get('/aboutUs', mainController.aboutUs);
+
+//search products
 mainRouters.get("/search", mainController.search);
 
 //render to cart
