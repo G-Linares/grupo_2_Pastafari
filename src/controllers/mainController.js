@@ -63,15 +63,14 @@ const mainController = {
     }
   },
   search: (req, res) => {
-    let search = req.query.keywords;
+    let search = req.query.keywords.toLowerCase();
     // recibe un string en la barra de busqueda y hace un filter para encontrar que objeto tiene ese mismo nombre
-    let productsToSearch = menu.filter((menu) => menu.item == search);
+    let productsToSearch = menu.filter(menu => menu.item.toLowerCase().includes(search));
     //si hay un match manda la info de ese objeto
-    if (productsToSearch == "") {
-      res.render("error");
+    if (productsToSearch == []) {
+      res.render("error", {msg: 'ERROR, NO HAY PLATILLOS EN LOS DATOS'});
     } else {
-      // la neta no se por que se manda toThousand pero ahi esta
-      res.render("product", { item: productsToSearch[0], search, toThousand });
+      res.render("results", { item: productsToSearch, search });
     }
   },
   loginExisting: (req, res) => {    

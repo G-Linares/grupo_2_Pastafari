@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('../partials/head') %>
+
+    <title>Menu</title>
+  </head>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <section>
+    </section>
+    <main>
+      <section class="menu" id="menu">
+        <h1 class="heading">Resultados de la búsqueda: <%=search%></h1>
+
+        <% if (item.length == 0) {%>
+            <h2><%= 'No hay elementos que coincidan con la búsqueda' %></h2>  
+            <% } %> 
+
+        <div class="box-container">
+          <% for(let platillo of item){ %>
+          <div class="box">
+            <img src="/img/products/<%= platillo.image %>" alt="" />
+            <h3><%= platillo.item%></h3>
+            <!--<h4><%= platillo.type%></h4>-->
+            <div class="price">
+              $<%= platillo.price%> <% if(platillo.discount != ''){ %>
+              <span><%= platillo.discount %></span>
+              <% }%>
+            </div>
+            <a href="#" class="btn">agregar carrito</a>
+            <a href="/producto/menu/<%= platillo.id%>" class="btn">detalles</a>
+          </div>
+          <% } %>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+  <script src="../../js/home.js"></script>
+</html>
