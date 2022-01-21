@@ -416,7 +416,7 @@ body.showLoginForm .popup {
 }
 
 .home {
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   background: url(../img/backgTest.jpg) no-repeat;
