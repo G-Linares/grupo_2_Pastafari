@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const methodOverride =  require('method-override');
+const session = require('express-session');
 
 const port = process.env.PORT || 3000;
 
@@ -10,6 +11,13 @@ const productRouters = require ('./src/routers/productRouters.js');
 
 //inicializamos el motor de vista a EJS
 app.set('view engine', 'ejs');
+
+//init session global
+app.use(session({
+  secret: 'Secret',
+  resave: false,
+  saveUninitialized: false
+}));
 
 //declaramos carpeta estatitica a public
 app.use(express.static(path.join(__dirname, './public')));
