@@ -20,7 +20,7 @@ const productController = {
     if (id > menu.length || id < 0 || isNaN(id)) {
       res.render("error");
     } else {
-      res.render("product", { item: menu[id] });
+      res.render("product", { item: menu[id], user: req.session.loggedUser });
     }
   },
   //renderiza el item description de un item que esta en platillos del Mes
@@ -29,16 +29,16 @@ const productController = {
     if (id > platillosDelMes.length || id < 0 || isNaN(id)) {
       res.render("error");
     } else {
-      res.render("product", { item: platillosDelMes[id - 1] });
+      res.render("product", { item: platillosDelMes[id - 1], user: req.session.loggedUser  });
     }
   },
   //renderiza el menu
   menu: (req, res) => {
-    res.render("menu", { item: menu });
+    res.render("menu", { item: menu, user: req.session.loggedUser  });
   },
   //renderiza vista para editar artículos
   index: (req, res) => {
-    res.render("productosPorEditar", { productos: menu });
+    res.render("productosPorEditar", { productos: menu, user: req.session.loggedUser  });
   },
   //procesa la edición de artículos
   agregar: (req, res) => {
@@ -61,7 +61,7 @@ const productController = {
     if (!productToEdit) {
       res.render("error");
     } else {
-      res.render("editarProducto", { productToEdit });
+      res.render("editarProducto", { productToEdit, user: req.session.loggedUser });
     }
   },
   actualizarProducto: (req, res) => {
@@ -82,7 +82,7 @@ const productController = {
     });
 
     fs.writeFileSync(menuCompleto, JSON.stringify(newProducts, null, " "));
-    res.redirect("/");
+    return res.redirect("/"); //el redirect es más rápido que el sessión al parecer y esto termina la session activa
   },
   borrar: (req, res) => {
     let id = req.params.id;

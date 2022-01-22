@@ -5,6 +5,8 @@ const userUpload = require('../middlewares/userUpload')
 
 const validateSU = require('../middlewares/validateSU')
 
+const guestCheck = require('../middlewares/guestCheck')
+
 const mainRouters = express.Router();
 
 // render to home
@@ -20,7 +22,7 @@ mainRouters.get("/search", mainController.search);
 mainRouters.get("/carrito", mainController.carrito);
 
 //render to sign-up
-mainRouters.get("/createAccount", mainController.sign_up);
+mainRouters.get("/createAccount", guestCheck, mainController.sign_up);
 mainRouters.post(
   "/createAccount",
   userUpload, //still uploads image if something is wrong in validateSU
@@ -28,7 +30,10 @@ mainRouters.post(
   mainController.new_sign_up
 );
 
-mainRouters.post("/loginExisting", mainController.loginExisting);
+mainRouters.post("/loginExisting", guestCheck,mainController.loginExisting);
 mainRouters.get("/dashboard", mainController.dashboard);
+
+//logs-out current user
+mainRouters.get("/logout", mainController.logout);
 
 module.exports = mainRouters;

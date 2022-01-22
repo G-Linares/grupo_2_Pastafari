@@ -33,16 +33,23 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const mainController = {
   home: (req, res) => {
-    res.render("home", { platillosDelMes, reviews });
+    console.log('Usuario is:')
+    console.log(req.session.loggedUser)
+    console.log('-------')
+    res.render("home", {
+      platillosDelMes,
+      reviews,
+      user: req.session.loggedUser,
+    });
   },
   aboutUs: (req, res) => {
-    res.render("aboutUs");
+    res.render("aboutUs", { user: req.session.loggedUser });
   },
   carrito: (req, res) => {
-    res.render("carrito", { item: menu });
+    res.render("carrito", { item: menu, user: req.session.loggedUser });
   },
   sign_up: (req, res) => {
-    res.render("createAccount");
+    res.render("createAccount", { user: req.session.loggedUser });
   },
   new_sign_up: (req, res) => {
     // ingresa un nuevo usuario al JSON de usuarios
@@ -62,38 +69,62 @@ const mainController = {
       fs.writeFileSync(usersPath, JSON.stringify(users, null, " "));
       res.redirect("/");
     } else {
-      res.render("createAccount", { errors: errors.array(), old: req.body });
+      res.render("createAccount", {
+        errors: errors.array(),
+        old: req.body,
+        user: req.session.loggedUser,
+      });
     }
   },
   search: (req, res) => {
     let search = req.query.keywords.toLowerCase();
     // recibe un string en la barra de busqueda y hace un filter para encontrar que objeto tiene ese mismo nombre
-    let productsToSearch = menu.filter(menu => menu.item.toLowerCase().includes(search));
+    let productsToSearch = menu.filter((menu) =>
+      menu.item.toLowerCase().includes(search)
+    );
     //si hay un match manda la info de ese objeto
     if (productsToSearch == []) {
-      res.render("error", {msg: 'ERROR, NO HAY PLATILLOS EN LOS DATOS'});
+      res.render("error", { msg: "ERROR, NO HAY PLATILLOS EN LOS DATOS" });
     } else {
-      res.render("results", { item: productsToSearch, search });
+      res.render("results", {
+        item: productsToSearch,
+        search,
+        user: req.session.loggedUser,
+      });
     }
   },
-  loginExisting: (req, res) => {    
-    const user = users.find( user => user.username == req.body.username);
+  loginExisting: (req, res) => {
+    const user = users.find((user) => user.username == req.body.username);
 
-    if(user){
-      bcrypt.compare(req.body.password,user.password).then((result)=>{
-        if(result){
-          res.redirect('/producto/menu')
-        } else {
-          console.log("Contrasena no hace match")
-        }
-      }).catch((err)=>console.error(err))
+    if (user) {
+      bcrypt
+        .compare(req.body.password, user.password)
+        .then((result) => {
+          if (result) {
+            delete user.password;
+            req.session.loggedUser = user;
+            return res.redirect("/producto/menu");
+          } else {
+            console.log("Contrasena no hace match");
+          }
+        })
+        .catch((err) => console.error(err));
     } else {
-      res.render('home', {errormessage: 'No hay usuario', platillosDelMes, reviews });
+      res.render("home", {
+        errormessage: "No hay usuario",
+        platillosDelMes,
+        reviews,
+        user: req.session.loggedUser,
+      });
     }
   },
   dashboard: (req, res) => {
     res.send("estas dentro");
   },
+  logout: (req, res) => {
+    req.session.destroy();
+    return res.redirect('/');
+  }
 };
 
 module.exports = mainController;

@@ -142,5 +142,14 @@
   "email": "TEST@GMAIL.COM",
   "password": "$2a$10$FmBo3Gb0c0LUi4WoxE2dduRvM38/uIPhqV.6NL.IHtq0vF1oNoKhe",
   "img": "TEST_img_cranelogo.png"
+ },
+ {
+  "id": 17,
+  "name": "mario",
+  "lastname": "mercado",
+  "username": "MAR",
+  "email": "UN@EMAIL.COM",
+  "password": "$2a$10$L3sJPrzJiNczKnb302W/..TZ0xlHAdgI/MCo6ZQN674.NcHOUSbSy",
+  "img": "MAR_img_kirby.jpg"
  }
 ]

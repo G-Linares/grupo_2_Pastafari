@@ -3,6 +3,9 @@ const express = require('express');
 const productController = require('../controllers/productController');
 const router = express.Router();
 
+//init userCheck middleware
+const userCheck = require('../middlewares/userCheck')
+
 //se implementa multer con su almacenamiento
 const whitelist = ['image/png', 'image/jpeg', 'image/jpg'];
 
@@ -36,15 +39,15 @@ router.get('/menu/:id', productController.id);
 router.get('/platilloDelMes/:id', productController.platilloDelMes);
 
 //render al menu editable
-router.get("/editar", productController.index);
+router.get("/editar", userCheck, productController.index);
 router.post("/editar", upload.single("image"), productController.agregar);
 
 //render a un articulo en especifico
-router.get("/editarProducto/:id", productController.editandoProducto);
+router.get("/editarProducto/:id", userCheck, productController.editandoProducto);
 router.put("/editarProducto/:id", productController.actualizarProducto);
 
 //se elimina un producto del JSON
-router.delete("/delete/:id", productController.borrar);
+router.delete("/delete/:id", userCheck,productController.borrar);
 
 
 
