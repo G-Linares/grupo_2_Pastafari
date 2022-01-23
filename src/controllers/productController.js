@@ -47,7 +47,7 @@ const productController = {
       ...req.body,
       image: req.file.filename,
     };
-    //soplo estan para ver que se han creado
+    //solo estan para ver que se han creado
     console.log(newProduct);
     menu.push(newProduct);
 

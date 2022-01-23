@@ -5,7 +5,9 @@ const userUpload = require('../middlewares/userUpload')
 
 const validateSU = require('../middlewares/validateSU')
 
+//initi check middlewares
 const guestCheck = require('../middlewares/guestCheck')
+const userCheck = require('../middlewares/userCheck')
 
 const mainRouters = express.Router();
 
@@ -19,7 +21,7 @@ mainRouters.get('/aboutUs', mainController.aboutUs);
 mainRouters.get("/search", mainController.search);
 
 //render to cart
-mainRouters.get("/carrito", mainController.carrito);
+mainRouters.get("/carrito", userCheck, mainController.carrito);
 
 //render to sign-up
 mainRouters.get("/createAccount", guestCheck, mainController.sign_up);
@@ -30,7 +32,7 @@ mainRouters.post(
   mainController.new_sign_up
 );
 
-mainRouters.post("/loginExisting", guestCheck,mainController.loginExisting);
+mainRouters.post("/loginExisting", guestCheck, mainController.loginExisting);
 mainRouters.get("/dashboard", mainController.dashboard);
 
 //logs-out current user

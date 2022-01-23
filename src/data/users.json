@@ -151,5 +151,14 @@
   "email": "UN@EMAIL.COM",
   "password": "$2a$10$L3sJPrzJiNczKnb302W/..TZ0xlHAdgI/MCo6ZQN674.NcHOUSbSy",
   "img": "MAR_img_kirby.jpg"
+ },
+ {
+  "id": 18,
+  "name": "USER1",
+  "lastname": "user1",
+  "username": "USER1",
+  "email": "UN@EMAIL.COM",
+  "password": "$2a$10$/Y1DfXEsW0jOsurhBT8o9evOOAIto62CSoLrO/HSaShU8rK.JvBIq",
+  "img": "USER1_img_kirby.jpg"
  }
 ]
