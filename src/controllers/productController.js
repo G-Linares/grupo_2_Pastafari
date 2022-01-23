@@ -82,7 +82,7 @@ const productController = {
     });
 
     fs.writeFileSync(menuCompleto, JSON.stringify(newProducts, null, " "));
-    return res.redirect("/"); //el redirect es más rápido que el sessión al parecer y esto termina la session activa
+    return res.redirect("/"); //el redirect es más rápido que el sessión al parecer y esto termina la session activa o no he configurado cookies
   },
   borrar: (req, res) => {
     let id = req.params.id;

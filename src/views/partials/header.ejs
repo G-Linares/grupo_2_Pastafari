@@ -12,38 +12,37 @@
     <i class="fas fa-th-list"></i>
     <a href="#contact">Contacto</a>
     <i class="fas fa-address-book"></i>
-    <% if( user != undefined) {%> 
-      <% if (user.username == 'MAR') {%>
-        <a href="/producto/editar">Editar Productos</a>
-        <i class="fas fa-address-book"></i>
-      <% } %> 
-    <% } %>
+    <% if( user != undefined) {%> <% if (user.username == 'MAR') {%>
+    <a href="/producto/editar">Editar Productos</a>
+    <i class="fas fa-address-book"></i>
+    <% } %> <% } %>
   </nav>
 
   <div class="icons">
     <button class="fas fa-search-plus" id="search-btn"></button>
     <% if (user != undefined) {%>
-      <button class="fas fa-shopping-cart" id="cart-btn"></button>
-    <% } %>  
-    <% if (user == undefined) {%>
-      <button
+    <button class="fas fa-shopping-cart" id="cart-btn"></button>
+    <% } %> <% if (user == undefined) {%>
+    <button
       class="fas fa-user-circle"
       id="user-btn"
       onclick="openLoginForm()"
     ></button>
 
-    <% } %> 
+    <% } %> <% if (user != undefined) {%>
+      <div class="dropdown">
+        <!--Dropdown that will be user navmenu-->
+        <button onclick="userMenu()" class="dropbtn">
+          <i class="fas fas fa-user-circle"></i> <span></span><%=user.username %>
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">Profile</a>
+          <a href="/logout">Logout</a>
+        </div>
+      </div>
+    <% } %>
     
-    <% if (user != undefined) {%>
-      <button
-      class="fas fa-user-circle"
-      id=""
-      onclick=""
-    > <%= user.username %> 
-      </button>
-      
-
-    <% } %>  
+   
 
     <button class="fas fa-bars" id="menu-btn"></button>
 

@@ -1,57 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <%- include('../partials/head') %>
-        <link href="css/stylecarrito.css" rel="stylesheet">
-        <title>Tu carrito</title>
-</head>
+    <link href="css/stylecarrito.css" rel="stylesheet" />
+    <title>Tu carrito</title>
+  </head>
 
-<body>
-
+  <body>
     <%- include('../partials/header') %>
-        <h2 class="centered-white">Tus productos:</h2>
-        <main class="contenedor-principal">
-            
-            <div class="productos">
-                <% for(let platillo of item){%>
-                    <div class="producto">
-                        <img class="fotos" src="/img/products/<%=platillo.image%>" alt="imagen">
-                        <div class="detalles-producto">
-                            <h3 class="producto-nombre"><%= platillo.item %></h3>
-                            <h4 class="producto-precio">$ <%= platillo.price %></h4>
-                            <div>
-                                Cantidad:
-                                <input class="cart-quantity-input" type="number" value="1" min="0">
-                            </div>
-                            <br>
-                            <p class="producto-remover">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                                <span class="eliminar">Eliminar del carrito</span>
-                            </p>
-                        </div>
-                    </div>
-    
-                    <%}%>
-                
+    <h2 class="centered-white">Tus productos:</h2>
+    <main class="contenedor-principal">
+      <div class="productos">
+        <% for(let platillo of item){%>
+        <div class="producto">
+          <img
+            class="fotos"
+            src="/img/products/<%=platillo.image%>"
+            alt="imagen"
+          />
+          <div class="detalles-producto">
+            <h3 class="producto-nombre"><%= platillo.item %></h3>
+            <h4 class="producto-precio">$ <%= platillo.price %></h4>
+            <div>
+              Cantidad:
+              <input
+                class="cart-quantity-input"
+                type="number"
+                value="1"
+                min="0"
+              />
             </div>
+            <br />
+            <p class="producto-remover">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+              <span class="eliminar">Eliminar del carrito</span>
+            </p>
+          </div>
+        </div>
 
-            <div class="total-carrito">
-                <p>
-                    Total Compras $ 100.00
-                </p>
-                <p>
-                    Items en carrito
-                    <span>2</span>
-                </p>
-                <a href="#">Proceder a la compra</a>
-            </div>
+        <%}%>
+      </div>
 
-        </main>
+      <div class="total-carrito">
+        <p>Total Compras $ 100.00</p>
+        <p>
+          Items en carrito
+          <span>2</span>
+        </p>
+        <a href="#">Proceder a la compra</a>
+      </div>
+    </main>
 
-        <%- include('../partials/footer') %>
-</body>
+    <%- include('../partials/footer') %>
 
-<script src="js/home.js"></script>
-
+    <!-- script zone-->
+    <%- include('../partials/scripts') %>
+    <!-- script zone-->
+  </body>
 </html>

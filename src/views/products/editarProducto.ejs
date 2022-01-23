@@ -3,7 +3,7 @@
     <head>
         <%- include('../partials/head') %>
             <link href="/css/styleEdicion.css" rel="stylesheet">
-            <title>Producto: <%=productToEdit.titulo %></title>
+            <title>Producto: <%=productToEdit.item %></title>
     </head>
 <body>
     <%- include('../partials/header') %>
@@ -46,7 +46,11 @@
         </section>
     </main>
     <%- include('../partials/footer') %>
+
+    <!-- script zone-->
+    <%- include('../partials/scripts') %>
+    <!-- script zone-->
 </body>
-<script src="/js/home.js"></script>
+
 
 </html>

@@ -19,14 +19,10 @@
           <p>Por favor llena estos datos para acceder</p>
           <p>Este registro no distingue entre mayusculas o minusculas</p>
 
-          <% if (locals.errors) { %> 
-            <% errors.forEach(error => { %>
-            <p style="color:red;"><%= error.msg %></p>
-            <% }) %> 
-          <% } %> 
-          
-          <% if (locals.msg) { %> 
-            <p style="color:red;"><%= msg %></p>
+          <% if (locals.errors) { %> <% errors.forEach(error => { %>
+          <p style="color: red"><%= error.msg %></p>
+          <% }) %> <% } %> <% if (locals.msg) { %>
+          <p style="color: red"><%= msg %></p>
           <% } %>
 
           <label for="name">Nombre(s)</label>
@@ -95,7 +91,9 @@
       </form>
     </div>
     <%- include('../partials/footer') %>
-  </body>
 
-  <script src="js/home.js"></script>
+    <!-- script zone-->
+    <%- include('../partials/scripts') %>
+    <!-- script zone-->
+  </body>
 </html>
