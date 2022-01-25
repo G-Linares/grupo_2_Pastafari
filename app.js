@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const methodOverride =  require('method-override');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 const port = process.env.PORT || 3000;
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, './public')));
 
 //inicializamos middleware para POST
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use(express.json());
 
 //inicializo middleware para PUT y DELETE

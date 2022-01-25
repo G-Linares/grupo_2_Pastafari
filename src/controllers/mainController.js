@@ -103,6 +103,11 @@ const mainController = {
           if (result) {
             delete user.password;
             req.session.loggedUser = user;
+
+            if (req.body.recordarme != undefined) {
+                res.cookie('recordarme', user.username, { maxAge: 60000 })
+            }
+
             return res.redirect("/producto/menu");
           } else {
             console.log("Contrasena no hace match");

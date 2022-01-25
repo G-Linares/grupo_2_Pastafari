@@ -160,5 +160,14 @@
   "email": "UN@EMAIL.COM",
   "password": "$2a$10$/Y1DfXEsW0jOsurhBT8o9evOOAIto62CSoLrO/HSaShU8rK.JvBIq",
   "img": "USER1_img_kirby.jpg"
+ },
+ {
+  "id": 19,
+  "name": "Juan",
+  "lastname": "Rios",
+  "username": "Rios",
+  "email": "juanrios@juan.com",
+  "password": "$2a$10$o/E4Gfs/gdSb8SaaufehiuBfayo/sSGLHxnmeXRPm3wt9dlRCGmzy",
+  "img": "Rios_img_juanAvatar.jpg"
  }
 ]
