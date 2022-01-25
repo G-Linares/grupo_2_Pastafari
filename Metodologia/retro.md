@@ -65,3 +65,33 @@ En este sprint 4 se llega a la siguiente conclusion:
 Final de la retrospectiva:
 
 Se repasan los objetivos propuestos para mejorar en el Sprint 5.
+
+
+# Inicio de la retrospectiva, sprint 5:
+
+Se lee el backlog de retrospectivas del sprint 4, y los acuerdos que se ejecutaron o quedaron pendientes.
+
+# Oportunidades de Mejora y Planes de acción:
+
+En este sprint 5 se llega a la siguiente conclusion:
+
+    Que problemas enfrentamos:
+        - Problemas de salud del equipo.
+        - Carga excesiva de trabajo externo que quitó tiempo para el proyecto.
+        - Procrastinación moderada del proyecto.
+        - Conflicto al trabajar en la misma branch.
+
+    Que hicimos bien:
+        - Repartición de trabajo y respuesta del equipo. 
+        - Responsabilizarnos como equipo del trabajo.
+        - Investigar temas de auxilio para completar el proyecto.
+
+    Acciones de Mejora:
+        - Priorizar tareas del proyecto para evitar retrasos.
+        - En la medida de lo posible evitar asignar trabajo con dependencias con un mejor sistema de filtrado.
+        - Designar un scrum master estático para atender los puntos retrasados de sprints pasados.
+        - Recurrir a los profesores con cuestiones particulares sobre el proyecto.
+
+Final de la retrospectiva:
+
+Se repasan los objetivos propuestos para mejorar en el Sprint 5.
