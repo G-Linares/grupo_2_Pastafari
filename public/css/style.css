@@ -699,6 +699,20 @@ body.showLoginForm .popup {
   background: none;
 }
 
+.contact .row form .inputBox  textarea {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  color: #000000;
+  text-transform: none;
+  background: none;
+  border: none;
+}
+
+iframe {
+  min-height: 300px;
+}
+
 .contact .row form .btn {
   text-align: center;
 }

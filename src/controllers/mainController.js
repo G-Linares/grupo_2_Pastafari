@@ -129,6 +129,9 @@ const mainController = {
   logout: (req, res) => {
     req.session.destroy();
     return res.redirect('/');
+  },
+  contact: (req,res) => {
+    return res.render('contact', { user: req.session.loggedUser });
   }
 };
 
