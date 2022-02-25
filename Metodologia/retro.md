@@ -94,4 +94,30 @@ En este sprint 5 se llega a la siguiente conclusion:
 
 Final de la retrospectiva:
 
-Se repasan los objetivos propuestos para mejorar en el Sprint 5.
+Se repasan los objetivos propuestos para mejorar en el Sprint 6.
+
+# Inicio de la retrospectiva, sprint 6:
+
+Se lee el backlog de retrospectivas del sprint 5, y los acuerdos que se ejecutaron o quedaron pendientes.
+
+# Oportunidades de Mejora y Planes de acción:
+
+En este sprint 6 se llega a la siguiente conclusion:
+
+    Que problemas enfrentamos:
+        -	Carga excesiva de trabajo externo que quitó tiempo para el proyecto por parte de varios integrantes.
+        -	Retraso en las entregas.
+        -	Desconocimiento de herramientas para lograr lo pedido por el sprint.
+        -	Falta de motivación con el curso.
+
+    Que hicimos bien:
+        -	Comenzamos organizados y trabajando.
+        -	Hasta la mitad del sprint las tareas se completaron con éxito.
+
+    Acciones de Mejora:
+        -	Retomar la comunicación perdida.
+        -	Automotivarnos para el último tramo del curso.
+
+Final de la retrospectiva:
+
+Se repasan los objetivos propuestos para mejorar en el Sprint 7.
