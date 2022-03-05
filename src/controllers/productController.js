@@ -1,6 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 
+//require database to work
+let db = require("../../database/models");
+
 // jala el JSON de menu Completo
 const menuCompleto = path.join(__dirname, "../data/menuCompleto.json");
 const menu = JSON.parse(fs.readFileSync(menuCompleto, "utf-8"));
@@ -34,7 +37,15 @@ const productController = {
   },
   //renderiza el menu
   menu: (req, res) => {
-    res.render("menu", { item: menu, user: req.session.loggedUser  });
+    //res.render("menu", { item: menu, user: req.session.loggedUser  });
+    db.Menu.findAll()
+    .then(function(menuView) {
+      res.render("menu", {item: menuView, user: req.session.loggedUser});
+    })
+    .catch(function(error) {
+      console.log(error);
+      res.redirect("home")
+    })
   },
   //renderiza vista para editar artículos
   index: (req, res) => {
@@ -42,16 +53,30 @@ const productController = {
   },
   //procesa la edición de artículos
   agregar: (req, res) => {
-    let newProduct = {
-      id: menu.length + 1,
-      ...req.body,
-      image: req.file.filename,
-    };
+    //let newProduct = {
+      //id: menu.length + 1,
+      //...req.body,
+      //image: req.file.filename,
+    //};
+    const {item, type, dish, description, score, discount, boughts, price, isTopPlate} = req.body;
+    const image = req.file.filename;
+    db.Menu.create({
+      item,
+      type,
+      dish,
+      description,
+      image,
+      score,
+      discount,
+      boughts,
+      price,
+      isTopPlate
+    });
     //solo estan para ver que se han creado
-    console.log(newProduct);
-    menu.push(newProduct);
+    //console.log(newProduct);
+    //menu.push(newProduct);
 
-    fs.writeFileSync(menuCompleto, JSON.stringify(menu, null, " "));
+    //fs.writeFileSync(menuCompleto, JSON.stringify(menu, null, " "));
     res.redirect("/producto/editar");
   },
   editandoProducto: (req, res) => {

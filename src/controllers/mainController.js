@@ -1,6 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 
+//require database to work
+let db = require("../../database/models");
+
 //requiere bscryptjs to hash password
 const bcrypt = require("bcryptjs");
 

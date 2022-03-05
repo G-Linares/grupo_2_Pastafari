@@ -52,10 +52,9 @@
             id="description"
             rows="3"
             cols="50"
+            placeholder="Tu descripción"
           >
-Escribe la descripción aquí.
-                            </textarea
-          >
+          </textarea>
           <label for="image"> Imagen para el producto</label>
           <input
             class="item"
@@ -85,6 +84,12 @@ Escribe la descripción aquí.
             id="price"
             placeholder="$$$"
           />
+          <label for="isTopPlate">Es platillo top?</label>
+          <select class="item" name="isTopPlate" id="isTopPlate">
+            <option selected value="" Elige>Elige</option>
+            <option value="1">Sí</option>
+            <option value="0" selected>No</option>
+          </select>
           <input class="item" type="submit" value="Submit" />
           <button class="item" type="reset" value="reset">
             Vaciar formulario
