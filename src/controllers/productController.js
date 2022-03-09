@@ -32,33 +32,45 @@ const productController = {
     if (id > platillosDelMes.length || id < 0 || isNaN(id)) {
       res.render("error");
     } else {
-      res.render("product", { item: platillosDelMes[id - 1], user: req.session.loggedUser  });
+      res.render("product", {
+        item: platillosDelMes[id - 1],
+        user: req.session.loggedUser,
+      });
     }
   },
   //renderiza el menu
   menu: (req, res) => {
-    //res.render("menu", { item: menu, user: req.session.loggedUser  });
     db.Menu.findAll()
-    .then(function(menuView) {
-      res.render("menu", {item: menuView, user: req.session.loggedUser});
-    })
-    .catch(function(error) {
-      console.log(error);
-      res.redirect("home")
-    })
+      .then(function (menuView) {
+        res.render("menu", { item: menuView, user: req.session.loggedUser });
+      })
+      .catch(function (error) {
+        console.log(error);
+        res.redirect("/");
+      });
   },
   //renderiza vista para editar artículos
   index: (req, res) => {
-    res.render("productosPorEditar", { productos: menu, user: req.session.loggedUser  });
+    db.Menu.findAll().then(function (menuView) {
+      res.render("productosPorEditar", {
+        productos: menuView,
+        user: req.session.loggedUser,
+      });
+    });
   },
   //procesa la edición de artículos
   agregar: (req, res) => {
-    //let newProduct = {
-      //id: menu.length + 1,
-      //...req.body,
-      //image: req.file.filename,
-    //};
-    const {item, type, dish, description, score, discount, boughts, price, isTopPlate} = req.body;
+    const {
+      item,
+      type,
+      dish,
+      description,
+      score,
+      discount,
+      boughts,
+      price,
+      isTopPlate,
+    } = req.body;
     const image = req.file.filename;
     db.Menu.create({
       item,
@@ -70,13 +82,8 @@ const productController = {
       discount,
       boughts,
       price,
-      isTopPlate
+      isTopPlate,
     });
-    //solo estan para ver que se han creado
-    //console.log(newProduct);
-    //menu.push(newProduct);
-
-    //fs.writeFileSync(menuCompleto, JSON.stringify(menu, null, " "));
     res.redirect("/producto/editar");
   },
   editandoProducto: (req, res) => {
@@ -86,7 +93,10 @@ const productController = {
     if (!productToEdit) {
       res.render("error");
     } else {
-      res.render("editarProducto", { productToEdit, user: req.session.loggedUser });
+      res.render("editarProducto", {
+        productToEdit,
+        user: req.session.loggedUser,
+      });
     }
   },
   actualizarProducto: (req, res) => {
@@ -109,17 +119,19 @@ const productController = {
     fs.writeFileSync(menuCompleto, JSON.stringify(newProducts, null, " "));
     return res.redirect("/"); //el redirect es más rápido que el sessión al parecer y esto termina la session activa o no he configurado cookies
   },
-  borrar: (req, res) => {
-    let id = req.params.id;
-    let productoBorrado = menu.filter((menu) => menu.id == id);
-    let imageToEliminate = productoBorrado[0].image;
-    let uploadPath = path.join(__dirname, '../../public/img/products/');
-    let erasePath = uploadPath+imageToEliminate;
+  borrar: async (req, res) => {
+    const id = req.params.id;
+    const imgName = await db.Menu.findByPk(id);
+
+    let img = imgName.dataValues.image;
+    console.log(img);
+    let uploadPath = path.join(__dirname, "../../public/img/products/");
+    let erasePath = uploadPath + img;
     fs.unlinkSync(erasePath);
-    let finalProducts = menu.filter((menu) => menu.id != id);
-    fs.writeFileSync(menuCompleto, JSON.stringify(finalProducts, null, " "));
-    //no puedo mandar a /editar por que se tiene que dar refresh a la pagina para que se vean los cambios.
-    res.redirect("/");
+
+    db.Menu.destroy ({
+      where: {id: id}
+    }).then(res.redirect("/"));
   },
 };
 module.exports = productController;
