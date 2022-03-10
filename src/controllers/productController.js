@@ -4,10 +4,6 @@ const path = require("path");
 //require database to work
 let db = require("../../database/models");
 
-// jala el JSON de menu Completo
-const menuCompleto = path.join(__dirname, "../data/menuCompleto.json");
-const menu = JSON.parse(fs.readFileSync(menuCompleto, "utf-8"));
-
 const platillosDelMesFilePath = path.join(
   __dirname,
   "../data/platillosDelMes.json"
@@ -34,13 +30,16 @@ const productController = {
     });
   },
   //renderiza el item description de un item que esta en platillos del Mes
-  platilloDelMes: (req, res) => {
+  platilloDelMes: async (req, res) => {
     const id = parseInt(req.params.id);
-    if (id > platillosDelMes.length || id < 0 || isNaN(id)) {
+
+    let topDish = await db.Menu.findByPk(id);
+
+    if (!topDish || id < 0 || isNaN(0)) {
       res.render("error");
     } else {
       res.render("product", {
-        item: platillosDelMes[id - 1],
+        item: topDish,
         user: req.session.loggedUser,
       });
     }

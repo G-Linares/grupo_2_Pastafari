@@ -105,31 +105,6 @@ LOCK TABLES `reviews` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `top_plates`
---
-
-DROP TABLE IF EXISTS `top_plates`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `top_plates` (
-  `top_plate_id` int NOT NULL,
-  `id` int NOT NULL,
-  PRIMARY KEY (`top_plate_id`),
-  KEY `id_idx` (`id`),
-  CONSTRAINT `item` FOREIGN KEY (`id`) REFERENCES `menu` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `top_plates`
---
-
-LOCK TABLES `top_plates` WRITE;
-/*!40000 ALTER TABLE `top_plates` DISABLE KEYS */;
-/*!40000 ALTER TABLE `top_plates` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `users`
 --
 

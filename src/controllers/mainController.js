@@ -35,12 +35,15 @@ const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const mainController = {
-  home: (req, res) => {
-    console.log('Usuario is:')
-    console.log(req.session.loggedUser)
-    console.log('-------')
+  home: async (req, res) => {
+    console.log('Usuario is:' + req.session.loggedUser, '\n'+ "--------");
+
+    let platilloDelMes = await db.Menu.findAll({
+      where: {isTopPlate: 1}
+    });
+    
     res.render("home", {
-      platillosDelMes,
+      platillosDelMes: platilloDelMes,
       reviews,
       user: req.session.loggedUser,
     });
