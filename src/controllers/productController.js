@@ -20,11 +20,18 @@ const productController = {
   //renderiza un elemento que viene desde el menu
   id: (req, res) => {
     const id = parseInt(req.params.id);
-    if (id > menu.length || id < 0 || isNaN(id)) {
-      res.render("error");
-    } else {
-      res.render("product", { item: menu[id], user: req.session.loggedUser });
-    }
+
+    db.Menu.findByPk(id).then((resultado) => {
+      console.log(resultado);
+      if (id < 0 || isNaN(id)) {
+        return res.render("Error");
+      } else {
+        return res.render("product", {
+          item: resultado.dataValues,
+          user: req.session.loggedUser,
+        });
+      }
+    });
   },
   //renderiza el item description de un item que esta en platillos del Mes
   platilloDelMes: (req, res) => {
@@ -86,10 +93,11 @@ const productController = {
     });
     res.redirect("/producto/editar");
   },
-  editandoProducto: (req, res) => {
+  editandoProducto: async (req, res) => {
     const id = parseInt(req.params.id);
-    //mejor ocupo metodo find para encontrar el item que tenga el mismo ID
-    let productToEdit = menu.find((product) => product.id == id);
+
+    let productToEdit = await db.Menu.findByPk(id);
+
     if (!productToEdit) {
       res.render("error");
     } else {
@@ -99,25 +107,37 @@ const productController = {
       });
     }
   },
-  actualizarProducto: (req, res) => {
+  actualizarProducto: async (req, res) => {
     let id = req.params.id;
-    let productToEdit = menu.find((product) => product.id == id);
+    let productToEdit = await db.Menu.findByPk(id);
+    let newImg = req.file.filename;
+    let realImg = req.file.filename;
+    console.log("Imagen a uplodear------------" + realImg);
 
-    productToEdit = {
-      id: productToEdit.id,
-      ...req.body,
-      image: productToEdit.image,
-    };
+    if (newImg == "" || !newImg) {
+      await db.Menu.update(
+        { id: productToEdit.id, ...req.body, image: productToEdit.image },
+        { where: { id: id } }
+      );
+      console.log("-----------ENTRO EL IF-----------");
+    } else {
+      //carga la nueva info a la DB
+      let oldImg = productToEdit.image;
 
-    let newProducts = menu.map((product) => {
-      if (product.id == productToEdit.id) {
-        return (product = { ...productToEdit });
-      }
-      return product;
-    });
+      let uploadPath = path.join(__dirname, "../../public/img/products/");
+      let erasePath = uploadPath + oldImg;
+      fs.unlinkSync(erasePath);//ESTO requiere handler en caso de que la imagén no se encuentre o crashea
 
-    fs.writeFileSync(menuCompleto, JSON.stringify(newProducts, null, " "));
-    return res.redirect("/"); //el redirect es más rápido que el sessión al parecer y esto termina la session activa o no he configurado cookies
+      await db.Menu.update(
+        { id: productToEdit.id, ...req.body, image: newImg },
+        { where: { id: id } }
+      );
+      console.log("-----------ENTRO EL ELSE-----------");
+      
+      
+    }
+
+    return res.redirect("/");
   },
   borrar: async (req, res) => {
     const id = req.params.id;
@@ -127,10 +147,10 @@ const productController = {
     console.log(img);
     let uploadPath = path.join(__dirname, "../../public/img/products/");
     let erasePath = uploadPath + img;
-    fs.unlinkSync(erasePath);
+    fs.unlinkSync(erasePath); //ESTO requiere handler en caso de que la imagén no se encuentre o crashea
 
-    db.Menu.destroy ({
-      where: {id: id}
+    db.Menu.destroy({
+      where: { id: id },
     }).then(res.redirect("/"));
   },
 };

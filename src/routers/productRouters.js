@@ -14,7 +14,7 @@ const upload = require("../middlewares/upload")
 //se renderiza todo el menu
 router.get('/menu', productController.menu);
 
-//se lista un item para con descripciones
+//se lista un item con descripciones
 router.get('/menu/:id', productController.id);
 
 //se lista un item con descripciones en la tabla del mes
@@ -26,7 +26,7 @@ router.post("/editar", upload.single("image"), productController.agregar);
 
 //render a un articulo en especifico
 router.get("/editarProducto/:id", userCheck, adminCheck, productController.editandoProducto);
-router.put("/editarProducto/:id", productController.actualizarProducto);
+router.put("/editarProducto/:id", upload.single("image"),productController.actualizarProducto);
 
 //se elimina un producto del JSON
 router.delete("/delete/:id", userCheck, adminCheck, productController.borrar);
