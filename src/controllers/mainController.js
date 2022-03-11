@@ -36,14 +36,16 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const mainController = {
   home: async (req, res) => {
-    console.log('Usuario is:' + req.session.loggedUser, '\n'+ "--------");
+    console.log("Usuario is: ");
+    console.log(req.session.loggedUser);
+    console.log("--------");
 
-    let platilloDelMes = await db.Menu.findAll({
-      where: {isTopPlate: 1}
+    let platillosDelMes = await db.Menu.findAll({
+      where: { isTopPlate: 1 },
     });
-    
+
     res.render("home", {
-      platillosDelMes: platilloDelMes,
+      platillosDelMes,
       reviews,
       user: req.session.loggedUser,
     });
@@ -58,21 +60,21 @@ const mainController = {
     res.render("createAccount", { user: req.session.loggedUser });
   },
   new_sign_up: (req, res) => {
-    // ingresa un nuevo usuario al JSON de usuarios
-    //console.log(req.body);
+
     let errors = validationResult(req);
-    //res.send(errors);
+    const { name, lastname, username, email, password } = req.body;
+
     if (errors.isEmpty()) {
-      let incomPass = req.body.password;
+      let incomPass = password;
       let hashedPass = bcrypt.hashSync(incomPass, 10);
-      let newUser = {
-        id: users.length + 1,
-        ...req.body,
+      db.Users.create({
+        name,
+        last_name: lastname,
+        user_name: username,
+        email,
         password: hashedPass,
         img: req.file.filename,
-      };
-      users.push(newUser);
-      fs.writeFileSync(usersPath, JSON.stringify(users, null, " "));
+      });
       res.redirect("/");
     } else {
       res.render("createAccount", {
@@ -99,34 +101,45 @@ const mainController = {
       });
     }
   },
-  loginExisting: (req, res) => {
-    const user = users.find((user) => user.username == req.body.username);
+  loginExisting: async (req, res) => {
+
+    const user = await db.Users.findOne({
+      where: { user_name: req.body.username },
+    });
 
     if (user) {
+      /* console.log("---------Este es el objeto de sequelize que trae----------");
+      console.log(userToSearch.dataValues); */
       bcrypt
-        .compare(req.body.password, user.password)
+        .compare(req.body.password, user.dataValues.password)
         .then((result) => {
+
           if (result) {
-            delete user.password;
-            req.session.loggedUser = user;
+            delete user.dataValues.password;
+            /* console.log("----Pass fue borrado----");
+            console.log(userToSearch.dataValues); */
+            req.session.loggedUser = user.dataValues;
+              /* console.log("------el session es------");
+              console.log(req.session.loggedUser); */
 
             if (req.body.recordarme != undefined) {
-                res.cookie('recordarme', user.username, { maxAge: 60000 })
+              res.cookie("recordarme", user.user_name, { maxAge: 60000 });
             }
 
-            return res.redirect("/producto/menu");
+            return res.redirect("/");
           } else {
-            console.log("Contrasena no hace match");
+            console.log("Contraseña no hace match");
           }
         })
         .catch((err) => console.error(err));
     } else {
-      res.render("home", {
+      /* res.render("home", {
         errormessage: "No hay usuario",
         platillosDelMes,
         reviews,
         user: req.session.loggedUser,
-      });
+      }); */
+      return res.redirect("/");
     }
   },
   dashboard: (req, res) => {
@@ -134,11 +147,11 @@ const mainController = {
   },
   logout: (req, res) => {
     req.session.destroy();
-    return res.redirect('/');
+    return res.redirect("/");
   },
-  contact: (req,res) => {
-    return res.render('contact', { user: req.session.loggedUser });
-  }
+  contact: (req, res) => {
+    return res.render("contact", { user: req.session.loggedUser });
+  },
 };
 
 module.exports = mainController;

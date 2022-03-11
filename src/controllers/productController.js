@@ -4,14 +4,6 @@ const path = require("path");
 //require database to work
 let db = require("../../database/models");
 
-const platillosDelMesFilePath = path.join(
-  __dirname,
-  "../data/platillosDelMes.json"
-);
-const platillosDelMes = JSON.parse(
-  fs.readFileSync(platillosDelMesFilePath, "utf-8")
-);
-
 const productController = {
   //renderiza un elemento que viene desde el menu
   id: (req, res) => {
@@ -125,15 +117,13 @@ const productController = {
 
       let uploadPath = path.join(__dirname, "../../public/img/products/");
       let erasePath = uploadPath + oldImg;
-      fs.unlinkSync(erasePath);//ESTO requiere handler en caso de que la imagén no se encuentre o crashea
+      fs.unlinkSync(erasePath); //ESTO requiere handler en caso de que la imagén no se encuentre o crashea
 
       await db.Menu.update(
         { id: productToEdit.id, ...req.body, image: newImg },
         { where: { id: id } }
       );
       console.log("-----------ENTRO EL ELSE-----------");
-      
-      
     }
 
     return res.redirect("/");

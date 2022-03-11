@@ -12,7 +12,7 @@
     <i class="fas fa-th-list"></i>
     <a href="/contacto">Contacto</a>
     <i class="fas fa-address-book"></i>
-    <% if( user != undefined) {%> <% if (user.username == 'MAR') {%>
+    <% if( user != undefined) {%> <% if (user.user_name == 'MAR') {%>
     <a href="/producto/editar">Editar Productos</a>
     <i class="fas fa-address-book"></i>
     <% } %> <% } %>
@@ -33,7 +33,7 @@
       <div class="dropdown">
         <!--Dropdown that will be user navmenu-->
         <button onclick="userMenu()" class="dropbtn">
-          <i class="fas fas fa-user-circle"></i> <span></span><%=user.username %>
+          <i class="fas fas fa-user-circle"></i> <span></span><%=user.user_name %>
         </button>
         <div id="myDropdown" class="dropdown-content">
           <a href="#">Profile</a>

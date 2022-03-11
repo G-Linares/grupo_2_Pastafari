@@ -112,7 +112,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `user_id` int NOT NULL,
+  `user_id` int NOT NULL AUTO_INCREMENT,
   `name` char(50) NOT NULL,
   `last_name` char(50) DEFAULT NULL,
   `user_name` char(50) NOT NULL,
@@ -124,8 +124,7 @@ CREATE TABLE `users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 INSERT INTO users 
-VALUES (0, 'Mario', 'Mercado', 'MAR', 'my@email.com', 123456, 'kirby.jpg');
-
+VALUES (0, 'Mario', 'Mercado', 'MAR', 'my@email.com', '$2a$10$XlrV0sxJFOT5kr6uIUawb.IuNX.Ii96bPbJncHHF059P8eeNstrjS', 'MAR_img_kirby.jpg');
 --
 -- Dumping data for table `users`
 --
