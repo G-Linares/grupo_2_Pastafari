@@ -3,6 +3,7 @@ const path = require("path");
 
 //require database to work
 let db = require("../../database/models");
+const Op = db.Sequelize.Op;
 
 //requiere bscryptjs to hash password
 const bcrypt = require("bcryptjs");
@@ -84,18 +85,16 @@ const mainController = {
       });
     }
   },
-  search: (req, res) => {
+  search: async (req, res) => {
     let search = req.query.keywords.toLowerCase();
-    // recibe un string en la barra de busqueda y hace un filter para encontrar que objeto tiene ese mismo nombre
-    let productsToSearch = menu.filter((menu) =>
-      menu.item.toLowerCase().includes(search)
-    );
+    // recibe un string en la barra de busqueda y busca en DB todo lo que se parezca
+    const results = await db.Menu.findAll({ where: {item: {[Op.like]: `%${search}%`}}});
     //si hay un match manda la info de ese objeto
-    if (productsToSearch == []) {
+    if (results == []) {
       res.render("error", { msg: "ERROR, NO HAY PLATILLOS EN LOS DATOS" });
     } else {
       res.render("results", {
-        item: productsToSearch,
+        item: results,
         search,
         user: req.session.loggedUser,
       });
