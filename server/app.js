@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const mainRoutes = require('./routes/mainRoutes.js')
+const menuRoutes = require('./routes/mainRoutes.js');
+const userRoutes = require('./routes/userRoutes.js');
 const db = require('./models');
 
 const app = express();
@@ -11,7 +12,8 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 
 //rutas
-app.use('/menu', mainRoutes);
+app.use('/menu', menuRoutes);
+app.use('/users', userRoutes);
 
 // enabilito los PORT con un limite de subida de 30MB
 app.use(bodyParser.json({ limit: "30mb", extended: true }));

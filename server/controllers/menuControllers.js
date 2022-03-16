@@ -1,8 +1,8 @@
 const { Menu } = require('../models');
 
-
-const index = (req, res) => {
-  res.json("Hola?");
+const index = async (req, res) => {
+  const listOfMenu = await Menu.findAll();
+  res.json(listOfMenu);
 };
 const indexMenu = async (req, res) => {
   const dish = req.body;
@@ -12,5 +12,5 @@ const indexMenu = async (req, res) => {
 
 module.exports = {
     index,
-    indexMenu
+    indexMenu,
 }
