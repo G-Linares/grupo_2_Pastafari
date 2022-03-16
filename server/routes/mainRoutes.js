@@ -1,13 +1,11 @@
-import express  from "express";
-
-//aqui se importan los controladores
-import { index, createDummyData } from "../controllers/mainControllers.js";
-
-//inicializo la ruta
+const express = require('express');
 const router = express.Router();
 
-//aui van las rutas
-router.get('/', index);
-router.post('/', createDummyData);
+//aqui se importan los controladores
+const mainControllers = require("../controllers/mainControllers.js");
 
-export default router;
+//aui van las rutas
+router.get('/', mainControllers.index);
+router.post('/', mainControllers.indexMenu);
+
+module.exports = router;
