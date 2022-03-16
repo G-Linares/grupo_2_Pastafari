@@ -27,10 +27,11 @@ DROP TABLE IF EXISTS `cart`;
 CREATE TABLE `cart` (
   `cart_id` int NOT NULL,
   `id` int NOT NULL,
-  `number_items` int NOT NULL,
+  `users_id` int NOT NULL,
   PRIMARY KEY (`cart_id`),
   KEY `id_idx` (`id`),
-  CONSTRAINT `id` FOREIGN KEY (`id`) REFERENCES `menu` (`id`)
+  CONSTRAINT `id` FOREIGN KEY (`id`) REFERENCES `menu` (`id`),
+  CONSTRAINT `users_id` FOREIGN KEY (`users_id`) REFERENCES `users` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -52,15 +53,15 @@ DROP TABLE IF EXISTS `menu`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `menu` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `item` char(80) NOT NULL,
-  `type` char(40) NOT NULL,
+  `item` varchar(80) NOT NULL,
+  `type` varchar(40) NOT NULL,
   `price` int NOT NULL,
   `description` varchar(300) NOT NULL,
-  `image` char(100) NOT NULL,
+  `image` varchar(100) NOT NULL,
   `score` int NOT NULL,
   `discount` int NOT NULL,
   `boughts` int NOT NULL,
-  `dish` char(40) NOT NULL,
+  `dish` varchar(40) NOT NULL,
   `isTopPlate` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -69,6 +70,13 @@ CREATE TABLE `menu` (
 --
 -- Dumping data for table `menu`
 --
+INSERT INTO menu
+VALUES (0, 'fusilli alfredo', 'fusilli', 120, 'Una pasta deliciosa con salsa alfredo','fusilliAlfredo.jpg',
+4, 0, 1, 'alfredo', 0); 
+
+INSERT INTO menu
+VALUES (1, 'farfalle alfredo', 'farfalle', 120, 'Una pasta deliciosa con salsa alfredo','farfalleAlfredo.jpg',
+4, 0, 1, 'alfredo', 1); 
 
 LOCK TABLES `menu` WRITE;
 /*!40000 ALTER TABLE `menu` DISABLE KEYS */;
@@ -85,10 +93,10 @@ DROP TABLE IF EXISTS `reviews`;
 CREATE TABLE `reviews` (
   `review_id` int NOT NULL,
   `user_id` int NOT NULL,
-  `username` char(20) NOT NULL,
+  `username` varchar(20) NOT NULL,
   `review` varchar(300) NOT NULL,
   `score` tinyint NOT NULL,
-  `img` char(150) NOT NULL,
+  `img` varchar(150) NOT NULL,
   PRIMARY KEY (`review_id`),
   KEY `user_id_idx` (`user_id`),
   CONSTRAINT `users` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
@@ -113,12 +121,12 @@ DROP TABLE IF EXISTS `users`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `user_id` int NOT NULL AUTO_INCREMENT,
-  `name` char(50) NOT NULL,
-  `last_name` char(50) DEFAULT NULL,
-  `user_name` char(50) NOT NULL,
-  `email` char(40) NOT NULL,
-  `password` char(150) NOT NULL,
-  `img` char(150) DEFAULT NULL,
+  `name` varchar(50) NOT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
+  `user_name` varchar(50) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `password` varchar(150) NOT NULL,
+  `img` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
