@@ -24,11 +24,14 @@ const Especiales = () => {
                 <img src={platilloPrueba} alt="food img" />
               </div>
               <div className="ourSpecialsMenu__item__info">
-                <h3 className="ourSpecialsMenu__item__title">Pasta Fettuccine Alfredo</h3>
+                <h3 className="ourSpecialsMenu__item__title">
+                Pasta Fettuccine Alfredo
+                </h3>
                 <h4 className="ourSpecialsMenu__item__price">$12</h4>
-               
+                
               </div>
             </div>
+           
           </div>
         </div>
       </section>
