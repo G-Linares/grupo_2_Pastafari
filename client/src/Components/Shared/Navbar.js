@@ -1,11 +1,6 @@
 import React from "react";
-import {Link, Route, Switch} from 'react-router-dom';
-import Home from '../Home/Home';
-import Contact from "../Contact/Contact";
-import Menu from "../Menu/Menu";
-import Login from "../Login/Login";
-import NotFound from "../NotFound";
-import CreateItem from "../Admin/CreateItem";
+import {Link} from 'react-router-dom';
+
 
 const Navbar = () => {
   return (
@@ -83,25 +78,7 @@ const Navbar = () => {
       </div>
 
       {/*aqui estan las rutas de la Navbar y ya renderiza todo */}
-      <Switch>
-            <Route exact path="/">
-                <Home />
-            </Route>
-            <Route exact path="/menu">
-                <Menu />
-            </Route>
-            <Route exact path="/contact">
-                <Contact />
-            </Route>
-            <Route exact path="/login">
-                <Login />
-            </Route>
-            <Route exact path="/createItem">
-                <CreateItem />
-            </Route>
-            <Route component={NotFound} />
-
-      </Switch>
+     
     </>
   );
 };
