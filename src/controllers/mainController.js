@@ -54,7 +54,9 @@ const mainController = {
   aboutUs: (req, res) => {
     res.render("aboutUs", { user: req.session.loggedUser });
   },
-  carrito: (req, res) => {
+  carrito: async (req, res) => {
+    let menu = await db.Menu.findAll();
+
     res.render("carrito", { item: menu, user: req.session.loggedUser });
   },
   sign_up: (req, res) => {
