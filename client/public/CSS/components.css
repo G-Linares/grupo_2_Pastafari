@@ -321,6 +321,12 @@
 	margin-top: 0.5rem;
 	color: var(--black-2);
 }
+.form__group span{
+	font-size: 1.4rem;
+	font-family: Raleway;
+	font-weight: 600;
+	color: red;
+}
 .form__group textarea {
 	resize: vertical;
 }
@@ -349,10 +355,21 @@
 	}
 	.form__group input,
 	.form__group textarea,
-	.form__group select {
+	.form__group select,
+	.form__group span {
 		font-size: 1.8rem;
 		padding: 2rem;
 		margin-top: 1.5rem;
 	}
+	.form__title__create{
+		font-size: 3.6rem;
+	}
 }
+.form__title__create{
+	text-align: center;
+	font-size: 1.8rem;
+	color: var(--black-1);
+	font-weight: 600;
+}
+
  /* termina form de contactos */

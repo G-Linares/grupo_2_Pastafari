@@ -208,6 +208,10 @@
   padding: 0.5rem;
   border-radius: 8px;
   gap: 0.5rem;
+  cursor: pointer;
+}
+.dishGrid__item:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
 }
 .dishGrid__item__img {
   flex: 4;

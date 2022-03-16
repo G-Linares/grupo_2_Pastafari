@@ -43,6 +43,10 @@
 	background-color: var(--lightGreen-1);
 	padding: 1.5rem;
 	border-radius: 12px;
+	cursor: pointer;
+}
+.ourSpecialsMenu__item:hover {
+	box-shadow: 0 0 11px rgba(33,33,33,.2);
 }
 .ourSpecialsMenu__item__img,
 .ourSpecialsMenu__item__info {

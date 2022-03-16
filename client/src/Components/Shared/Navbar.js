@@ -5,6 +5,7 @@ import Contact from "../Contact/Contact";
 import Menu from "../Menu/Menu";
 import Login from "../Login/Login";
 import NotFound from "../NotFound";
+import CreateItem from "../Admin/CreateItem";
 
 const Navbar = () => {
   return (
@@ -94,6 +95,9 @@ const Navbar = () => {
             </Route>
             <Route exact path="/login">
                 <Login />
+            </Route>
+            <Route exact path="/createItem">
+                <CreateItem />
             </Route>
             <Route component={NotFound} />
 
