@@ -2,10 +2,13 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useHistory } from 'react-router-dom';
 
 const url = "http://localhost:3001/"
 
 const CreateItem = () => {
+  let history = useHistory();
+
   const initialValues = {
     item: "",
     type: "",
@@ -34,7 +37,7 @@ const CreateItem = () => {
 
   const onSubmit = (data) => {
       axios.post(`${url}menu`, data).then((response) => {
-          console.log("funciono");
+          history.push('/menu');
       })
   };
 

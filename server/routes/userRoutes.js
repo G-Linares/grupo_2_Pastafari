@@ -5,7 +5,10 @@ const router = express.Router();
 const userControllers = require("../controllers/userControllers.js");
 
 //aui van las rutas
-router.get('/', userControllers.users);
-router.post('/', userControllers.indexUsers);
+router.post('/', userControllers.createUser);
+router.get('/', userControllers.seeUsers);
+
+router.post('/login',userControllers.loginUser);
+
 
 module.exports = router;

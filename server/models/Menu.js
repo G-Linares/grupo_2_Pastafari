@@ -1,3 +1,5 @@
+// solo es una prueba para ver que puedo enlazar la base de detos y hacerla relacional
+
 module.exports = (sequelize, DataTypes) => {
 
     const Menu = sequelize.define("Menu", {
@@ -40,6 +42,13 @@ module.exports = (sequelize, DataTypes) => {
         tableName: "Menu",
         timestamps: false
     });
+
+    // Menu.associate = (models) => {
+    //     Menu.hasOne(models.Users,{
+    //       onDelete:"cascade",
+    //     });
+    //   }; 
+
     return Menu;
 
 }

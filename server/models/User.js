@@ -1,9 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
     let cols = {
-      user_id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
       },
       name: {
         type: DataTypes.STRING,
@@ -11,24 +10,31 @@ module.exports = (sequelize, DataTypes) => {
       last_name: {
         type: DataTypes.STRING,
       },
-      user_name: {
-        type: DataTypes.STRING,
-      },
       email: {
         type: DataTypes.STRING,
       },
       password: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       img: {
         type: DataTypes.STRING,
       },
     };
-  
+    
     const Users = sequelize.define("Users", cols, {
         tableName: "Users",
         timestamps: false,
       });
-  
+
+      // no funcionana las relaciones de tablas
+
+
+      // Users.associate = (models) => {
+      //   Users.hasMany(models.Menu,{
+      //     onDelete:"cascade",
+      //   });
+      // }; 
+
     return Users;
   };
