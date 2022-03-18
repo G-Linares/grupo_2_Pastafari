@@ -1,7 +1,9 @@
 import React from "react";
 import platilloPrueba from "../../../pictures/platilloPrueba.jpg";
+import { useHistory } from 'react-router-dom';
 
 const SecondGrid = (breakfastFiltered) => {
+  let history = useHistory();
   return (
     <>
       <section id="dishGrid">
@@ -10,7 +12,7 @@ const SecondGrid = (breakfastFiltered) => {
           <div className="dishGrid__wrapper">
             {breakfastFiltered.breakfastFiltered.map((value, index) => {
               return (
-                <div className="dishGrid__item" key={index}>
+                <div className="dishGrid__item" key={index} onClick={() => {history.push(`/dish/${value.id}`)}}>
                   <div className="dishGrid__item__img">
                     <img src={platilloPrueba} alt="food img" />
                   </div>

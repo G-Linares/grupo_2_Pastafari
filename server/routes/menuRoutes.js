@@ -8,4 +8,7 @@ const menuControllers = require("../controllers/menuControllers.js");
 router.get('/', menuControllers.index);
 router.post('/', menuControllers.indexMenu);
 
+//agarro info de base de datos de un item
+router.get('/byId/:id', menuControllers.singleDish);
+
 module.exports = router;

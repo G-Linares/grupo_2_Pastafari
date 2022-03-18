@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Especiales from "./MenuComponents/Especiales";
 import FirstGrid from "./MenuComponents/FirstGrid";
 import SecondGrid from "./MenuComponents/SecondGrid";
 import ThirdGrid from "./MenuComponents/ThirdGrid";
@@ -29,7 +28,6 @@ const Menu = () => {
   return (
     <>
       <TituloPagina />
-      <Especiales />
       <FirstGrid entryFiltered={entryFiltered} />
       <SecondGrid breakfastFiltered={breakfastFiltered}/>
       <ThirdGrid mainFiltered={mainFiltered} />

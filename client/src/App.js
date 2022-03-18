@@ -8,6 +8,7 @@ import Contact from "./Components/Contact/Contact";
 import Login from "./Components/Login/Login";
 import CreateItem from "./Components/Admin/CreateItem";
 import NotFound from "./Components/NotFound";
+import Dish from "./Components/Dish/Dish";
 
 const App = () => {
   return (
@@ -29,6 +30,9 @@ const App = () => {
           </Route>
           <Route exact path="/createItem">
             <CreateItem />
+          </Route>
+          <Route exact path="/dish/:id">
+            <Dish />
           </Route>
           <Route component={NotFound} />
         </Switch>

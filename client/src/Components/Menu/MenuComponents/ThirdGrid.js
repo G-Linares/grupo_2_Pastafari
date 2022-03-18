@@ -1,7 +1,9 @@
 import React from "react";
 import platilloPrueba from "../../../pictures/platilloPrueba.jpg";
+import { useHistory } from "react-router-dom";
 
 const ThirdGrid = (mainFiltered) => {
+  let history = useHistory();
   return (
     <>
       <section id="dishGrid">
@@ -10,14 +12,18 @@ const ThirdGrid = (mainFiltered) => {
           <div className="dishGrid__wrapper">
             {mainFiltered.mainFiltered.map((value, index) => {
               return (
-                <div className="dishGrid__item" key={index}>
+                <div
+                  className="dishGrid__item"
+                  key={index}
+                  onClick={() => {
+                    history.push(`/dish/${value.id}`);
+                  }}
+                >
                   <div className="dishGrid__item__img">
                     <img src={platilloPrueba} alt="food img" />
                   </div>
                   <div className="dishGrid__item__info">
-                    <h3 className="dishGrid__item__title">
-                      {value.item}
-                    </h3>
+                    <h3 className="dishGrid__item__title">{value.item}</h3>
                     <h3 className="dishGrid__item__price">{value.price}</h3>
                   </div>
                 </div>
