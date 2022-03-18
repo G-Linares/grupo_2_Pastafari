@@ -121,3 +121,28 @@ En este sprint 6 se llega a la siguiente conclusion:
 Final de la retrospectiva:
 
 Se repasan los objetivos propuestos para mejorar en el Sprint 7.
+
+# Inicio de la retrospectiva, sprint 7:
+
+Se lee el backlog de retrospectivas del sprint 6, y los acuerdos que se ejecutaron o quedaron pendientes.
+
+# Oportunidades de Mejora y Planes de acción:
+
+En este sprint 7 se llega a la siguiente conclusion:
+
+    Que problemas enfrentamos:
+        -	Intervención de la vida real (problemas personales de los integrantes).
+        -	Retraso en general del sprint.
+        -	Falta de comunicación y planeación
+
+    Que hicimos bien:
+        -	Ser resilientes frente a las complicaciones.
+
+    Acciones de Mejora:
+        -   Extender horas de trabajo para reponer tiempo.
+        -	Recuperar la comunicación y enfocarse en la planeación.
+
+
+Final de la retrospectiva:
+
+Se repasan los objetivos propuestos para mejorar en el Sprint 8.
