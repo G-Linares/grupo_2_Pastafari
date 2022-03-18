@@ -36,7 +36,12 @@ const CreateItem = () => {
   });
 
   const onSubmit = (data) => {
-      axios.post(`${url}menu`, data).then((response) => {
+    
+      axios.post(`${url}menu`, data ,{
+        headers:{
+          accessToken: sessionStorage.getItem("accessToken")
+        }
+      }).then((response) => {
           history.push('/menu');
       })
   };

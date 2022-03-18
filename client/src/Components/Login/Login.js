@@ -35,12 +35,20 @@ const Login = () => {
     })
   };
 
-  //hago una handle function que verifica que el usuario y la contrasenia se encuentren en la base de datos
+  //hago una handle function que verifica que el usuario y la contrasenia se encuentren en la base de datos, si haces login bien o guarda en session storage
 
   const onSubmitLogin = () => {
     const data = {username: usernameProvided, password:passwordProvided};
     axios.post(`http://localhost:3001/users/login`, data).then((response) => {
-        console.log(response.data);
+        if(response.data.error){
+          return alert(response.data.error);
+        } else {
+          sessionStorage.setItem("accessToken", response.data);
+          
+        }
+        
+        
+         
     })
   };
 
