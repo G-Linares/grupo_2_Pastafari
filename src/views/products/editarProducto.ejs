@@ -1,56 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('../partials/head') %>
-            <link href="/css/styleEdicion.css" rel="stylesheet">
-            <title>Producto: <%=productToEdit.item %></title>
-    </head>
-<body>
+  <head>
+    <%- include('../partials/head') %>
+    <link href="/css/styleEdicion.css" rel="stylesheet" />
+    <title>Producto: <%=productToEdit.item %></title>
+  </head>
+  <body>
     <%- include('../partials/header') %>
 
     <main>
-        <section class="contenedor-form">
-            <form class="form-articulo" action="/producto/editarProducto/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                <label for="item">Nombre del producto</label>
-                <input class="item" type="text" name="item" value="<%=productToEdit.item %>">
-                <label for="type">Tipo de pasta</label>
-                <input class="item" type="text" name="type" value="<%=productToEdit.type %>">
-                <label for="price">Precio del producto</label>
-                <input type="number" name="price" value="<%=productToEdit.price %>">
-                <label for="description">Descripcion</label>
-                <textarea id="descripcion" name="description" rows="4" cols="50"><%= productToEdit.description %> 
-                </textarea>
-                <label for="image">Inserta la nueva imagen aquí</label>
-                <input type="file" name="image">
-                <label for="score">Score del producto</label>
-                <input type="number" name="score" value="<%=productToEdit.score %>">
-                <label for="score">Cambia el score</label>
-                <select>
-                    <option value="elige" selected>Elige</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
+      <section class="contenedor-form">
+        <form
+          class="form-articulo"
+          action="/producto/editarProducto/<%= productToEdit.id %>?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <label for="item">Nombre del producto</label>
+          <input
+            class="item"
+            type="text"
+            name="item"
+            value="<%=productToEdit.item %>"
+          />
+          <label for="type">Tipo de pasta</label>
+          <input
+            class="item"
+            type="text"
+            name="type"
+            value="<%=productToEdit.type %>"
+          />
+          <label for="price">Precio del producto</label>
+          <input type="number" name="price" value="<%=productToEdit.price %>" />
+          <label for="description">Descripcion</label>
+          <textarea id="descripcion" name="description" rows="4" cols="50">
+<%= productToEdit.description %> 
+                </textarea
+          >
+          <label for="image">Inserta la nueva imagen aquí</label>
+          <input type="file" name="image" />
+          <label for="score">Score del producto</label>
+          <input type="number" name="score" value="<%=productToEdit.score %>" />
+          <label for="score">Cambia el score</label>
+          <select>
+            <option value="elige" selected>Elige</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
 
-                <label for="discount">Descuento del producto</label>
-                <input type="number" name="discount" value="<%=productToEdit.discount %>">
-                <label for="boughts">Número comprado</label>
-                <input type="number" name="boughts" value="<%=productToEdit.boughts%>">
-                <label for="dish">Estilo de platillo</label>
-                <input type="text" name="dish" value="<%=productToEdit.dish%>">
-                <button class="boton" type="reset" value="reset">Deshacer cambios</button>
-                <button class="boton" type="submit" value="submit">Guardar cambios</button>
-            </form>
-        </section>
+          <label for="discount">Descuento del producto</label>
+          <input
+            type="number"
+            name="discount"
+            value="<%=productToEdit.discount %>"
+          />
+          <label for="boughts">Número comprado</label>
+          <input
+            type="number"
+            name="boughts"
+            value="<%=productToEdit.boughts%>"
+          />
+          <label for="dish">Estilo de platillo</label>
+          <input type="text" name="dish" value="<%=productToEdit.dish%>" />
+          <label for="isTopPlate">Es platillo top?</label>
+          <select class="item" name="isTopPlate" id="isTopPlate">
+            <option value="" Elige>Elige</option>
+            <% if(productToEdit.isTopPlate == 0) { %>
+            <option value="1">Sí</option>
+            <option selected value="0">No</option>
+            <% } else { %>
+            <option selected value="1">Sí</option>
+            <option value="0">No</option>
+            <% } %>
+          </select>
+          <button class="boton" type="reset" value="reset">
+            Deshacer cambios
+          </button>
+          <button class="boton" type="submit" value="submit">
+            Guardar cambios
+          </button>
+        </form>
+      </section>
     </main>
     <%- include('../partials/footer') %>
 
     <!-- script zone-->
     <%- include('../partials/scripts') %>
     <!-- script zone-->
-</body>
-
-
+  </body>
 </html>

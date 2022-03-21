@@ -9,7 +9,8 @@ const userCheck = require('../middlewares/userCheck')
 const adminCheck = require('../middlewares/adminCheck');
 
 //init upload middleware
-const upload = require("../middlewares/upload")
+const upload = require("../middlewares/upload");
+const validateNewDish = require('../middlewares/validateNewDish');
 
 //se renderiza todo el menu
 router.get('/menu', productController.menu);
@@ -22,7 +23,7 @@ router.get('/platilloDelMes/:id', productController.platilloDelMes);
 
 //render al menu editable
 router.get("/editar", userCheck, adminCheck, productController.index);
-router.post("/editar", upload.single("image"), productController.agregar);
+router.post("/editar", upload.single("image"), validateNewDish, productController.agregar);
 
 //render a un articulo en especifico
 router.get("/editarProducto/:id", userCheck, adminCheck, productController.editandoProducto);

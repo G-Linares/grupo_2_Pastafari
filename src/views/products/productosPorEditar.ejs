@@ -19,43 +19,53 @@
         >
           <h2>Formulario para nuevos productos</h2>
           <label for="item">Nombre del producto</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'item') { %>
+            <p style="color: #DD0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input
             class="item"
             type="text"
             name="item"
             id="item"
-            placeholder="nuevo producto"
+            placeholder="Nuevo producto"
+            value="<%= locals.old && old.item ? old.item : '' %>"
             required
           />
+
           <label for="type">Tipo de pasta</label>
-          <select class="item" name="type" id="type">
-            <option selected value="" Elige>Elige</option>
-            <option value="farfalle">Farfalle</option>
-            <option value="fettuccine">Fettuccine</option>
-            <option value="fusilli">Fusilli</option>
-            <option value="rigatoni">Rigatoni</option>
-            <option value="spaguetti">Spaguetti</option>
-          </select>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'type') { %>
+            <p style="color: #DD0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
+          <input class="item" name="type" id="type" placeholder="Teclea tipo" value="<%= locals.old && old.type ? old.type: '' %>"/>
+
           <label for="dish">Tipo de platillo</label>
-          <select class="item" name="dish" id="dish">
-            <option selected value="" Elige>Elige</option>
-            <option value="alfredo">Alfredo</option>
-            <option value="bolognesa">Bolognesa</option>
-            <option value="allaNorma">Alla Norma</option>
-            <option value="alPesto">Al Pesto</option>
-            <option value="carbonara">Carbonara</option>
-          </select>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'dish') { %>
+            <p style="color: #DD0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
+          <input class="item" name="dish" id="dish" placeholder="Teclea platillo" value="<%= locals.old && old.dish ? old.dish: '' %>"/>
+
           <label for="description">Descripcion del producto</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'description') { %>
+            <p style="color: #DD0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <textarea
             class="item"
             name="description"
             id="description"
             rows="3"
             cols="50"
-            placeholder="Tu descripción"
-          >
-          </textarea>
+            placeholder="Escribe la descripción aquí"
+          ><%= locals.old && old.description ? old.description: '' %></textarea>
+
           <label for="image"> Imagen para el producto</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'image') { %>
+            <p style="color: #DD0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input
             class="item"
             type="file"
@@ -64,26 +74,49 @@
             placeholder="Selecciona imagen del producto"
             required
           />
+
           <label for="score">Score</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'score') { %>
+            <p style="color: #DD0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input
             class="item"
             type="text"
             name="score"
             id="score"
             placeholder="1-5"
+            value="<%= locals.old && old.score ? old.score: '' %>"
           />
+
           <label for="discount">Descuento del producto</label>
-          <input type="text" name="discout" placeholder="10" />
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'discount') { %>
+            <p style="color: #DD0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
+          <input type="text" name="discount" placeholder="10" value="<%= locals.old && old.discount ? old.discount: '' %>" />
+
           <label for="boughts">Número comprado</label>
-          <input type="text" name="boughts" id="boughts" placeholder="50" />
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'boughts') { %>
+            <p style="color: #DD0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
+          <input type="text" name="boughts" id="boughts" placeholder="50" value="<%= locals.old && old.boughts ? old.boughts: '' %>" />
+
           <label for="price">Precio del producto</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'price') { %>
+            <p style="color: #DD0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input
             class="item"
             type="text"
             name="price"
             id="price"
             placeholder="$$$"
+            value="<%= locals.old && old.price ? old.price: '' %>"
           />
+
           <label for="isTopPlate">Es platillo top?</label>
           <select class="item" name="isTopPlate" id="isTopPlate">
             <option selected value="" Elige>Elige</option>

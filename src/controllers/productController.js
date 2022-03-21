@@ -1,3 +1,4 @@
+const { validationResult } = require("express-validator");
 const fs = require("fs");
 const path = require("path");
 
@@ -58,6 +59,7 @@ const productController = {
   },
   //procesa la edición de artículos
   agregar: (req, res) => {
+    let errors = validationResult(req);
     const {
       item,
       type,
@@ -69,20 +71,32 @@ const productController = {
       price,
       isTopPlate,
     } = req.body;
-    const image = req.file.filename;
-    db.Menu.create({
-      item,
-      type,
-      dish,
-      description,
-      image,
-      score,
-      discount,
-      boughts,
-      price,
-      isTopPlate,
-    });
-    res.redirect("/producto/editar");
+
+    if (errors.isEmpty()) {
+      const image = req.file.filename;
+      db.Menu.create({
+        item,
+        type,
+        dish,
+        description,
+        image,
+        score,
+        discount,
+        boughts,
+        price,
+        isTopPlate,
+      });
+      res.redirect("/producto/editar");
+    } else {
+      db.Menu.findAll().then(function (menuView) {
+        res.render("productosPorEditar", {
+          productos: menuView,
+          user: req.session.loggedUser,
+          errors: errors.array(),
+          old: req.body,
+        });
+      });
+    }
   },
   editandoProducto: async (req, res) => {
     const id = parseInt(req.params.id);
