@@ -16,6 +16,11 @@
           method="POST"
           enctype="multipart/form-data"
         >
+          <% if (locals.errors) { %> <% errors.forEach(error => { %>
+          <p style="color: red"><%= error.msg %></p>
+          <% }) %> <% } %> <% if (locals.msg) { %>
+          <p style="color: red"><%= msg %></p>
+          <% } %>
           <label for="item">Nombre del producto</label>
           <input
             class="item"
@@ -41,16 +46,6 @@
           <input type="file" name="image" />
           <label for="score">Score del producto</label>
           <input type="number" name="score" value="<%=productToEdit.score %>" />
-          <label for="score">Cambia el score</label>
-          <select>
-            <option value="elige" selected>Elige</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-
           <label for="discount">Descuento del producto</label>
           <input
             type="number"

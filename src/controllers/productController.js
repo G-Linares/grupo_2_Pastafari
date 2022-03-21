@@ -115,32 +115,43 @@ const productController = {
   actualizarProducto: async (req, res) => {
     let id = req.params.id;
     let productToEdit = await db.Menu.findByPk(id);
-    let newImg = req.file.filename;
-    let realImg = req.file.filename;
-    console.log("Imagen a uplodear------------" + realImg);
-
-    if (newImg == "" || !newImg) {
-      await db.Menu.update(
-        { id: productToEdit.id, ...req.body, image: productToEdit.image },
-        { where: { id: id } }
-      );
-      console.log("-----------ENTRO EL IF-----------");
-    } else {
-      //carga la nueva info a la DB
-      let oldImg = productToEdit.image;
-
-      let uploadPath = path.join(__dirname, "../../public/img/products/");
-      let erasePath = uploadPath + oldImg;
-      fs.unlinkSync(erasePath); //ESTO requiere handler en caso de que la imagén no se encuentre o crashea
-
-      await db.Menu.update(
-        { id: productToEdit.id, ...req.body, image: newImg },
-        { where: { id: id } }
-      );
-      console.log("-----------ENTRO EL ELSE-----------");
+    let newImg = "";
+    if (req.file != undefined) {
+      newImg = req.file.filename;
     }
+    let errors = validationResult(req);
 
-    return res.redirect("/");
+    if (errors.isEmpty()) {
+      if (newImg == "" || !newImg) {
+        await db.Menu.update(
+          { id: productToEdit.id, ...req.body, image: productToEdit.image },
+          { where: { id: id } }
+        );
+        console.log("-----------ENTRO EL IF-----------");
+      } else {
+        //carga la nueva info a la DB
+        let oldImg = productToEdit.image;
+
+        let uploadPath = path.join(__dirname, "../../public/img/products/");
+        let erasePath = uploadPath + oldImg;
+        fs.unlinkSync(erasePath); //ESTO requiere handler en caso de que la imagén no se encuentre o crashea
+
+        await db.Menu.update(
+          { id: productToEdit.id, ...req.body, image: newImg },
+          { where: { id: id } }
+        );
+        console.log("-----------ENTRO EL ELSE-----------");
+      }
+
+      return res.redirect("/");
+    } else {
+      console.log("Hay errores al update");
+      return res.render("editarProducto", {
+        productToEdit,
+        user: req.session.loggedUser,
+        errors: errors.array()
+      });
+    }
   },
   borrar: async (req, res) => {
     const id = req.params.id;
