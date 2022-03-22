@@ -2,11 +2,14 @@ import React, {useState} from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
 
   const [usernameProvided, setUsernameProvided] = useState("");
   const [passwordProvided, setPasswordProvided] = useState("");
+
+  let history = useHistory();
 
   const initialValues = {
     username: "",
@@ -44,11 +47,8 @@ const Login = () => {
           return alert(response.data.error);
         } else {
           sessionStorage.setItem("accessToken", response.data);
-          
-        }
-        
-        
-         
+          history.push('/');
+        }         
     })
   };
 

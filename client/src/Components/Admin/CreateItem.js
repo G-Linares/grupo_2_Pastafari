@@ -42,7 +42,13 @@ const CreateItem = () => {
           accessToken: sessionStorage.getItem("accessToken")
         }
       }).then((response) => {
+        if(response.data.error){
+          alert("Necistas estar logeado para crear un platillo");
+        } else {
+          alert("se creo satisfactoriamente")
           history.push('/menu');
+        }
+        
       })
   };
 
