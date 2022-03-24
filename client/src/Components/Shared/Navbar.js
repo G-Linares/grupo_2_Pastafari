@@ -9,7 +9,11 @@ const Navbar = () => {
 
   const logout = () => {
     localStorage.removeItem("accessToken");
-    setAuthState(false)
+    setAuthState({
+      username: "",
+      id: 0,
+      status: false,
+    })
   }
   
   return (
@@ -70,7 +74,7 @@ const Navbar = () => {
                     </Link>
                   </li>
 
-                  {!authState ? (
+                  {!authState.status ? (
                     <>
                       <li>
                         <Link className="btn primary-btn" to="/login">
@@ -96,6 +100,7 @@ const Navbar = () => {
                             <FaUserCircle />
                           </Link>
                           <div className="dropdown-content">
+                            <p className="account_details">{authState.username}</p>
                             <button onClick={logout}> Log Out</button>
                             <Link to="/myAccount"> Settings</Link>
                            

@@ -12,18 +12,40 @@ import Dish from "./Components/Dish/Dish";
 import MyAccount from "./Components/MyAccount/MyAccount";
 import Cart from "./Components/Cart/Cart";
 import { AuthContext } from "./helpers/AuthContext";
+import axios from "axios";
 
 const App = () => {
-
-  const [authState, setAuthState] = useState(false);
+  //vamos a sacar mas informacion de la llamada al API
+  const [authState, setAuthState] = useState({
+    username: "",
+    id: 0,
+    status: false,
+  });
 
   // cuando se hace refresh checa si hay un accces token
-  // puedo hacer validacion con fetch a api para ver si existe pero es mucho problema
   useEffect(() => {
-    if(localStorage.getItem("accessToken")){
-      setAuthState(true);
-    }
-  },[])
+    // if(localStorage.getItem("accessToken")){
+    //   setAuthState(true);
+    // }
+    // mejor lo hago validando al usuario con llamada a API
+    axios
+      .get("http://localhost:3001/users/auth", {
+        headers: {
+          accessToken: localStorage.getItem("accessToken"),
+        },
+      })
+      .then((response) => {
+        if (response.data.error) {
+          setAuthState({...authState, status:false});
+        } else {
+          setAuthState({
+            username: response.data.username,
+            id: response.data.id,
+            status: true,
+          });
+        }
+      });
+  }, []);
 
   return (
     <>
@@ -50,7 +72,7 @@ const App = () => {
               <Dish />
             </Route>
             <Route exact path="/cart">
-              <Cart/>
+              <Cart />
             </Route>
             <Route exact path="/myAccount">
               <MyAccount />

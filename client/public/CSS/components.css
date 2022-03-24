@@ -64,6 +64,9 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.account_details{
+	text-align: center;
+}
 
 @media only screen and (max-width: 768px) {
   .nav {
