@@ -25,16 +25,16 @@ const seeUsers = async (req, res) => {
 const loginUser = async (req, res) => {
   const { username, password } = req.body;
   const user = await Users.findOne({ where: { username: username } });
-  if (!user) {
-    return res.json({ error: "Usuario no existe" });
-  }
-  bcrypt
-    .compare(password, user.password)
-    .then(async (match) => {
-      if (!match) {
-        return res.json({ error: "Usuario o Contraseña incorrectas" });
-      }
-      const accessToken = sign({username: user.username, id:user.id}, "secreto")
+  if (!user) return res.json({ error: "Usuario no existe" });
+
+  bcrypt.compare(password, user.password).then(async (match) => {
+      if (!match) return res.json({ error: "Usuario o Contraseña incorrectas" });
+      
+      const accessToken = sign(
+        { username: user.username, id: user.id },
+        "importantsecret"
+      );
+      
       res.json(accessToken);
     })
     
