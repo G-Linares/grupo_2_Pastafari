@@ -20,6 +20,7 @@ const Login = () => {
     email: "",
     password: "",
     img: "",
+    type:""
   };
 
   const validationSchema = Yup.object().shape({
@@ -29,6 +30,7 @@ const Login = () => {
     email: Yup.string().required("*"),
     password: Yup.string().required("*"),
     img: Yup.string().required("*"),
+    type: Yup.string().oneOf(["Admin", "Cliente"],"Escriba Admin o Cliente")
   });
 
   // se crea un nuevo usuario en la base de datos
@@ -47,7 +49,6 @@ const Login = () => {
     axios
       .post(`http://localhost:3001/users/login`, userData)
       .then((response) => {
-        console.log(response);
         if (response.data.error) {
           return alert(response.data.error);
         } else {
@@ -57,6 +58,7 @@ const Login = () => {
             username: response.data.username,
             id: response.data.id,
             status: true,
+            type: response.data.type
           });
           history.push("/myaccount");
         }
@@ -105,7 +107,10 @@ const Login = () => {
                   type="email"
                 />
                 <ErrorMessage name="img" component="span" />
-                <Field name="img" placeholder="Foto de Perfil" required="" />.
+                <Field name="img" placeholder="Foto de Perfil" required="" />
+                <ErrorMessage name="type" component="div" className="admin_input_field" />
+                <Field name="type" placeholder="Tipo de cuenta (Admin/Cliente)" required="" />
+                
                 <button type="submit">Regístrate</button>
               </Form>
             </div>

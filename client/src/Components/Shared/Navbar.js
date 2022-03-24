@@ -4,7 +4,6 @@ import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../../helpers/AuthContext";
 
 const Navbar = () => {
-
   const { authState, setAuthState } = useContext(AuthContext);
 
   const logout = () => {
@@ -13,9 +12,10 @@ const Navbar = () => {
       username: "",
       id: 0,
       status: false,
-    })
-  }
-  
+      type: "",
+    });
+  };
+
   return (
     <>
       <div className="nav">
@@ -73,7 +73,15 @@ const Navbar = () => {
                       Contacto
                     </Link>
                   </li>
-
+                  {authState.type == "Admin" && (
+                    <>
+                      <li>
+                        <Link to="/createItem" className="nav__link">
+                          Crea un Platillo
+                        </Link>
+                      </li>
+                    </>
+                  )}
                   {!authState.status ? (
                     <>
                       <li>
@@ -85,11 +93,6 @@ const Navbar = () => {
                   ) : (
                     <>
                       <li>
-                        <Link className="nav__link" to="/createItem">
-                          Crea un Platillo
-                        </Link>
-                      </li>
-                      <li>
                         <Link to="/cart" className="nav_icon">
                           <FaShoppingCart />
                         </Link>
@@ -100,15 +103,21 @@ const Navbar = () => {
                             <FaUserCircle />
                           </Link>
                           <div className="dropdown-content">
-                            <p className="account_details">{authState.username}</p>
+                            <p className="account_details">
+                              Hola, {authState.username}!
+                            </p>
+                            <p className="account_details">
+                              Cuenta de tipo <br />
+                              {authState.type}
+                            </p>
                             <button onClick={logout}> Log Out</button>
                             <Link to="/myAccount"> Settings</Link>
-                           
                           </div>
                         </div>
                       </li>
                     </>
                   )}
+             
                 </div>
               </ul>
             </nav>

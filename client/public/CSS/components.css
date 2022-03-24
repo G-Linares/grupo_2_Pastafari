@@ -522,3 +522,9 @@ button:hover {
 }
 
 /* termina estilo para inicio de sesion */
+
+.admin_input_field{
+  color: red;
+  font-size: 15px;
+  text-align: center;
+}

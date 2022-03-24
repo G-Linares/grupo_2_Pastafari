@@ -20,6 +20,7 @@ const App = () => {
     username: "",
     id: 0,
     status: false,
+    type:""
   });
 
   // cuando se hace refresh checa si hay un accces token
@@ -42,6 +43,7 @@ const App = () => {
             username: response.data.username,
             id: response.data.id,
             status: true,
+            type: response.data.type
           });
         }
       });

@@ -1,9 +1,9 @@
 const { Users } = require("../models");
 const bcrypt = require("bcrypt");
-const {sign, TokenExpiredError} = require('jsonwebtoken');
+const {sign} = require('jsonwebtoken');
 
 const createUser = async (req, res) => {
-  const { username, password, name, last_name, email, img } = req.body;
+  const { username, password, name, last_name, email, img,type } = req.body;
   bcrypt.hash(password, 10).then((hash) => {
     Users.create({
       username: username,
@@ -12,6 +12,7 @@ const createUser = async (req, res) => {
       last_name: last_name,
       email: email,
       img: img,
+      type:type
     });
     res.json("guardado");
   });
@@ -34,7 +35,7 @@ const loginUser = async (req, res) => {
         "importantsecret"
       );   
       // ya no voy a mandar solamente el TokenExpiredError, ya tambien mando el username y el id
-      res.json({token:accessToken, username:username, id:user.id});
+      res.json({token:accessToken, username:username, id:user.id, type:user.type});
     })
     
 };

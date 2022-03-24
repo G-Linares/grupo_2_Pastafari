@@ -20,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
       img: {
         type: DataTypes.STRING,
       },
+      type: {
+        type: DataTypes.STRING,
+        allowNull:false,
+      }
     };
     
     const Users = sequelize.define("Users", cols, {
