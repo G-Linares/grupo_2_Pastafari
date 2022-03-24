@@ -1,37 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../../helpers/AuthContext";
 
 const Navbar = () => {
-  const [authState, setAuthState] = useState(false);
 
-  useEffect(() => {
+  const { authState, setAuthState } = useContext(AuthContext);
 
-    const validateAuthState = async () => {
-      axios.get("http://localhost:3001/users/auth", {
-        headers: {
-          accessToken: localStorage.getItem("accessToken"),
-        },
-      })
-      .then((response) => {
-        console.log(response.data.error)
-        if (response.data.error) {
-          setAuthState(false);
-        } else {
-          setAuthState(true);
-        }
-      })
-    }
-    validateAuthState();
-  }, []);
-
+  const logout = () => {
+    localStorage.removeItem("accessToken");
+    setAuthState(false)
+  }
+  
   return (
     <>
       <div className="nav">
-      <AuthContext.Provider value={{ authState, setAuthState }}>
-
         <div className="container">
           <div className="nav__wrapper">
             <Link to="/" className="logo">
@@ -77,11 +60,6 @@ const Navbar = () => {
                 </div>
                 <div className="nav__list__wrapper">
                   <li>
-                    <Link className="nav__link" to="/">
-                      Inicio
-                    </Link>
-                  </li>
-                  <li>
                     <Link className="nav__link" to="/menu">
                       Menú
                     </Link>
@@ -91,19 +69,39 @@ const Navbar = () => {
                       Contacto
                     </Link>
                   </li>
-                  
-                  {!authState && (
+
+                  {!authState ? (
                     <>
                       <li>
-                      <Link className="btn primary-btn" to="/login">
-                        Inicia Sesión
-                      </Link>
-                    </li>
+                        <Link className="btn primary-btn" to="/login">
+                          Inicia Sesión
+                        </Link>
+                      </li>
                     </>
-                  )}
-                  {authState && (
+                  ) : (
                     <>
-                      <FaShoppingCart className="shopping_cart"/>
+                      <li>
+                        <Link className="nav__link" to="/createItem">
+                          Crea un Platillo
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/cart" className="nav_icon">
+                          <FaShoppingCart />
+                        </Link>
+                      </li>
+                      <li>
+                        <div className="dropdown">
+                          <Link to="/myAccount" className="nav_icon">
+                            <FaUserCircle />
+                          </Link>
+                          <div className="dropdown-content">
+                            <button onClick={logout}> Log Out</button>
+                            <Link to="/myAccount"> Settings</Link>
+                           
+                          </div>
+                        </div>
+                      </li>
                     </>
                   )}
                 </div>
@@ -111,8 +109,6 @@ const Navbar = () => {
             </nav>
           </div>
         </div>
-
-      </AuthContext.Provider>
       </div>
 
       {/*aqui estan las rutas de la Navbar y ya renderiza todo */}

@@ -46,5 +46,5 @@ module.exports = {
   createUser,
   seeUsers,
   loginUser,
-  auth
+  auth,
 };

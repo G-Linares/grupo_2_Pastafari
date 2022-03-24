@@ -1,13 +1,16 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { AuthContext } from "../../helpers/AuthContext";
 
 const Login = () => {
 
   const [usernameProvided, setUsernameProvided] = useState("");
   const [passwordProvided, setPasswordProvided] = useState("");
+
+  const {setAuthState} = useContext(AuthContext);
 
   let history = useHistory();
 
@@ -46,15 +49,13 @@ const Login = () => {
         console.log(response)
         if(response.data.error){
           return alert(response.data.error);
-          
         } else {
           localStorage.setItem("accessToken", response.data);
+          setAuthState(true)
           history.push('/myaccount');
         }         
     })
   };
-
-
 
   // esta fallando la promise de el submit
   return (

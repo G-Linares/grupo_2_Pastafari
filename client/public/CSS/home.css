@@ -578,11 +578,11 @@
 	border: none;
 	font-size: 1.4rem;
 	padding: 0 2rem;
-	height: 100%;
+	height: 20%;
 	/* width: 100%; */
 	position: absolute;
-	right: 0;
-	top: 0;
+	right: 25px;
+	top: 130px;
 }
 @media only screen and (min-width: 768px) {
 	.newsletter__wrapper {
