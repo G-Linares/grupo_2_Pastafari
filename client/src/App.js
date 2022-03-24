@@ -9,6 +9,7 @@ import Login from "./Components/Login/Login";
 import CreateItem from "./Components/Admin/CreateItem";
 import NotFound from "./Components/NotFound";
 import Dish from "./Components/Dish/Dish";
+import MyAccount from "./Components/MyAccount/MyAccount";
 
 const App = () => {
   return (
@@ -33,6 +34,9 @@ const App = () => {
           </Route>
           <Route exact path="/dish/:id">
             <Dish />
+          </Route>
+          <Route exact path="/myaccount">
+            <MyAccount />
           </Route>
           <Route component={NotFound} />
         </Switch>

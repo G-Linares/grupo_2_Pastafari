@@ -39,11 +39,12 @@ const CreateItem = () => {
     
       axios.post(`${url}menu`, data ,{
         headers:{
-          accessToken: sessionStorage.getItem("accessToken")
+          accessToken: localStorage.getItem("accessToken")
         }
       }).then((response) => {
         if(response.data.error){
           alert("Necistas estar logeado para crear un platillo");
+          history.push('/login');
         } else {
           alert("se creo satisfactoriamente")
           history.push('/menu');

@@ -1,11 +1,37 @@
-import React from "react";
-import {Link} from 'react-router-dom';
-
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { FaShoppingCart } from "react-icons/fa";
+import { AuthContext } from "../../helpers/AuthContext";
 
 const Navbar = () => {
+  const [authState, setAuthState] = useState(false);
+
+  useEffect(() => {
+
+    const validateAuthState = async () => {
+      axios.get("http://localhost:3001/users/auth", {
+        headers: {
+          accessToken: localStorage.getItem("accessToken"),
+        },
+      })
+      .then((response) => {
+        console.log(response.data.error)
+        if (response.data.error) {
+          setAuthState(false);
+        } else {
+          setAuthState(true);
+        }
+      })
+    }
+    validateAuthState();
+  }, []);
+
   return (
     <>
       <div className="nav">
+      <AuthContext.Provider value={{ authState, setAuthState }}>
+
         <div className="container">
           <div className="nav__wrapper">
             <Link to="/" className="logo">
@@ -65,20 +91,31 @@ const Navbar = () => {
                       Contacto
                     </Link>
                   </li>
-                  <li>
-                    <Link className="btn primary-btn" to="/login">
-                     Inicia Sesión
-                    </Link>
-                  </li>
+                  
+                  {!authState && (
+                    <>
+                      <li>
+                      <Link className="btn primary-btn" to="/login">
+                        Inicia Sesión
+                      </Link>
+                    </li>
+                    </>
+                  )}
+                  {authState && (
+                    <>
+                      <FaShoppingCart className="shopping_cart"/>
+                    </>
+                  )}
                 </div>
               </ul>
             </nav>
           </div>
         </div>
+
+      </AuthContext.Provider>
       </div>
 
       {/*aqui estan las rutas de la Navbar y ya renderiza todo */}
-     
     </>
   );
 };

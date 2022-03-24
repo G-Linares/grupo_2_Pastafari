@@ -41,17 +41,22 @@ const Login = () => {
   //hago una handle function que verifica que el usuario y la contrasenia se encuentren en la base de datos, si haces login bien o guarda en session storage
 
   const onSubmitLogin = () => {
-    const data = {username: usernameProvided, password:passwordProvided};
-    axios.post(`http://localhost:3001/users/login`, data).then((response) => {
+    const userData = {username: usernameProvided, password:passwordProvided};
+    axios.post(`http://localhost:3001/users/login`, userData).then((response) => {
+        console.log(response)
         if(response.data.error){
           return alert(response.data.error);
+          
         } else {
-          sessionStorage.setItem("accessToken", response.data);
-          history.push('/');
+          localStorage.setItem("accessToken", response.data);
+          history.push('/myaccount');
         }         
     })
   };
 
+
+
+  // esta fallando la promise de el submit
   return (
     <>
       <div className="loginWrapper">
@@ -91,7 +96,7 @@ const Login = () => {
           </Formik>
          
             <div className="login">
-              <form onSubmit={onSubmitLogin}>
+              <div>
                 <label htmlFor="chk" aria-hidden="true" className="sign_up">
                   Inicia Sesión
                 </label>
@@ -99,8 +104,8 @@ const Login = () => {
                 <input name="username" placeholder="Usuario" required="" onChange={(event) => {setUsernameProvided(event.target.value)}}/>
                 
                 <input name="password" placeholder="Contraseña" required="" type="password" onChange={(event) => {setPasswordProvided(event.target.value)}}/>
-                <button type="submit">Login</button>
-              </form>
+                <button onClick={onSubmitLogin}>Login</button>
+              </div>
             </div>
           
         </div>
