@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import platilloPrueba from "../../pictures/platilloPrueba.jpg";
+import { AuthContext } from "../../helpers/AuthContext";
 
 const Dish = () => {
   const [dish, setDish] = useState([]);
+
+  const { authState } = useContext(AuthContext);
 
   const url = "http://localhost:3001/";
   let { id } = useParams();
@@ -32,7 +35,22 @@ const Dish = () => {
               <p className="info">{dish.description}</p>
               <p className="price">${dish.price}</p>
               <div className="btn-and-rating-box">
-                <button className="btn_add_to_cart">Agregar al carrito</button>
+                {!authState.status ? (
+                  <div className="btn_to_log_in">
+                    <Link to="/login" className="btn_to_log_in_text">
+                      
+                      Inicia Sesión para Comprar
+                    </Link>
+                  </div>
+                ) : (
+                  <button className="btn_add_to_cart">
+                    Agregar al carrito
+                  </button>
+                )}
+
+                {authState.type === "Admin" && (
+                  <button className="btn_add_to_cart">Borrar Platillo</button>
+                )}
               </div>
             </div>
           </div>

@@ -642,3 +642,19 @@ button:hover {
 }
 
 /* item solito para detalles final */
+.btn_to_log_in{
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  padding: 1.2rem 2rem;
+  text-decoration: none;
+  border: solid 1px black;
+  margin-bottom: 25px;
+}
+
+.btn_to_log_in_text{
+  text-decoration: none;
+  color: white;
+}

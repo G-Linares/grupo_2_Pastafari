@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useEffect, useContext} from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useHistory } from 'react-router-dom';
+import { AuthContext } from "../../helpers/AuthContext";
+import Swal from "sweetalert2";
 
 const url = "http://localhost:3001/"
 
@@ -52,6 +54,21 @@ const CreateItem = () => {
         
       })
   };
+ 
+  // empiezxa validacion para ver si estas logeado
+  const {authState} = useContext(AuthContext);
+  useEffect(() => {
+    if(!authState.status){
+      Swal.fire({
+        icon: 'error',
+        title: 'Ups...',
+        text: 'Necesitas estar loggeado como administrador para acceder a esta página'
+      })
+      history.push('/login');
+    }else{
+      console.log("si hay cuenta iniciada")
+    }
+  },[]);
 
   return (
     <>
