@@ -52,6 +52,7 @@ const validateSU = [
   }),
   body("img")
   .custom((value, { req }) => {
+    console.log(req.file);
     switch (req.file.mimetype) {
       case "image/png":
         return true;
@@ -61,6 +62,11 @@ const validateSU = [
         return true;
       default:
         throw new Error("La imagen debe ser png, jpg o jpeg");
+    }
+  })
+  .custom((value, {req}) => {
+    if (req.file.size > 5000000) {
+      throw new Error("La imagen debe pesar 5mb o menos");
     }
   }),
 ];
