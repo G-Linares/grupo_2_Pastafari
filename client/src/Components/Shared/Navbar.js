@@ -73,7 +73,7 @@ const Navbar = () => {
                       Contacto
                     </Link>
                   </li>
-                  {authState.type == "Admin" && (
+                  {authState.type === "Admin" && (
                     <>
                       <li>
                         <Link to="/createItem" className="nav__link">
@@ -117,7 +117,6 @@ const Navbar = () => {
                       </li>
                     </>
                   )}
-             
                 </div>
               </ul>
             </nav>

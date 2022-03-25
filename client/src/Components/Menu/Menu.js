@@ -20,17 +20,17 @@ const Menu = () => {
     
   }, []);
 
-  // filtrado para seccionar
-  const entryFiltered = listOfDishes.filter(dish => dish.type.includes('entry'));
-  const breakfastFiltered = listOfDishes.filter(dish => dish.type.includes('desayuno'));
-  const mainFiltered = listOfDishes.filter(dish => dish.type.includes('Comida'));
+  // filtrado para seccionar por tipo, ahorita lo voy a dejar como todo uno mismo
+  // const entryFiltered = listOfDishes.filter(dish => dish.type.includes('entry'));
+  // const breakfastFiltered = listOfDishes.filter(dish => dish.type.includes('desayuno'));
+  // const mainFiltered = listOfDishes.filter(dish => dish.type.includes('Comida'));
 
   return (
     <>
       <TituloPagina />
-      <FirstGrid entryFiltered={entryFiltered} />
-      <SecondGrid breakfastFiltered={breakfastFiltered}/>
-      <ThirdGrid mainFiltered={mainFiltered} />
+      <FirstGrid entryFiltered={listOfDishes} />
+      {/* <SecondGrid breakfastFiltered={breakfastFiltered}/>
+      <ThirdGrid mainFiltered={mainFiltered} /> */}
     </>
   );
 };

@@ -8,7 +8,8 @@ const FirstGrid = (entryFiltered) => {
     <>
       <section id="dishGrid">
         <div className="container">
-          <h2 className="dishGrid__title">Platillos de Entrada</h2>
+          {/* <h2 className="dishGrid__title">Platillos de Entrada</h2> */}
+          <h2 className="dishGrid__title">Platillos General</h2>
           <div className="dishGrid__wrapper">
             {entryFiltered.entryFiltered.map((value, index) => {
               return (
