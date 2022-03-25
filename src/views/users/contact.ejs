@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+    <title>Pastafari</title>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+
+    <!-- comienza contacto -->
+
+    <section class="contact" id="contact">
+      <h1 class="heading"><span>Mandanos </span> mensaje</h1>
+      <div class="row">
+        <form action="">
+          <h3>Ingresa tus Datos</h3>
+          <div class="inputBox">
+            <span class="fas fa-user"></span>
+            <input type="text" placeholder="N O M B R E" />
+          </div>
+          <div class="inputBox">
+            <span class="fas fa-envelope"></span>
+            <input type="email" placeholder="E M A I L" />
+          </div>
+          <div class="inputBox">
+            <textarea
+              type="textarea"
+              class="inputBox"
+              id="message"
+              name="message"
+              rows="5"
+              cols="100"
+              placeholder="A Q U I   T U   M E N S A J E"
+            ></textarea>
+          </div>
+
+          <input
+            type=""
+            value="CONTACTANOS"
+            class="btn"
+            id="send-button-contact"
+          />
+        </form>
+      </div>
+    </section>
+
+    <%- include('../partials/footer') %>
+
+    <!-- script zone-->
+    <%- include('../partials/scripts') %>
+    <!-- script zone-->
+  </body>
+</html>

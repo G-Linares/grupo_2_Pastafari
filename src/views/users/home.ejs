@@ -1,176 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <%- include('../partials/head') %>
-    <title> Pastafari </title>
+    <title>Pastafari</title>
+  </head>
 
-</head>
+  <body>
+    <!-- hecomienza header -->
 
-<body>
-<!-- hecomienza header -->
+    <%- include('../partials/header') %>
 
-<%- include('../partials/header') %>
+    <!-- fin de header-->
 
-<!-- fin de header-->
+    <!-- hocomienza home  -->
+    <% if(locals.errormessage){ %>
+    <div id="status" class="invisible"><%= errormessage %></div>
+    <%}%>
 
-<!-- hocomienza home  -->
-<% if(locals.errormessage){ %>
-    <div id='status' class='invisible'><%= errormessage %></div>
-<%}%>
-
-<section class="home" id="home">
-    <div class="content">
-        <h3>Pasta italiana<br/><span class="typed"> </span></h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus, maxime? Lorem, ipsum dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, expedita?</p>
+    <section class="home" id="home">
+      <div class="content">
+        <h3>Pasta italiana<br /><span class="typed"> </span></h3>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Voluptatibus, maxime? Lorem, ipsum dolor. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Vel, expedita?
+        </p>
         <a href="/producto/menu" class="btn">Accede Al Menu</a>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- acaba home -->
+    <!-- acaba home -->
 
-<!-- comienza about section  -->
+    <!-- comienza about section  -->
 
+    <section class="about" id="about">
+      <h1 class="heading"><span>Acerca de Pastafari.Co</span></h1>
 
-<section class="about" id="about">
-
-    <h1 class="heading"> <span>Acerca de Pastafari.Co</span> </h1>
-
-    <div class="row">
-
+      <div class="row">
         <div class="content">
-            <h3>Que hace a una gran pasta?</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui ea ullam, enim tempora ipsum fuga alias quae ratione a officiis id temporibus autem? Quod nemo facilis cupiditate. Ex, vel?</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit amet enim quod veritatis, nihil voluptas culpa! Neque consectetur obcaecati sapiente?</p>
-            <a href="#about" class="btn">Aprende mas aqui</a>
+          <h3>Que hace a una gran pasta?</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus qui ea ullam, enim tempora ipsum fuga alias quae
+            ratione a officiis id temporibus autem? Quod nemo facilis
+            cupiditate. Ex, vel?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit amet
+            enim quod veritatis, nihil voluptas culpa! Neque consectetur
+            obcaecati sapiente?
+          </p>
+          <a href="#about" class="btn">Aprende mas aqui</a>
         </div>
 
         <div class="image">
-           
-                <div class="carousel">
-                    <div class="carousel__item carousel__item--visible">
-                      <img src="img/1.jpg" />
-                    </div>
-                    <div class="carousel__item">
-                      <img src="img/2.jpg" />
-                    </div>
-                    <div class="carousel__item">
-                      <img src="img/3.jpg" />
-                    </div>
-                    <div class="carousel__actions">
-                      <button id="carousel__button--prev" aria-label="Previous slide"><</button>
-                      <button id="carousel__button--next" aria-label="Next slide">></button>
-                    </div>
-                  </div>
-        
-                </div>
-    </div>
+          <div class="carousel">
+            <div class="carousel__item carousel__item--visible">
+              <img src="img/1.jpg" />
+            </div>
+            <div class="carousel__item">
+              <img src="img/2.jpg" />
+            </div>
+            <div class="carousel__item">
+              <img src="img/3.jpg" />
+            </div>
+            <div class="carousel__actions">
+              <button id="carousel__button--prev" aria-label="Previous slide">
+                <
+              </button>
+              <button id="carousel__button--next" aria-label="Next slide">
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</section>
+    <!-- acaba about -->
 
+    <!-- comienza platilos del mes  -->
 
-<!-- acaba about -->
+    <section class="menu" id="menu">
+      <h1 class="heading">Platillos <span> del Mes </span></h1>
 
-<!-- comienza platilos del mes  -->
-
-<section class="menu" id="menu">
-
-    <h1 class="heading"> Platillos <span> del Mes </span> </h1>
-
-    <div class="box-container">
+      <div class="box-container">
         <% for(let platillo of platillosDelMes){ %>
         <div class="box">
-            <img src="/img/products/<%= platillo.image %>" alt="">
-            <h3><%= platillo.item%></h3>
-            <h4><%= platillo.type%></h4>
-            <div class="price">$<%= platillo.price%>
-                <% if(platillo.discount != ''){ %>
-                    <span><%= platillo.discount %></span>
-                <% }%>
-            </div> 
-            <a href="#" class="btn">agregar carrito</a>
-            <a href="/producto/platilloDelMes/<%= platillo.id%>" class="btn">detalles</a>
-        
-        </div> 
-        <% } %> 
-    </div>
+          <img src="/img/products/<%= platillo.image %>" alt="" />
+          <h3><%= platillo.item%></h3>
+          <h4><%= platillo.type%></h4>
+          <div class="price">
+            $<%= platillo.price%> <% if(platillo.discount != ''){ %>
+            <span><%= platillo.discount %></span>
+            <% }%>
+          </div>
+          <a href="#" class="btn">agregar carrito</a>
+          <a href="/producto/platilloDelMes/<%= platillo.id%>" class="btn"
+            >detalles</a
+          >
+        </div>
+        <% } %>
+      </div>
+    </section>
 
-</section>
+    <!-- acaba el platillos del mes -->
 
-<!-- acaba el platillos del mes -->
+    <!-- comienza el review  -->
 
+    <section class="review" id="review">
+      <h1 class="heading">customer's <span>review</span></h1>
 
-<!-- comienza el review  -->
-
-<section class="review" id="review">
-
-    <h1 class="heading"> customer's <span>review</span> </h1>
-
-    <div class="box-container">
-        
+      <div class="box-container">
         <% for(let review of reviews){ %>
-            <div class="box">
-                <div class="quote-icon">
-                    <i class="far fa-address-card"></i>
-                </div> 
-                <p><%= review.text %></p>
-                <img src="img/<%= review.img%>" class="user" alt="">
-                <h3><%= review.name%></h3>
-                <div class="stars">
-                    <% for(let i= 0; i< review.score; i++){ %>
-                        <i class="fas fa-star"></i>             
-                    <% } %>
-                    <% if(review.score < 5){ %>
-                        <% for(let i = review.score; i < 5; i++ ){%>
-                            <i class="far fa-star"></i>
-                        <%}%>
-                    <% } %>
-                </div>
-            </div>
+        <div class="box">
+          <div class="quote-icon">
+            <i class="far fa-address-card"></i>
+          </div>
+          <p><%= review.text %></p>
+          <img src="img/<%= review.img%>" class="user" alt="" />
+          <h3><%= review.name%></h3>
+          <div class="stars">
+            <% for(let i= 0; i< review.score; i++){ %>
+            <i class="fas fa-star"></i>
+            <% } %> <% if(review.score < 5){ %> <% for(let i = review.score; i <
+            5; i++ ){%>
+            <i class="far fa-star"></i>
+            <%}%> <% } %>
+          </div>
+        </div>
         <%}%>
-    </div>
+      </div>
+    </section>
 
-</section>
+    <!-- acaba review -->
 
-<!-- acaba review -->
+    <!-- comienza contacto -->
 
-<!-- comienza contacto -->
+    <section class="contact" id="contact">
+      <h1 class="heading"><span> Nuestra </span> ubicación</h1>
+      <div class="row">
+        <iframe
+          class="map"
+          src="https://maps.google.com/maps?q=angel%20de%20la%20revolucion%20mexico&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        ></iframe>
+      </div>
+    </section>
 
-<section class="contact" id="contact">
-    <h1 class="heading"> <span>Mandanos </span> mensaje </h1>
-    <div class="row">
-        <form action="">
-            <h3>INgresa tus Datos</h3>
-            <div class="inputBox">
-                <span class="fas fa-user"></span>
-                <input type="text" placeholder="N O M B R E">
-            </div>
-            <div class="inputBox">
-                <span class="fas fa-envelope"></span>
-                <input type="email" placeholder="E M A I L">
-            </div>
-            <div class="inputBox">
-                <span class="fas fa-phone"></span>
-                <input type="number" placeholder="T E L E F O N O">
-            </div>
-            <input type="" value="CONTACTANOS" class="btn" id="send-button-contact">
-        </form>
-        <iframe class="map" src="https://maps.google.com/maps?q=angel%20de%20la%20revolucion%20mexico&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-    </div>
-</section>
+    <!-- acaba contatco -->
 
-<!-- acaba contatco -->
+    <!-- fcomienza footer  -->
 
-<!-- fcomienza footer  -->
+    <%- include('../partials/footer') %>
 
-<%- include('../partials/footer') %>
+    <!-- acaba footer -->
 
-<!-- acaba footer -->
-
-<!-- script zone-->
-<%- include('../partials/scripts') %>
-<!-- script zone-->
-
-
-</body>
+    <!-- script zone-->
+    <%- include('../partials/scripts') %>
+    <!-- script zone-->
+  </body>
 </html>

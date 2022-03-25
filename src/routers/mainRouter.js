@@ -38,4 +38,7 @@ mainRouters.get("/dashboard", mainController.dashboard);
 //logs-out current user
 mainRouters.get("/logout", mainController.logout);
 
+//renders contact page
+mainRouters.get("/contacto", mainController.contact);
+
 module.exports = mainRouters;

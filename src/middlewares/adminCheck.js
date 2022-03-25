@@ -1,7 +1,7 @@
 //checks if user is admin
 
 function adminCheck (req, res, next) {
-    switch (req.session.loggedUser.username) {
+    switch (req.session.loggedUser.user_name) {
         case "MAR": 
         next();
         break;
