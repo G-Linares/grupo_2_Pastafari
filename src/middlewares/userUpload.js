@@ -10,10 +10,8 @@ let userstorage = multer.diskStorage({
 });
 
 //init upload
-const maxSize = 5000000; //5MB (mb * bt)
 let userUpload = multer({
   storage: userstorage,
-  limits: { fileSize: maxSize }
 }).single('img');
 
 module.exports = userUpload;

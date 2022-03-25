@@ -1,4 +1,5 @@
 const { body } = require("express-validator");
+const db = require("../../database/models");
 
 const validateSU = [
   body("name")
@@ -21,14 +22,34 @@ const validateSU = [
     .withMessage("Usuario no puede estar vacio")
     .bail()
     .isLength({ min: 3 })
-    .withMessage("Usuario debe tener al menos 3 caractéres"),
+    .withMessage("Usuario debe tener al menos 3 caractéres")
+    .custom( async(value, {req}) => {
+      let newUserName = req.body.username;
+      let checkUserName = await db.Users.findOne({where: {user_name: newUserName}});
+      console.log(checkUserName);
+      if ( checkUserName != undefined) {
+        throw new Error("El usuario ya existe");
+      } else {
+        return true;
+      }
+    }),
   body("email")
     .trim()
     .notEmpty()
     .withMessage("Email no puede estar vacio")
     .bail()
     .isEmail()
-    .withMessage("Inserta un email valido"),
+    .withMessage("Inserta un email valido")
+    .custom( async(value, {req}) => {
+      let newEmail = req.body.email;
+      let checkEmail = await db.Users.findOne({where: {email: newEmail}});
+      console.log(checkEmail);
+      if ( checkEmail != undefined) {
+        throw new Error("El email ya existe");
+      } else {
+        return true;
+      }
+    }),
   body("password")
     .trim()
     .notEmpty()
@@ -52,6 +73,7 @@ const validateSU = [
   }),
   body("img")
   .custom((value, { req }) => {
+    console.log(req.file);
     switch (req.file.mimetype) {
       case "image/png":
         return true;
@@ -61,6 +83,13 @@ const validateSU = [
         return true;
       default:
         throw new Error("La imagen debe ser png, jpg o jpeg");
+    }
+  })
+  .custom((value, {req}) => {
+    if (req.file.size > 5000000) {
+      throw new Error("La imagen debe pesar 5mb o menos");
+    } else {
+      return true;
     }
   }),
 ];
