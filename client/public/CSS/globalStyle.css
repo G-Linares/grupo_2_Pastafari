@@ -51,3 +51,23 @@ a {
 	display: inline-block;
 	text-decoration: none;
 }
+
+/* empieza estilo de alrtas Swal  */
+
+.swal2-title{
+	font-family: 'Roboto', sans-serif;
+	font-size: 4rem;
+}
+
+.swal2-html-container{
+	font-family: 'Roboto', sans-serif;
+	font-size: 3rem;
+}
+.swal2-styled.swal2-confirm {
+	background-color: var(--green-2) !important;
+}
+.swal2-actions{
+	width: 60% !important;
+}
+
+/* termina estilo de alertas Swal */

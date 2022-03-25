@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../helpers/AuthContext";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [usernameProvided, setUsernameProvided] = useState("");
@@ -60,6 +61,11 @@ const Login = () => {
             status: true,
             type: response.data.type
           });
+          Swal.fire({
+            icon: 'success',
+            title: '¡Bienvenido!',
+            text: `Has accedido a tu cuenta ${response.data.username}`
+          })
           history.push("/myaccount");
         }
       });
