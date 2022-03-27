@@ -19,13 +19,11 @@
           <p>Por favor llena estos datos para acceder</p>
           <p>Este registro no distingue entre mayusculas o minusculas</p>
 
-          <% if (locals.errors) { %> <% errors.forEach(error => { %>
-          <p style="color: red"><%= error.msg %></p>
-          <% }) %> <% } %> <% if (locals.msg) { %>
-          <p style="color: red"><%= msg %></p>
-          <% } %>
-
           <label for="name">Nombre(s)</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'name') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input
             type="text"
             name="name"
@@ -35,6 +33,10 @@
             required
           />
           <label for="lastname">Apellidos</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'lastname') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input
             type="text"
             name="lastname"
@@ -44,6 +46,10 @@
             required
           />
           <label for="username">Nombre de Usuario</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'username') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input
             type="text"
             name="username"
@@ -53,6 +59,10 @@
             required
           />
           <label for="email">E-mail</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'email') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input
             type="email"
             name="email"
@@ -63,6 +73,10 @@
           />
 
           <label for="password">Contraseña</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'password') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input
             type="password"
             placeholder="Ingresa la Contraseña"
@@ -70,15 +84,23 @@
             id="password"
             required
           />
-          <label for="cofpassword">Confirmación de Contraseña </label>
-          <!--Esto debe cambiarse para que ayude al usuario a no errar al establecer contraseña-->
+          <label for="coPassword">Confirmación de Contraseña </label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'coPassword') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input
             type="password"
             placeholder="Confirma tu contraseña"
-            id="cofpassword"
+            name="coPassword"
+            id="coPassword"
             required
           />
           <label for="img">Imagen de usuario</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'img') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input type="file" name="img" id="img" required />
 
           <div class="container-buttons">

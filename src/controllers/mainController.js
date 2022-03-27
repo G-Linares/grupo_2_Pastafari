@@ -63,7 +63,6 @@ const mainController = {
     res.render("createAccount", { user: req.session.loggedUser });
   },
   new_sign_up: (req, res) => {
-
     let errors = validationResult(req);
     const { name, lastname, username, email, password } = req.body;
 
@@ -80,6 +79,13 @@ const mainController = {
       });
       res.redirect("/");
     } else {
+      let unadmitedImg = req.file.filename;
+      console.log(unadmitedImg);
+      let uploadPath = path.join(__dirname, "../../public/img/users/");
+      let erasePath = uploadPath + unadmitedImg;
+      if (fs.existsSync(erasePath)) {
+        fs.unlinkSync(erasePath);
+      }
       res.render("createAccount", {
         errors: errors.array(),
         old: req.body,
@@ -90,7 +96,9 @@ const mainController = {
   search: async (req, res) => {
     let search = req.query.keywords.toLowerCase();
     // recibe un string en la barra de busqueda y busca en DB todo lo que se parezca
-    const results = await db.Menu.findAll({ where: {item: {[Op.like]: `%${search}%`}}});
+    const results = await db.Menu.findAll({
+      where: { item: { [Op.like]: `%${search}%` } },
+    });
     //si hay un match manda la info de ese objeto
     if (results == []) {
       res.render("error", { msg: "ERROR, NO HAY PLATILLOS EN LOS DATOS" });
@@ -103,7 +111,6 @@ const mainController = {
     }
   },
   loginExisting: async (req, res) => {
-
     const user = await db.Users.findOne({
       where: { user_name: req.body.username },
     });
@@ -114,13 +121,12 @@ const mainController = {
       bcrypt
         .compare(req.body.password, user.dataValues.password)
         .then((result) => {
-
           if (result) {
             delete user.dataValues.password;
             /* console.log("----Pass fue borrado----");
             console.log(userToSearch.dataValues); */
             req.session.loggedUser = user.dataValues;
-              /* console.log("------el session es------");
+            /* console.log("------el session es------");
               console.log(req.session.loggedUser); */
 
             if (req.body.recordarme != undefined) {
