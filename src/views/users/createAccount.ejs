@@ -15,6 +15,9 @@
         enctype="multipart/form-data"
       >
         <div class="container-registro">
+          <div class="errores">
+              <ul></ul>    
+          </div>
           <h1>Crea tu nueva cuenta</h1>
           <p>Por favor llena estos datos para acceder</p>
           <p>Este registro no distingue entre mayusculas o minusculas</p>
@@ -32,7 +35,7 @@
             id="name"
             placeholder="Ingresa tu nombre"
             value="<%= locals.old && old.name ? old.name : '' %>"
-            required
+            class="invalid"
           />
           <label for="lastname">Apellidos</label>
           <input
@@ -41,7 +44,7 @@
             id="lastname"
             placeholder="Ingresa tus apellidos"
             value="<%= locals.old && old.lastname ? old.lastname : '' %>"
-            required
+            class="invalid"
           />
           <label for="username">Nombre de Usuario</label>
           <input
@@ -50,7 +53,7 @@
             id="username"
             placeholder="Ingresa Nombre de Usuario"
             value="<%= locals.old && old.username? old.username : '' %>"
-            required
+            class="invalid"
           />
           <label for="email">E-mail</label>
           <input
@@ -59,7 +62,7 @@
             id="email"
             placeholder="Ingresa tu email"
             value="<%= locals.old && old.email ? old.email : '' %> "
-            required
+            class="invalid"
           />
 
           <label for="password">Contraseña</label>
@@ -68,7 +71,7 @@
             placeholder="Ingresa la Contraseña"
             name="password"
             id="password"
-            required
+            class="invalid"
           />
           <label for="cofpassword">Confirmación de Contraseña </label>
           <!--Esto debe cambiarse para que ayude al usuario a no errar al establecer contraseña-->
@@ -76,10 +79,10 @@
             type="password"
             placeholder="Confirma tu contraseña"
             id="cofpassword"
-            required
+            class="invalid"
           />
           <label for="img">Imagen de usuario</label>
-          <input type="file" name="img" id="img" required />
+          <input type="file" name="img" id="img" />
 
           <div class="container-buttons">
             <button type="submit" class="btn">Accede</button>
