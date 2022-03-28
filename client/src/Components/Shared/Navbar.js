@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../../helpers/AuthContext";
+import { useHistory } from "react-router-dom";
 
 const Navbar = () => {
+  let history = useHistory();
   const { authState, setAuthState } = useContext(AuthContext);
 
   const logout = () => {
@@ -14,6 +16,7 @@ const Navbar = () => {
       status: false,
       type: "",
     });
+    history.push('/');
   };
 
   return (

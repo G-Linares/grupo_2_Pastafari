@@ -44,9 +44,16 @@ const auth = (req,res) => {
   res.json(req.user);
 }
 
+const profile = async (req, res) => {
+  const id = req.params.id;
+  const user = await Users.findByPk(id);
+  res.json(user);
+};
+
 module.exports = {
   createUser,
   seeUsers,
   loginUser,
   auth,
+  profile
 };

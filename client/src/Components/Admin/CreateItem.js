@@ -66,7 +66,11 @@ const CreateItem = () => {
       })
       history.push('/login');
     }else{
-      console.log("si hay cuenta iniciada")
+      Swal.fire({
+        icon: "success",
+        title: "Usuario Autenticado",
+        text: "Aquí puedes crear un nuevo platillo",
+      });
     }
   },[]);
 

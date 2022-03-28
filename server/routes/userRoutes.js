@@ -15,5 +15,7 @@ router.post('/login',userControllers.loginUser);
 //autentica si esta logeado
 router.get('/auth', validateToken, userControllers.auth);
 
+router.get('/profile/:id', userControllers.profile);
+
 
 module.exports = router;
