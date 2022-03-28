@@ -1,11 +1,11 @@
 window.addEventListener("load", function() {
-    let formulario = document.querySelector("form");
+    let formulario = document.querySelector("form.contenedor-formulario");
     let fields = document.querySelectorAll(".invalid");
     console.log("Soy la validacion del registro");
 
     formulario.addEventListener("submit", (event) => {
       event.preventDefault();
-        let errors = [];
+        let errores = [];
     
         for (let e = 0; e < fields.length; e++) {
           console.log(fields[e]);
@@ -13,7 +13,7 @@ window.addEventListener("load", function() {
             errores.push(`El campo ${fields[e].id} no debe estar vacio`);
           }
         }
-        console.log(errors)
+        console.log(errores)
 
         if (errores.length > 0) {
           let messageErrores = document.querySelector("div.errores ul");
