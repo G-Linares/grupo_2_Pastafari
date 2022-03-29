@@ -10,14 +10,15 @@
     <%- include('../partials/header') %>
 
     <main>
+      
       <section class="agregar-inventario">
+        <h2 class="heading">Formulario para nuevos productos</h2>
         <form
           action="/producto/editar"
           method="POST"
           class="contenedor-formulario"
-          enctype="multipart/form-data"
-        >
-          <h2>Formulario para nuevos productos</h2>
+          enctype="multipart/form-data">
+          
           <label for="item">Nombre del producto</label>
           <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
           (e.param == 'item') { %>
@@ -31,21 +32,21 @@
             placeholder="Nuevo producto"
             value="<%= locals.old && old.item ? old.item : '' %>"
             required
-          />
+          ></input>
 
           <label for="type">Tipo de pasta</label>
           <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
           (e.param == 'type') { %>
             <p style="color: #DD0000"><%= e.msg %></p>
           <% } %> <% }) %> <% } %>
-          <input class="item" name="type" id="type" placeholder="Teclea tipo" value="<%= locals.old && old.type ? old.type: '' %>"/>
+          <input class="item" name="type" id="type" placeholder="Teclea tipo" value="<%= locals.old && old.type ? old.type: '' %>"></input>
 
           <label for="dish">Tipo de platillo</label>
           <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
           (e.param == 'dish') { %>
             <p style="color: #DD0000"><%= e.msg %></p>
           <% } %> <% }) %> <% } %>
-          <input class="item" name="dish" id="dish" placeholder="Teclea platillo" value="<%= locals.old && old.dish ? old.dish: '' %>"/>
+          <input class="item" name="dish" id="dish" placeholder="Teclea platillo" value="<%= locals.old && old.dish ? old.dish: '' %>"></input>
 
           <label for="description">Descripcion del producto</label>
           <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
@@ -58,23 +59,10 @@
             id="description"
             rows="3"
             cols="50"
-            placeholder="Escribe la descripción aquí"
-          ><%= locals.old && old.description ? old.description: '' %></textarea>
-
-          <label for="image"> Imagen para el producto</label>
-          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
-          (e.param == 'image') { %>
-            <p style="color: #DD0000"><%= e.msg %></p>
-          <% } %> <% }) %> <% } %>
-          <input
-            class="item"
-            type="file"
-            name="image"
-            id="image"
-            placeholder="Selecciona imagen del producto"
-            required
-          />
-
+            placeholder="Escribe la descripción aquí">
+          <%= locals.old && old.description ? old.description: '' %>
+          </textarea>
+          
           <label for="score">Score</label>
           <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
           (e.param == 'score') { %>
@@ -87,21 +75,22 @@
             id="score"
             placeholder="1-5"
             value="<%= locals.old && old.score ? old.score: '' %>"
-          />
+          ></input>
 
           <label for="discount">Descuento del producto</label>
           <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
           (e.param == 'discount') { %>
             <p style="color: #DD0000"><%= e.msg %></p>
           <% } %> <% }) %> <% } %>
-          <input type="text" name="discount" placeholder="10" value="<%= locals.old && old.discount ? old.discount: '' %>" />
+          <input class="item" type="text" name="discount" placeholder="10" value="<%= locals.old && old.discount ? old.discount: '' %>" ></input>
 
           <label for="boughts">Número comprado</label>
           <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
           (e.param == 'boughts') { %>
             <p style="color: #DD0000"><%= e.msg %></p>
           <% } %> <% }) %> <% } %>
-          <input type="text" name="boughts" id="boughts" placeholder="50" value="<%= locals.old && old.boughts ? old.boughts: '' %>" />
+          <input class="item" type="text" name="boughts" id="boughts" placeholder="50" value="<%= locals.old && old.boughts ? old.boughts: '' %>">
+          </input>
 
           <label for="price">Precio del producto</label>
           <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
@@ -114,8 +103,8 @@
             name="price"
             id="price"
             placeholder="$$$"
-            value="<%= locals.old && old.price ? old.price: '' %>"
-          />
+            value="<%= locals.old && old.price ? old.price: '' %>">
+          </input>
 
           <label for="isTopPlate">Es platillo top?</label>
           <select class="item" name="isTopPlate" id="isTopPlate">
@@ -123,7 +112,20 @@
             <option value="1">Sí</option>
             <option value="0" selected>No</option>
           </select>
-          <input class="item" type="submit" value="Submit" />
+          <label for="image"> Imagen para el producto</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'image') { %>
+            <p style="color: #DD0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
+          <input
+            class="item"
+            type="file"
+            name="image"
+            id="image"
+            placeholder="Selecciona imagen del producto"
+            required
+          ></input>
+          <button class="item submit" type="submit" value="Submit">Submit</button>
           <button class="item" type="reset" value="reset">
             Vaciar formulario
           </button>

@@ -16,12 +16,11 @@
           method="POST"
           enctype="multipart/form-data"
         >
-          <% if (locals.errors) { %> <% errors.forEach(error => { %>
-          <p style="color: red"><%= error.msg %></p>
-          <% }) %> <% } %> <% if (locals.msg) { %>
-          <p style="color: red"><%= msg %></p>
-          <% } %>
           <label for="item">Nombre del producto</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+            (e.param == 'item') { %>
+            <p style="color: #dd0000"><%= e.msg %></p>
+            <% } %> <% }) %> <% } %>
           <input
             class="item"
             type="text"
@@ -29,6 +28,10 @@
             value="<%=productToEdit.item %>"
           />
           <label for="type">Tipo de pasta</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'type') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input
             class="item"
             type="text"
@@ -36,29 +39,57 @@
             value="<%=productToEdit.type %>"
           />
           <label for="price">Precio del producto</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'price') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input type="number" name="price" value="<%=productToEdit.price %>" />
           <label for="description">Descripcion</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'description') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <textarea id="descripcion" name="description" rows="4" cols="50">
 <%= productToEdit.description %> 
                 </textarea
           >
           <label for="image">Inserta la nueva imagen aquí</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'image') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input type="file" name="image" />
           <label for="score">Score del producto</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'score') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input type="number" name="score" value="<%=productToEdit.score %>" />
           <label for="discount">Descuento del producto</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'discount') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input
             type="number"
             name="discount"
             value="<%=productToEdit.discount %>"
           />
           <label for="boughts">Número comprado</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'boughts') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input
             type="number"
             name="boughts"
             value="<%=productToEdit.boughts%>"
           />
           <label for="dish">Estilo de platillo</label>
+          <% if (locals.errors) { %> <% errors.forEach( function (e) { %> <% if
+          (e.param == 'dish') { %>
+          <p style="color: #dd0000"><%= e.msg %></p>
+          <% } %> <% }) %> <% } %>
           <input type="text" name="dish" value="<%=productToEdit.dish%>" />
           <label for="isTopPlate">Es platillo top?</label>
           <select class="item" name="isTopPlate" id="isTopPlate">
