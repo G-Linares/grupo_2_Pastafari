@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 import { AuthContext } from "../../helpers/AuthContext";
 import Swal from "sweetalert2";
 import { useContext, useEffect, useState } from "react";

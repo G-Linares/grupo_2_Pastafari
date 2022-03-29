@@ -51,7 +51,11 @@ const Login = () => {
       .post(`http://localhost:3001/users/login`, userData)
       .then((response) => {
         if (response.data.error) {
-          return alert(response.data.error);
+          return  Swal.fire({
+            icon: 'error',
+            title: 'Usuario o contraseña incorrecta',
+            text: `Por favor intenta acceder con una contraseña o usuario válido`
+          })
         } else {
           // como el pedido ya caraga con datos del usuario y el token que de acceder a diferentes partes
           localStorage.setItem("accessToken", response.data.token);

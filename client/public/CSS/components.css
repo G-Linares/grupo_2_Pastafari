@@ -661,6 +661,15 @@ button:hover {
 
 /* inicio de vista para cuenta de usaurio  */
 
-
+/* ocupe el mismo estilo a final de cuentas */
 
 /* termina vista de inicio de sesion de uisuario */
+
+/* inicia estilo de iconos para editar producto */
+.edit_item_icon {
+  font-size: 3rem;
+  color: rgb(12, 163, 45);
+  text-align: center;
+  cursor: pointer;
+}
+/* termina estilo de boton para editar platillo  */
