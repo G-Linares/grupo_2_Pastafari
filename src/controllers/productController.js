@@ -88,6 +88,13 @@ const productController = {
       });
       res.redirect("/producto/editar");
     } else {
+      let unadmitedImg = req.file.filename;
+      console.log(unadmitedImg);
+      let uploadPath = path.join(__dirname, "../../public/img/products/");
+      let erasePath = uploadPath + unadmitedImg;
+      if (fs.existsSync(erasePath)) {
+        fs.unlinkSync(erasePath);
+      }
       db.Menu.findAll().then(function (menuView) {
         res.render("productosPorEditar", {
           productos: menuView,

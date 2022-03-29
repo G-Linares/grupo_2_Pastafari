@@ -28,9 +28,6 @@ const validateNewDish = [
     .notEmpty()
     .bail()
     .withMessage("Descripción no puede estar vacio"),
-  /*  body("image")//esto no llega a usarse si multer tira a error y mata la página
-    .notEmpty()
-    .withMessage("Image no puede estar vacio"), */
   body("score")
     .trim()
     .notEmpty()
@@ -53,6 +50,28 @@ const validateNewDish = [
     .notEmpty()
     .bail()
     .withMessage("Precio no puede estar vacio"),
+  body("image")
+  .custom((value, { req }) => {
+    console.log(req.file);
+    switch (req.file.mimetype) {
+      case "image/png":
+        return true;
+      case "image/jpg":
+        return true;
+      case "image/jpeg":
+        return true;
+      default:
+        throw new Error("La imagen debe ser png, jpg o jpeg");
+    }
+  })
+  .bail()
+  .custom((value, {req}) => {
+    if (req.file.size > 5000000) {
+      throw new Error("La imagen debe pesar 5mb o menos");
+    } else {
+      return true;
+    }
+  }),
 ];
 
 module.exports = validateNewDish;

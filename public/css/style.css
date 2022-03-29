@@ -75,7 +75,7 @@ body {
 
 section {
   padding: 2rem 7%;
-  margin-top: 6rem;
+  margin-top: 2rem;
 }
 
 .heading {
@@ -114,7 +114,7 @@ section {
   justify-content: space-between;
   padding: 1.5rem 7%;
   border-bottom: var(--alter);
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;

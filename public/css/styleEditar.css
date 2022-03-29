@@ -1,25 +1,28 @@
 .agregar-inventario {
-    margin-top: 8rem;
+    margin-top: 4rem;
     justify-content: center;
     justify-content: center;
-    display: flex;
+    display: block;
 }
 
 .contenedor-formulario {
     display: flex;
-    background-color: grey;
+    background-color: black;
     border-radius: 5px;
     flex-direction: column;
     text-align: center;
     padding: 10px;
+    color: white;
+    font-size: medium;
 }
 
 .item {
     padding: 5px;
     margin: 5px;
-    width: 45%;
+    width: 100%;
     align-self: center;
     justify-content: center;
+    text-align: center;
 }
 
 main section.articulos-existentes {
@@ -53,10 +56,14 @@ h2.producto-nombre {
 button {
     margin: 5px;
     border-radius: 5px;
-    background-color:cyan;
+    background-color: lightskyblue;
     color: white;
     font-weight: bold;
     padding: 5px;
+}
+
+button.submit {
+    background-color: mediumseagreen;
 }
 
 button:hover {
