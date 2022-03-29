@@ -36,30 +36,32 @@
             value="<%=productToEdit.type %>"
           />
           <label for="price">Precio del producto</label>
-          <input type="number" name="price" value="<%=productToEdit.price %>" />
+          <input type="number" class="item" name="price" value="<%=productToEdit.price %>" />
           <label for="description">Descripcion</label>
           <textarea id="descripcion" name="description" rows="4" cols="50">
 <%= productToEdit.description %> 
                 </textarea
           >
           <label for="image">Inserta la nueva imagen aquí</label>
-          <input type="file" name="image" />
+          <input type="file" class="item" name="image" />
           <label for="score">Score del producto</label>
-          <input type="number" name="score" value="<%=productToEdit.score %>" />
+          <input type="number" class="item" name="score" value="<%=productToEdit.score %>" />
           <label for="discount">Descuento del producto</label>
           <input
             type="number"
             name="discount"
             value="<%=productToEdit.discount %>"
+            class="item"
           />
           <label for="boughts">Número comprado</label>
           <input
             type="number"
             name="boughts"
             value="<%=productToEdit.boughts%>"
+            class="item"
           />
           <label for="dish">Estilo de platillo</label>
-          <input type="text" name="dish" value="<%=productToEdit.dish%>" />
+          <input type="text" class="item" name="dish" value="<%=productToEdit.dish%>" />
           <label for="isTopPlate">Es platillo top?</label>
           <select class="item" name="isTopPlate" id="isTopPlate">
             <option value="" Elige>Elige</option>
