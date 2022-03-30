@@ -904,6 +904,56 @@ select:focus {
 .show {display: block;}
 /*dropdown menu ends*/
 
+.contenedor-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-articulo {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  background-color: black;
+  color: white;
+  justify-content: space-evenly;
+  text-align: center;
+  font-size: medium;
+  padding: 2%;
+  border-radius: 5px;
+  margin: 10px 0px;
+}
+
+form img {
+  width: 120px;
+}
+
+.form-articulo > input {
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+section.contenedor-form {
+  position: relative;
+}
+
+button.botonCambiar {
+  padding: 5px;
+  margin: 10px 0px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: mediumseagreen;
+}
+
+button.botonDeshacer {
+  padding: 5px;
+  margin: 10px 0px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: red;
+}
+
 @media (max-width: 450px) {
   html {
     font-size: 50%;

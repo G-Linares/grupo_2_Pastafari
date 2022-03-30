@@ -49,7 +49,7 @@
           (e.param == 'description') { %>
           <p style="color: #dd0000"><%= e.msg %></p>
           <% } %> <% }) %> <% } %>
-          <textarea id="descripcion" name="description" rows="4" cols="50">
+          <textarea id="descripcion" name="description" rows="4" cols="50" style="text-align: center;">
 <%= productToEdit.description %> 
                 </textarea
           >
@@ -102,10 +102,10 @@
             <option value="0">No</option>
             <% } %>
           </select>
-          <button class="boton" type="reset" value="reset">
+          <button class="botonDeshacer" type="reset" value="reset">
             Deshacer cambios
           </button>
-          <button class="boton" type="submit" value="submit">
+          <button class="botonCambiar" type="submit" value="submit">
             Guardar cambios
           </button>
         </form>
