@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
+import { FaBars, FaShoppingCart, FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../../helpers/AuthContext";
 import { useHistory } from "react-router-dom";
 
@@ -16,116 +16,160 @@ const Navbar = () => {
       status: false,
       type: "",
     });
-    history.push('/');
+    history.push("/");
   };
+
+  const [activeMenu, setActiveMenu] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const controlNavbar = () => {
+    if (window.scrollY > 100) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, []);
 
   return (
     <>
-      <div className="nav">
-        <div className="container">
-          <div className="nav__wrapper">
-            <Link to="/" className="logo">
-              <h1 className="main_logo_letters"> Pastafari </h1>
+      <header className={`header ${show && "header__opacity"}`}>
+        <div className="header__content">
+          <div className="header__logo-container">
+            <Link to="/" className="main_logo_letters">
+              PASTAFARI
             </Link>
-            <nav>
-              <div className="nav__icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="feather feather-menu"
-                >
-                  <line x1="3" y1="12" x2="21" y2="12" />
-                  <line x1="3" y1="6" x2="21" y2="6" />
-                  <line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
-              </div>
-              <div className="nav__bgOverlay"></div>
-              <ul className="nav__list">
-                <div className="nav__close">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="feather feather-x"
-                  >
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                </div>
-                <div className="nav__list__wrapper">
+          </div>
+          <div className="header__main">
+            <ul className="header__links">
+              <li className="header__link-wrapper">
+                <Link to="/menu" className="nav_icon">
+                  Menú
+                </Link>
+              </li>
+              <li className="header__link-wrapper">
+                <Link to="/contact" className="nav_icon">
+                  Contacto
+                </Link>
+              </li>
+
+              {authState.type === "Admin" && (
+                <>
                   <li>
-                    <Link className="nav__link" to="/menu">
-                      Menú
+                    <Link to="/createItem" className="nav_icon">
+                      Crea un Platillo
                     </Link>
                   </li>
-                  <li>
-                    <Link className="nav__link" to="/contact">
-                      Contacto
+                </>
+              )}
+              {!authState.status ? (
+                <>
+                  <li className="header__link-wrapper">
+                    <Link className="btn primary-btn" to="/login">
+                      Inicia Sesión
                     </Link>
                   </li>
-                  {authState.type === "Admin" && (
-                    <>
-                      <li>
-                        <Link to="/createItem" className="nav__link">
-                          Crea un Platillo
-                        </Link>
-                      </li>
-                    </>
-                  )}
-                  {!authState.status ? (
-                    <>
-                      <li>
-                        <Link className="btn primary-btn" to="/login">
-                          Inicia Sesión
-                        </Link>
-                      </li>
-                    </>
-                  ) : (
-                    <>
-                      <li>
-                        <Link to="/cart" className="nav_icon">
-                          <FaShoppingCart />
-                        </Link>
-                      </li>
-                      <li>
-                        <div className="dropdown">
-                          <Link to="/myAccount" className="nav_icon">
-                            <FaUserCircle />
-                          </Link>
-                          <div className="dropdown-content">
-                            <p className="account_details">
-                              Hola, {authState.username}!
-                            </p>
-                            <p className="account_details">
-                              Cuenta de tipo <br />
-                              {authState.type}
-                            </p>
-                            <button onClick={logout}> Log Out</button>
-                            <Link to="/myAccount"> Settings</Link>
-                          </div>
-                        </div>
-                      </li>
-                    </>
-                  )}
-                </div>
-              </ul>
-            </nav>
+                </>
+              ) : (
+                <>
+                  <li className="header__link-wrapper">
+                    <Link to="/cart" className="nav_icon">
+                      <FaShoppingCart />
+                    </Link>
+                  </li>
+                  <li className="header__link-wrapper">
+                    <div className="dropdown">
+                      <Link to="/myAccount" className="nav_icon">
+                        <FaUserCircle />
+                      </Link>
+                      <div className="dropdown-content">
+                        <p className="account_details">
+                          Hola, {authState.username}!
+                        </p>
+                        <p className="account_details">
+                          Cuenta de tipo <br />
+                          {authState.type}
+                        </p>
+                        <button onClick={logout}> Log Out</button>
+                        <Link to="/myAccount"> Settings</Link>
+                      </div>
+                    </div>
+                  </li>
+                </>
+              )}
+            </ul>
+            <div
+              className="header__main-ham-menu-cont"
+              onClick={() => setActiveMenu(!activeMenu)}
+            >
+              <FaBars />
+            </div>
           </div>
         </div>
-      </div>
+        {activeMenu && (
+          <div className="header__sm-menu">
+            <div className="header__sm-menu-content">
+              <ul className="header__sm-menu-links">
+                <li className="header__sm-menu-link">
+                  <Link to="/menu" className="nav_icon" onClick={()=>{setActiveMenu(!activeMenu)}}>
+                    Menú
+                  </Link>
+                </li>
+
+                <li className="header__sm-menu-link">
+                  <Link to="/contact" className="nav_icon" onClick={()=>{setActiveMenu(!activeMenu)}}>
+                    Contacto
+                  </Link>
+                </li>
+                {authState.type === "Admin" && (
+                  <>
+                    <li className="header__sm-menu-link">
+                      <Link to="/createItem" className="nav_icon" onClick={()=>{setActiveMenu(!activeMenu)}}>
+                        Crea un Platillo
+                      </Link>
+                    </li>
+                  </>
+                )}
+                {!authState.status ? (
+                <>
+                  <li className="header__link-wrapper">
+                    <Link className="btn primary-btn" to="/login"onClick={()=>{setActiveMenu(!activeMenu)}} >
+                      Inicia Sesión
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="header__sm-menu-link">
+                    <Link to="/cart" className="nav_icon" onClick={()=>{setActiveMenu(!activeMenu)}}>
+                      Mi Carrito
+                    </Link>
+                  </li>
+                  <li className="header__sm-menu-link">
+                    
+                      <Link to="/myAccount" className="nav_icon">
+                        Mi cuenta
+                      </Link>
+      
+            
+                  
+              
+                  </li>
+                </>
+              )}
+
+              
+              </ul>
+            </div>
+          </div>
+        )}
+      </header>
 
       {/*aqui estan las rutas de la Navbar y ya renderiza todo */}
     </>

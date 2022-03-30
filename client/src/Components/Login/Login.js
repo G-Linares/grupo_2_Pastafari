@@ -25,12 +25,12 @@ const Login = () => {
   };
 
   const validationSchema = Yup.object().shape({
-    username: Yup.string().required("*"),
-    name: Yup.string().required("*"),
-    last_name: Yup.string().required("*"),
-    email: Yup.string().required("*"),
-    password: Yup.string().required("*"),
-    img: Yup.string().required("*"),
+    username: Yup.string().min(3,"Tiene que tener al menos 3 caracteres").required("no puede esta vacio el campo"),
+    name: Yup.string().required("no puede esta vacio el campo"),
+    last_name: Yup.string().required("no puede esta vacio el campo"),
+    email: Yup.string("tiene que ser un email valido").required("no puede esta vacio el campo"),
+    password: Yup.string().required("no puede esta vacio el campo"),
+    img: Yup.string().required("no puede esta vacio el campo"),
     type: Yup.string().oneOf(["Admin", "Cliente"],"Escriba Admin o Cliente")
   });
 
@@ -38,8 +38,11 @@ const Login = () => {
 
   const onSubmitCreate = (data) => {
     axios.post(`http://localhost:3001/users`, data).then(() => {
-      // history.push('/menu');
-      console.log("creaste un nuevo usuario");
+      Swal.fire({
+        icon: 'success',
+        title: '¡Has creado una nueva cuenta!',
+        text: "ya puedes iniciar sesion",
+      });
     });
   };
 

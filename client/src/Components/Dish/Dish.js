@@ -50,7 +50,13 @@ const Dish = () => {
       title: 'Ingresa una nueva foto',
       input: 'text',
       inputLabel: 'image',
-      inputPlaceholder: 'Ingresa la nueva foto aquí'
+      inputPlaceholder: 'Ingresa la nueva foto aquí',
+      showCancelButton: true,
+      inputValidator: (value) => {
+        if (!value) {
+          return 'Necesitas escribir algo!'
+        }
+      }
     });
     axios.put(`${url}menu/edit/image`,{newImage: newImage, id:id});
     setDish({...dish, image:newImage});
@@ -60,7 +66,13 @@ const Dish = () => {
       title: 'Ingresa un nuevo nombre del platillo',
       input: 'text',
       inputLabel: 'item',
-      inputPlaceholder: 'Ingresa el nombre aquí'
+      inputPlaceholder: 'Ingresa el nombre aquí',
+      showCancelButton: true,
+      inputValidator: (value) => {
+        if (!value) {
+          return 'Necesitas escribir algo!'
+        }
+      }
     }) ;   
     axios.put(`${url}menu/edit/name`,{newItem: newItem, id:id});
     setDish({...dish, item:newItem});
@@ -70,7 +82,13 @@ const Dish = () => {
       title: 'Ingresa una nueva descripción',
       input: 'text',
       inputLabel: 'info',
-      inputPlaceholder: 'Ingresa la descripción aquí'
+      inputPlaceholder: 'Ingresa la descripción aquí',
+      showCancelButton: true,
+      inputValidator: (value) => {
+        if (!value) {
+          return 'Necesitas escribir algo!'
+        }
+      }
     });
     axios.put(`${url}menu/edit/description`,{newDescription: newDescription, id:id});
     setDish({...dish, description:newDescription});
@@ -80,7 +98,13 @@ const Dish = () => {
       title: 'Ingresa un nuevo precio',
       input: 'text',
       inputLabel: 'price',
-      inputPlaceholder: 'Ingresa el precio aquí'
+      inputPlaceholder: 'Ingresa el precio aquí',
+      showCancelButton: true,
+      inputValidator: (value) => {
+        if (!value) {
+          return 'Necesitas escribir algo!'
+        }
+      }
     });
     axios.put(`${url}menu/edit/price`,{newPrice: newPrice, id:id});
     setDish({...dish,price:newPrice});

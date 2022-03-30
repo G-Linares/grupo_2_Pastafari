@@ -17,5 +17,12 @@ router.get('/auth', validateToken, userControllers.auth);
 
 router.get('/profile/:id', userControllers.profile);
 
+router.put('/edit/username', userControllers.editUsernameUser);
+router.put('/edit/name', userControllers.editNameUser);
+router.put('/edit/last_name', userControllers.editLastNameUser);
+router.put('/edit/email', userControllers.editEmailUser);
+// router.put('/edit/password', userControllers.editPasswordUser);
+router.put('/edit/type', userControllers.editTypeUser);
+
 
 module.exports = router;

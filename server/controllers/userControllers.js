@@ -50,10 +50,47 @@ const profile = async (req, res) => {
   res.json(user);
 };
 
+const editUsernameUser = async ( req, res ) => {
+  const {newUsername, id} = req.body;
+  await Users.update({username: newUsername},{where:{id:id}})
+  res.json(newUsername);
+}
+const editNameUser = async ( req, res ) => {
+  const {newName, id} = req.body;
+  await Users.update({name: newName},{where:{id:id}})
+  res.json(newName);
+}
+const editLastNameUser = async ( req, res ) => {
+  const {newLastName, id} = req.body;
+  await Users.update({last_name: newLastName},{where:{id:id}})
+  res.json(newLastName);
+}
+const editEmailUser  = async ( req, res ) => {
+  const {newEmail, id} = req.body;
+  await Users.update({email: newEmail},{where:{id:id}})
+  res.json(newEmail);
+}
+// const editPasswordUser = async ( req, res ) => {
+//   const {newPassword, id} = req.body;
+//   await Users.update({password: newPassword},{where:{id:id}})
+//   res.json(newPassword);
+// }
+const editTypeUser = async ( req, res ) => {
+  const {newType, id} = req.body;
+  await Users.update({type: newType},{where:{id:id}})
+  res.json(newType);
+}
+
 module.exports = {
   createUser,
   seeUsers,
   loginUser,
   auth,
-  profile
+  profile,
+  editUsernameUser,
+  editNameUser,
+  editLastNameUser,
+  // editPasswordUser,
+  editTypeUser,
+  editEmailUser
 };
