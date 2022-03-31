@@ -1,14 +1,14 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": '',
+    "password": 'Tanjiro321#@!',
     "database": "pastafari",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": 'Tanjiro321#@!',
     "database": "pastafari",
     "host": "127.0.0.1",
     "dialect": "mysql"

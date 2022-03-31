@@ -5,10 +5,12 @@ const methodOverride =  require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3002;
 
 const mainRouters = require('./src/routers/mainRouter.js');
 const productRouters = require ('./src/routers/productRouters.js');
+const apiRouters = require ('./src/routers/apiRouters.js');
+const cors = require('cors');
 
 //inicializamos el motor de vista a EJS
 app.set('view engine', 'ejs');
@@ -27,6 +29,7 @@ app.use(express.static(path.join(__dirname, './public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.json());
+app.use(cors())
 
 //inicializo middleware para PUT y DELETE
 app.use(methodOverride('_method'));
@@ -37,6 +40,8 @@ app.set('views', [path.join(__dirname + '/src/views/users'), path.join(__dirname
 // aqui vas los paths para el URL
 app.use('/', mainRouters);
 app.use('/producto', productRouters);
+app.use('/api', apiRouters);
+
 
 // ************ error handler ************
 app.use((req, res, next) => next(createError(404)));
